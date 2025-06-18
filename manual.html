@@ -61,19 +61,19 @@
 <f>  <a href="#example">1. Пример +</a></f>
 <f>  <a href="#basics">2. Основы +</a></f>
 <f>  <a href="#game-state">3. Состояние игры +</a></f>
-<f>  <a href="#commands">4. Команды</a></f>
-<f>  <a href="#search-filters">5. Фильтры поиска</a></f>
+<f>  <a href="#commands">4. Команды +</a></f>
+<f>  <a href="#search-filters">5. Фильтры поиска +</a></f>
 <f>  <a href="#comparisons">6. Сравнения</a></f>
 <f>  <a href="#variables">7. Переменные</a></f>
 <f>  <a href="#math-operations">8. Математические операции</a></f>
 <f>  <a href="#functions">9. Функции</a></f>
 <f>  <a href="#native-functions">10. Встроенные функции</a></f>
-<f>  <a href="#import">11. Importing External Scripts</a></f>
-<f>  <a href="#ascii-art">12. ASCII-art</a></f>
-<f>  <a href="#loops">13. Loops</a></f>
-<f>  <a href="#arrays">14. Arrays</a></f>
-<f>  <a href="#custom-input">15. Custom Input</a></f>
-<f>  <a href="#user-interface">16. User Interface</a></f>
+<f>  <a href="#import">11. Импорт сторонних скриптов +</a></f>
+<f>  <a href="#ascii-art">12. ASCII-арт +</a></f>
+<f>  <a href="#loops">13. Циклы</a></f>
+<f>  <a href="#arrays">14. Массивы</a></f>
+<f>  <a href="#custom-input">15. Кастомные способы ввода</a></f>
+<f>  <a href="#user-interface">16. Пользовательский интерфейс</a></f>
 <f>  <a href="#tips">17. Советы +</a></f>
 <f>  <a href="#default-script">18. Скрипт по умолчанию +</a></f>
 <f>  <a href="#ability_ids">Приложение A - ID перезарядки способностей +</a></f>
@@ -554,156 +554,156 @@
 
 ·:·:· Команды ·:·:·
 <font color="#bbbbbb">
-These tell the game to do something.
+Они говорят игре совершить какое-либо действие.
 
 <table>
   <tbody><tr>
     <td>activate (ability)</td>
-    <td>Activates an item ability. (ability) can have these values: potion, P, left, L, right, R. Also works with ability IDs<eg><br>Например:<br>activate R<br>(activates the ability of the item equipped on the right side, such as the Hatchet)</eg></td>
+    <td>Активирует способность предмета. Параметр (ability) может принимать следующие значения: potion, P, left, L, right, R. Также работает с ID способностей.<eg><br>Например:<br>activate R<br>(активирует способность правого предмета, например, топора)</eg></td>
   </tr>
   <tr>
     <td>brew (ingredients)</td>
-    <td>Refills the potion bottle to the specified combination of ingredients. Executes only at the beginning of a run, at time 0. Ingredients can be <eg>stone</eg>, <eg>wood</eg>, <eg>tar</eg> or <eg>bronze</eg> and should be separated by <eg>+</eg>. Ingredient names can be written in English or in the language selected in the settings.<eg><br>Например:<br>?loc.begin<br>  brew bronze + tar</eg></td>
+    <td>Заливает в бутылку для зелья указанные ингредиенты. Может выполниться только в первый кадр, когда time = 0. Ингредиенты могут быть следующими: <eg>stone</eg>, <eg>wood</eg>, <eg>tar</eg> or <eg>bronze</eg>, а разделяться должны с помощью символа <eg>+</eg>. Имя можно писать как на английском, так и на используемом вами языке (например, на русском).<eg><br>Например:<br>?loc.begin<br>  brew bronze + tar</eg></td>
   </tr>
   <tr>
-    <td>equip  (str)</td>
-    <td>Equips an item. (str) has a limit of 7 criteria. Two-handed items must use this form of the equip command.<eg><br>Например:<br>equip vigor crossbow *8 +5</eg></td>
+    <td>equip (str)</td>
+    <td>Снаряжает вас предметом. Параметр (str) имеет лимит в 7 критериев поиска. Двуручные оружия обязаны использовать данный формат команды equip.<eg><br>Например:<br>equip vigor crossbow *8 +5</eg></td>
   </tr>
   <tr>
     <td>equipL (str)</td>
-    <td>Equips an item to the left hand that best fits the given criteria.<eg><br>Например:<br>equipL poison d_sword</eg></td>
+    <td>Снаряжает вас предметом в левую руку, который лучше всех подходит под заданные критерии.<eg><br>Например:<br>equipL poison d_sword</eg></td>
   </tr>
   <tr>
     <td>equipR (str)</td>
-    <td>Equips an item to the right hand that best fits the given criteria.<eg><br>Например:<br>equipR vigor shield</eg></td>
+    <td>Снаряжает вас предметом в правую руку, который лучше всех подходит под заданные критерии.<eg><br>Например:<br>equipR vigor shield</eg></td>
   </tr>
   <tr>
     <td>equip @var@</td>
-    <td>Equips an item based on criteria from a string variable. Equip and other item search commands support subtractive criteria.<eg><br>Например:<br>var weaponName = "poison sword *10 -big"<br>equipR @weaponName@</eg></td>
+    <td>Снаряжает предметом по критерию из строковой переменной. Equip и прочие команды поиска предметов поддерживают вычитательные критерии (те, которые вы не хотите использовать).<eg><br>Например:<br>var weaponName = "poison sword *10 -big"<br>equipR @weaponName@</eg></td>
   </tr>
   <tr>
     <td>loadout (n)</td>
-    <td>Equips a specific loadout number.<eg><br>Например:<br>?loc = caves<br>  loadout 1<br>?loc = deadwood<br>  loadout 2</eg></td>
+    <td>Снаряжает вас выкладкой с номером n.<eg><br>Например:<br>?loc = caves<br>  loadout 1<br>?loc = deadwood<br>  loadout 2</eg></td>
   </tr>
   <tr>
     <td>&gt; (str)</td>
-    <td>Prints a string to the top of the screen.<eg><br>Например:<br>&gt;Hello World!</eg></td>
+    <td>Выводит строку на верх экрана.<eg><br>Например:<br>&gt;Hello World!</eg></td>
   </tr>
   <tr>
     <td>&gt; @varName@</td>
-    <td>Prints a string with the value of a variable inserted. Multiple variables can be inserted into a single print. To insert, surround the variable's name with @.<eg><br>The following example prints information about the currently targeted foe:<br>var foeInfo<br>foeInfo = foe<br>&gt;FOE = @foeInfo@</eg></td>
+    <td>Выводит указанную переменную на экран. В одну команду вывода можно вставлять несколько переменных. Имя переменной необходимо окружать с обоих сторон символом @.<eg><br>Данный пример выводит информацию о выбранном в качестве цели противнике:<br>var foeInfo<br>foeInfo = foe<br>&gt;FOE = @foeInfo@</eg></td>
   </tr>
   <tr>
     <td>&gt;(abcd</td>
-    <td>Shows a custom facial expression on the player. Requires Big Head.<eg><br>Например:<br>&gt;( OwO</eg></td>
+    <td>Показывает на лице игрока кастомное выражение лица. Требует большую голову (лунный камень).<eg><br>Например:<br>&gt;( UwU</eg></td>
   </tr>
   <tr>
     <td>&gt;oX,Y,[#rrggbb,](str)</td>
-    <td>Advanced print relative to the player's position. X and Y are the coordinate offsets. #rrggbb is the color of the text in <a href="https://htmlcolorcodes.com/" target="_blank">hexadecimal notation</a>. Color can also be set with these constants: #white, #cyan, #yellow, #green, #blue and #red. To print in rainbow use #rainFF where the last 2 characters define the brightness.<eg><br>The following example writes "Let's go!" in red font, relative to the player's position, 6 to the left and 3 down:<br>&gt;o-6,3,#red,Let's go!</eg></td>
+    <td>Продвинутая функция вывода относительно позиции игрока. X и Y - координатные смещения. #rrggbb - цвет текста в <a href="https://htmlcolorcodes.com/" target="_blank">шестнадцатеричной форме</a>. Цвет также может быть одной из следующих констант: #white, #cyan, #yellow, #green, #blue and #red. Радужный цвет использует #rainFF, где 2 последних символа определяют яркость.<eg><br>Данный пример выводит "Погнали!" красным цветом на 6 блоков влево и 3 вниз относительно игрока:<br>&gt;o-6,3,#red,Погнали!</eg></td>
   </tr>
   <tr>
     <td>&gt;hX,Y,[#rrggbb,](str)</td>
-    <td>Similar to "&gt;o", however, draws on the same layer as the Big Head. Ideal for accessories such as hats.<eg><br>The following draws a yellow hat on the player. Works best if Big Head is enabled:<br>&gt;h-2,-3,#yellow,ascii<br>##_<br>#| |<br>_|_|_<br>asciiend</eg></td>
+    <td>Похоже на "&gt;o", но отрисовывается на том же слое, что и большая голова. Идеально для аксессуаров по типу шляп.<eg><br>Данный код рисует на игроке желтую шляпку. Работает лучше с включенной большой головой:<br>&gt;h-2,-3,#yellow,ascii<br>##_<br>#| |<br>_|_|_<br>asciiend</eg></td>
   </tr>
   <tr>
     <td>&gt;`X,Y,[#rrggbb,](str)</td>
-    <td>Advanced print relative to the upper-left corner of the screen.<eg><br>The following prints "Hello World!", but uses variables for the coordinates and the color:<br>var posX = 10<br>var posY = 5<br>var color = rainE1<br>&gt;`@posX@,@posY@,#@color@,Hello World!</eg></td>
+    <td>Продвинутая функция вывода относительно верхнего левого угла экрана.<eg><br>Данный код выводит "Hello World!", используя переменные для координат и цвета:<br>var posX = 10<br>var posY = 5<br>var color = rainE1<br>&gt;`@posX@,@posY@,#@color@,Hello World!</eg></td>
   </tr>
   <tr>
     <td>&gt;cX,Y,[#rrggbb,](str)</td>
-    <td>Advanced print relative to the center of the screen. Similar to "&gt;`". Note that in all these the color is optional.<eg><br>This example demonstrates how the color is optional and defaults to white:<br>&gt;c0,0,Hello World!</eg></td>
+    <td>Продвинутая функция вывода  относительно центра экрана. Похожа на "&gt;`". Во всех этих командах необязательно указывать цвет.<eg><br>Данный пример показывает, что цвет не обязателен (по умолчанию ставится белый):<br>&gt;c0,0,Hello World!</eg></td>
   </tr>
   <tr>
     <td>&gt;fX,Y,[#rrggbb,](str)</td>
-    <td>Advanced print relative to the target foe's head position.<eg><br>The following draws a red crosshairs on the targeted foe:<br>&gt;f-2,0,#ff0000,ascii<br>##!<br>-#·#-<br>##¡<br>asciiend</eg></td>
+    <td>Продвинутая функция вывода относительно головы выбранного противника.<eg><br>Данный код рисует красный крестик на враге:<br>&gt;f-2,0,#ff0000,ascii<br>##!<br>-#·#-<br>##¡<br>asciiend</eg></td>
   </tr>
   <tr>
     <td>var (variable)</td>
-    <td>Declares a variable that can be used in math, logical and string operations. See the <a href="#variables">variables section</a> for details about their lifecycle and behavior, that may differ from other languages.<eg><br>Например:<br>var message = Hello World!<br>&gt;@message@</eg></td>
+    <td>Объявляет переменную для последующих действий. Для подробной информации можете прочесть раздел <a href="#variables">переменных</a>.<eg><br>Например:<br>var message = Hello World!<br>&gt;@message@</eg></td>
   </tr>
   <tr>
     <td>func (function)</td>
-    <td>Declares a <a href="#functions">function</a> that can be called later.<eg><br>Например:<br>func Print(message)<br>  &gt;@message@<br><br>Print(Hello World!)</eg></td>
+    <td>Объявляет <a href="#functions">функцию</a> для последующего вызова.<eg><br>Например:<br>func Print(message)<br>  &gt;@message@<br><br>Print(Hello World!)</eg></td>
   </tr>
   <tr>
     <td>for v = a..b</td>
-    <td>Creates a <a href="#loops">loop</a> that iterates a variable 'v' from value 'a' to value 'b'. Code that appears inside the loop's scope will run multiple times.<eg><br>Например:<br>var a<br>a = 0<br>for i = 1..5<br>  a = a + i<br>&gt;a = @a@</eg></td>
+    <td>Создает <a href="#loops">цикл</a>, прогоняющий переменную 'v' от 'a' до 'b'. Код внутри цикла сработает несколько раз.<eg><br>Например:<br>var a<br>a = 0<br>for i = 1..5<br>  a = a + i<br>&gt;a = @a@</eg></td>
   </tr>
   <tr>
     <td>import (script)</td>
-    <td>Loads and executes a singular copy of an <a href="#import">external script</a>.<eg><br>This example imports the fishing mini-game located at<br>(save-file folder)/Stonescript/Fishing.txt<br><br>import Fishing</eg></td>
+    <td>Загружает и выполняет копию <a href="#import">стороннего скрипта</a>.<eg><br>Данный пример импортирует мини-игру 'Рыбалка', расположенную в <br>(save-file folder)/Stonescript/Fishing.txt<br><br>import Fishing</eg></td>
   </tr>
   <tr>
     <td>new (script)</td>
-    <td>Loads and executes an <a href="#import">external script</a> similar to 'import'. However, objects loaded with 'new' are each an individual copy and their script body will only execute one time.<eg><br>This example creates and prints a vector object:<br>var v = new Components/Vector<br>v.Init(10, 5)<br>&gt;Vector = @v@</eg></td>
+    <td>Загружает и выполняет <a href="#import">сторонний скрипт</a>, почти как 'import'. Однако скрипты, загруженные с помощью 'new', являются индивидуальными объектами, и сработают только один раз.<eg><br>Данный пример создает и выводит объект вектора:<br>var v = new Components/Vector<br>v.Init(10, 5)<br>&gt;Vector = @v@</eg></td>
   </tr>
   <tr>
     <td>disable abilities</td>
-    <td>Prevents activation of potion and weapon abilities. Also greys out the HUD buttons.</td>
+    <td>Запрещает активацию способностей (оружия, зелий, и т.д.). Также делает кнопку интерфейса серой.</td>
   </tr>
   <tr>
     <td>enable abilities</td>
-    <td>Restores activation of abilities that were disabled by a previous call to "disable abilities".</td>
+    <td>Возвращает возможность активации способностей, вызванную "disable abilities".</td>
   </tr>
   <tr>
     <td>disable banner</td>
-    <td>Prevents rendering of the horizontal banner that appears with the location name at the beginning and end of a location.</td>
+    <td>Отключает отображение баннера с названием локации в начале забега.</td>
   </tr>
   <tr>
     <td>enable banner</td>
-    <td>Restores rendering of the horizontal banner with location name.</td>
+    <td>Возвращает отображение баннера с названием локации.</td>
   </tr>
   <tr>
     <td>disable hud (opts)</td>
-    <td>Hides and disables the gameplay user interface elements. Accepts optional parameters, specifying the set of elements to disable: p = player health and debuffs, f = foe health and debuffs, a = ability buttons, r = resources, b = banner, u = utility belt.<eg><br>Например:<br>disable hud // Disables all hud elements<br>Например:2<br>disable hud ru // Disables only resources (r) and utility belt (u)</eg></td>
+    <td>Отключает элементы пользовательского интерфейса. Может принимать параметры, определяющие набор отключаемых элементов: p = здоровье и дебаффы игрока, f = здоровье и дебаффы противника, a = кнопки способностей, r = ресурсы, b = баннер с названием локации, u = ремень с выкладками.<eg><br>Например:<br>disable hud // Отключает весь HUD<br>Или:<br>disable hud ru // Отключает только ресурсы (r) и выкладки (u)</eg></td>
   </tr>
   <tr>
     <td>enable hud (opts)</td>
-    <td>Brings back the user interface elements hidden by previous "disable hud" commands. Accepts the same optional parameters as the disable command.</td>
+    <td>Возвращает элементы интерфейса, скрытые с помощью 'disable hud'. Может принимать такие же параметры.</td>
   </tr>
   <tr>
     <td>disable loadout input</td>
-    <td>Prevents weapon loadouts from being saved or recalled with input keys.</td>
+    <td>Запрещает сохранение/загрузку выкладок по горячим клавишам.</td>
   </tr>
   <tr>
     <td>enable loadout input</td>
-    <td>Restores the saving or recalling of weapon loadouts by means of input keys.</td>
+    <td>Возвращает возможность сохранения/загрузки выкладок.</td>
   </tr>
   <tr>
     <td>disable loadout print</td>
-    <td>Hides the messages that appear when a loadout is recalled.</td>
+    <td>Скрывает сообщения при загрузке выкладки.</td>
   </tr>
   <tr>
     <td>enable loadout print</td>
-    <td>Brings back the printing of loadout messages.</td>
+    <td>Возвращает сообщения при загрузке выкладок.</td>
   </tr>
   <tr>
     <td>disable npcDialog</td>
-    <td>Hides and auto-skips NPC dialog bubbles.</td>
+    <td>Скрывает и автоматически пропускает все диалоги с NPC.</td>
   </tr>
   <tr>
     <td>enable npcDialog</td>
-    <td>Brings back NPC dialog bubbles.</td>
+    <td>Возвращает диалоги с NPC.</td>
   </tr>
   <tr>
     <td>disable pause</td>
-    <td>Hides the pause button user interface. Pause is still available with the [P] shortcut.</td>
+    <td>Скрывает кнопку паузы. Она все еще доступна при нажатии на [P].</td>
   </tr>
   <tr>
     <td>enable pause</td>
-    <td>Brings back the pause button hidden by a previous "disable pause" command.</td>
+    <td>Возвращает кнопку паузы.</td>
   </tr>
   <tr>
     <td>disable player</td>
-    <td>Hides the player. Has no effect on combat, this is only cosmetic.</td>
+    <td>Скрывает игрока. Нет эффекта во время боя, изменение исключительно косметическое.</td>
   </tr>
   <tr>
     <td>enable player</td>
-    <td>Brings back the player rendering if it was hidden by a previous "disable player" command.</td>
+    <td>Возвращает отображение игрока.</td>
   </tr>
   <tr>
     <td>play (sound) (pitch)</td>
-    <td>Plays a <a href="#sounds">sound effect</a> with an optional pitch value. The pitch default value is 100 with higher numbers increasing the pitch and smaller numbers lowering it.<eg><br>Например:<br>?key = primary<br>  play buy<br>?key = up<br>  play buy 200<br><br>Например:2:<br>var pitch<br>?time%30 = 0<br>  pitch = rng/100 + 50<br>  &gt;@pitch@<br>  play buy @pitch@</eg></td>
+    <td>Проигрывает <a href="#sounds">звуковой эффект</a> с (необязательным) уровнем питча. По умолчанию питч равен 100.<eg><br>Например:<br>?key = primary<br>  play buy<br>?key = up<br>  play buy 200<br><br>Или:<br>var pitch<br>?time%30 = 0<br>  pitch = rng/100 + 50<br>  &gt;@pitch@<br>  play buy @pitch@</eg></td>
   </tr>
 </tbody></table></font>
 <a href="#"><font color="#505050">^К началу</font></a>
@@ -711,9 +711,9 @@ These tell the game to do something.
 
 <div id="search-filters"><div id="separator"><!---------------------------></div>
 
-·:·:· Search Filters ·:·:·
+·:·:· Фильтры поиска ·:·:·
 <font color="#bbbbbb">
-These are used when evaluating foes, locations and items.
+Используются для проверки врагов, локаций и предметов.
 
 <eg><f>Например::
 ?foe = insect | foe = poison
@@ -749,8 +749,8 @@ immune_to_stun
 immune_to_ranged
 immune_to_debuff_damage
 immune_to_physical
-*[number]  star level (location or item)
-+[number]  enchantment bonus (item only)
+*[number]  звездный уровень (локации или предмета)
++[number]  уровень зачарования (предмета)
 </font>
 
 <a href="#"><font color="#505050">^К началу</font></a>
@@ -1565,18 +1565,18 @@ While scripts can define their own functions, Stonescript comes with a set of pr
 
 <div id="import"><div id="separator"><!---------------------------></div>
 
-·:·:· Importing External Scripts ·:·:·
+·:·:· Импорт сторонних скриптов ·:·:·
 <font color="#bbbbbb">
-Your script doesn't have to be all in the Mind Stone. Stonescript supports the loading of external files through the 'import' and 'new' keywords. For external scripts to work they must be located in your <a href="https://stonestoryrpg.com/faq.html#Technical%20Help">save-file folder</a>, inside a /Stonescript folder and end in '.txt'.
+Необязательно писать весь скрипт внутри Камня Разума. Stonescript поддерживает загрузку сторонних файлов с помощью команд 'import' и 'new'. Для корректной работы сторонних скриптов они должны располагаться в вашей <a href="https://stonestoryrpg.com/faq.html#Technical%20Help">папке с сохранениями</a>, внутри папки /Stonescript и заканчиваться на '.txt'.
 
-In the most basic example an external script is imported and runs as if it were directly in your Mind Stone, making this a convenient way to organize farming scripts:
+Самый простой пример - сторонний скрипт импортируется и выполняется так, будто он напрямую написан в Камне Разума, что позволяет сделать удобную организацию скриптов для фарма:
 <eg>
 import Rocky
 import Deadwood
 import Caves
 import Forest
 </eg>
-When a script is imported it's copied into its own container and returns as a reference. Variables declared in the external script are isolated and don't interact with variables in other scripts. In this example, a printing utility script offers simplified services:
+Когда скрипт импортируется, он копируется в свой личный контейнер и возвращается как ссылка на объект. Переменные, объявленные в стороннем скрипте, изолированы и не взаимодействуют с другими скриптами. В данном примере представлен простой скрипт продвинутых функций вывода:
 <eg><f>
 // PrintUtil.txt
 func LowerLeft(x, y, color, message)
@@ -1588,12 +1588,12 @@ func LowerRight(x, y, color, message)
   y = y + screen.h
   &gt;`@x@,@y@,@color@,@message@
 
-// Main script in Mind Stone
+// Основной скрипт в Камне Разума
 var print = import PrintUtil
 disable hud
-print.LowerLeft(0,-1,#ffffff,"Health: " + hp)
+print.LowerLeft(0,-1,#ffffff,"Здоровье: " + hp)
 </f></eg>
-Advanced solutions can import the same script multiple times using the 'new' command, for example, to implement componentization or an Object Oriented paradigm:
+Продвинутые решения могут импортировать один и тот же скрипт несколько раз с помощью команды 'new', например, чтобы использовать компоненты или парадигмы объектно-ориентированного программирования:
 <eg><f>
 // Vector.txt
 var x = 0
@@ -1607,7 +1607,7 @@ func subtract(otherVect)
   x = x - otherVect.x
   y = y - otherVect.y
 
-// Main script in Mind Stone
+// Основной скрипт в Камне Разума
 var vectFrom = new Components/Vector
 var vectTo = new Components/Vector
 
@@ -1617,7 +1617,7 @@ vectTo.subtract(vectFrom)
 
 &gt;x = @vectTo.x@, y = @vectTo.y@
 </f></eg>
-External scripts can implement a 'ToString()' function, allowing their direct use in advanced print commands:
+Сторонние скрипты могут включать в себя функцию 'ToString()', чтобы их можно было напрямую использовать в продвинутых функциях ввода:
 <eg><f>
 // Vector.txt
 var x = 0
@@ -1630,18 +1630,18 @@ func init(_x, _y)
 func ToString()
   return "(" + x + ", " + y + ")"
 
-// Main script in Mind Stone
+// Основной скрипт в Камне Разума
 var v = import Components/Vector
 v.init(3,5)
 &gt;Vector = @v@
 </f></eg>
-External scripts can be imported from subfolders:
+Сторонние скрипты можно импортировать из подпапок:
 <eg><f>
 import Games/Blackjack
 import Cosmetics/PetFrog
 import Cosmetics/Hats
 </f></eg>
-While similar, there are two important differences between 'import' and 'new'. With 'import' the same object is returned each time. If you import the same script from multiple places they will all be using the same object. Scripts imported with 'new' are unique copies, but their script body will only run 1 time as opposed to every frame.
+Хоть они и похожи, между 'import' и 'new' есть два важных различия. 'import' возвращает один и тот же объект каждый раз. Если вы импортируете один и тот же скрипт несколько раз, они все будут использовать один и тот же объект. Скрипты, импортированные с помощью 'new', являются уникальными копиями, но их тело сработает только один раз, а не каждый кадр.
 </font>
 
 <a href="#"><font color="#505050">^К началу</font></a>
@@ -1649,17 +1649,17 @@ While similar, there are two important differences between 'import' and 'new'. W
 
 <div id="ascii-art"><div id="separator"><!---------------------------></div>
 
-·:·:· ASCII-art ·:·:·
+·:·:· ASCII-арт ·:·:·
 <font color="#bbbbbb">
-In Stonescript, custom ASCII-art can be embedded within the scripts and drawn on screen with the advanced print commands. There are a few methods to do this and some glyphs have special behavior:
+На языке Stonescript, кастомные ASCII-арты можно создавать прямо внутри скрипта и выводить на экран с помощью продвинутых команд вывода. Существует несколько способов сделать это, и у некоторых символов есть особое поведение:
 <f>
-#  - Blank space. Transparency. Does not draw.
-\n - Line break. Causes the draw to continue on the next line. WARNING: This is an expensive operator and should not be used for breaking lines in large drawings. Use the ascii/asciiend block instead.
+#  - Пустое место. Прозрачный символ. Не отрисовывается.
+\n - Перевод каретки. Отрисовка продолжится на следующей линии. ВНИМАНИЕ: Этот оператор не ресурсоемкий и его не следует использовать для разрыва линий в больших рисунках. Для этого лучше использовать блок ascii или asciiend.
 </f>
 
-Method 1 - Advanced print
+Способ 1 - Продвинутый вывод
 
-This example draws a green circle to the top-left of the screen.
+Этот пример рисует зеленый круг в верхней левой части экрана.
 <eg><f>
 &gt;`1,0,#green,ascii
 #.-.
@@ -1668,9 +1668,9 @@ This example draws a green circle to the top-left of the screen.
 asciiend
 </f></eg>
 
-Method 2 - Variables
+Способ 2 - Переменные
 
-This example saves the art for a spooky fish into a variable, then draws it to the top-left of the screen in red color.
+Этот пример записывает рисунок страшной рыбки в переменную, а затем рисует его красным цветом в верхней левой части экрана.
 <eg><f>
 var fishSprite
 fishSprite = ascii
