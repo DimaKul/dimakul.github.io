@@ -53,6 +53,8 @@
 <f>Нужна помощь? Посетите <a href="https://discord.gg/StoneStoryRPG" target="_blank">официальный Discord</a> или <a href="https://t.me/StoneStoryRpgRu" target="_blank">канал в Telegram</a>.<f>
 
 <f>Данное руководство является всеобъемлющим справочником всех доступных возможностей Stonescript. Большинство приведенных примеров можно скопировать/вставить прямо в Камень Разума, что является отличным способом проверить их работу на деле.</f>
+
+<f>Переведено Димакулом примерно на 60%.</f>
 </f></f></f></font>
 
 
@@ -1998,38 +2000,38 @@ Table with all the available key codes:
 
 ·:·:· User Interface ·:·:·
 <font color="#bbbbbb">
-Buttons, text, animations... Stonescript provides a system for building complex layouts and high performance User Interfaces. An invisible "root" Panel exists by default, at the base of the system. Various other UI elements can be added to the root Panel, including additional Panels, forming a tree structure. All elements are drawn together, in a single step, in the order in which they are added.
+Кнопки, текст, анимации... Stonescript предоставляет системы создания сложных layouts и пользовательского интерфейса с высокой производительностью. По умолчанию существует невидимая панель "root", в основании системы. К этой корневой панели можно добавить множество различных элементов, включая доп.панели, формируя древовидную структуру. Все элементы отрисовываются вместе, за один шаг, в том порядке, в котором они были добавлены.
 <eg><f>
 root
 │
-├─ Panel
-│  ├─ Text
-│  ├─ ASCII-art
-│  └─ Button
+├─ Панель
+│  ├─ Текст
+│  ├─ ASCII-арт
+│  └─ Кнопка
 │
-├─ Panel
-│  ├─ Panel
-|  |  └─ Text
+├─ Панель
+│  ├─ Панель
+|  |  └─ Текст
 ...
 </f></eg>
 
 <table>
-  <tbody><tr><td>UI<br>‾‾</td><td>Call functions in the <eg>ui</eg> namespace to build the interface.</td></tr>
+  <tbody><tr><td>UI<br>‾‾</td><td>Вызывайте функции в пространстве имен <eg>ui</eg>, чтобы выстроить интерфейс.</td></tr>
   <tr>
     <td>ui.root<br><eg>Panel</eg></td>
-    <td>The base UI object on top of which the entire tree is built.<eg><br>Например:<br>disable hud<br>ui.root.visible = true</eg></td>
+    <td>Основной объект UI, поверх которого строится все дерево.<eg><br>Например:<br>disable hud<br>ui.root.visible = true</eg></td>
   </tr>
   <tr>
     <td>ui.AddAnim(string)<br><eg>Возвращает Anim</eg></td>
-    <td>Adds an Anim object to the root Panel. Accepts an animation sprite sheet as parameter.<eg><br>Например:<br>?loc.begin<br>  ui.AddAnim(ascii<br>\o)<br>%%<br>(o/<br>asciiend)</eg></td>
+    <td>Добавляет объект типа Anim на корневую панель. Принимает набор спрайтов для анимации как параметр.<eg><br>Например:<br>?loc.begin<br>  ui.AddAnim(ascii<br>\o)<br>%%<br>(o/<br>asciiend)</eg></td>
   </tr>
   <tr>
     <td>ui.AddButton()<br><eg>Возвращает Button</eg></td>
-    <td>Adds a Button object to the root Panel.<eg><br>Например:<br>func OnPressed()<br>  &gt; Hello World!<br><br>?loc.begin<br>  var button = ui.AddButton()<br>  button.y = 1<br>  button.text = Press me<br>  button.SetPressed(OnPressed)</eg></td>
+    <td>Добавляет объект типа Button на корневую панель.<eg><br>Например:<br>func OnPressed()<br>  &gt; Hello World!<br><br>?loc.begin<br>  var button = ui.AddButton()<br>  button.y = 1<br>  button.text = Нажми меня<br>  button.SetPressed(OnPressed)</eg></td>
   </tr>
   <tr>
     <td>ui.AddPanel()<br><eg>Возвращает Panel</eg></td>
-    <td>Adds a Panel object to the root Panel. Panels are an important object type, serving as containers for other elements.<eg><br>Например:<br>?loc.begin<br>  var p = ui.AddPanel()<br>  p.color = #red</eg></td>
+    <td>Добавляет объект типа Panel на корневую панель. Панели - важный тип объекта, так как они служат в качестве контейнера для других элементов.<eg><br>Например:<br>?loc.begin<br>  var p = ui.AddPanel()<br>  p.color = #red</eg></td>
   </tr>
   <tr>
     <td>ui.AddStyle()<br><eg>Возвращает int</eg></td>
@@ -2172,120 +2174,120 @@ root
     <td>ID number of the Buttons's current style. Default value is 1. Possible values from -8 to 8. Additional styles can be added with <eg>ui.AddStyle()</eg></td>
   </tr>
   <tr>
-    <td>button.SetPressed(f)<br><eg>function callaback</eg></td>
+    <td>button.SetPressed(f)<br><eg>function callback</eg></td>
     <td>Assigns a function to be called when the button is pressed. The function can have any number of parameters (even no parameters). When the function is called, the first parameter will be a reference to the button itself.<br><eg>Например:<br>var button1<br>var button2<br>func OnPressed(btn)<br>  ?btn = button1<br>    &gt;Button1 was pressed<br>  :<br>    &gt;Button2 was pressed<br><br>?loc.begin<br>  button1 = ui.AddButton()<br>  button1.y = 1<br>  button1.SetPressed(OnPressed)<br><br>  button2 = ui.AddButton()<br>  button2.y = 6<br>  button2.SetPressed(OnPressed)</eg></td>
   </tr>
   <tr>
-    <td>button.SetDown(f)<br><eg>function callaback</eg></td>
-    <td>Similar to .SetPressed(), .SetDown() assigns a function to be called when the button press begins (first user contact).</td>
+    <td>button.SetDown(f)<br><eg>function callback</eg></td>
+    <td>По аналогии с .SetPressed(), .SetDown() назначает функцию, которая вызывается, когда начинается нажатие кнопки игроком.</td>
   </tr>
   <tr>
-    <td>button.SetUp(f)<br><eg>function callaback</eg></td>
-    <td>Similar to .SetPressed(), .SetUp() assigns a function to be called when a depress ends on top of the button (last user contact).<br><eg>Например:<br>func OnDown()<br>  &gt; Down!<br><br>func OnUp()<br>  &gt; Up!<br><br>?loc.begin<br>  var button = ui.AddButton()<br>  button.y = 1<br>  button.text = Press me<br>  button.SetDown(OnDown)<br>  button.SetUp(OnUp)</eg></td>
+    <td>button.SetUp(f)<br><eg>function callback</eg></td>
+    <td>По аналогии с .SetPressed(), .SetUp() назначает функцию, которая вызывается, когда игрок полностью перестает держать кнопку.<br><eg>Например:<br>func OnDown()<br>  &gt; Down!<br><br>func OnUp()<br>  &gt; Up!<br><br>?loc.begin<br>  var button = ui.AddButton()<br>  button.y = 1<br>  button.text = Press me<br>  button.SetDown(OnDown)<br>  button.SetUp(OnUp)</eg></td>
   </tr>
-  <tr><td><br>Anim &gt; Component<br>‾‾‾‾</td><td><br>ASCII sprite-sheet animations that can be added to UI.</td></tr>
+  <tr><td><br>Anim &gt; Component<br>‾‾‾‾</td><td><br>Анимации на основе набора спрайтов ASCII, которые можно добавить на UI.</td></tr>
   <tr>
     <td>anim.color<br><eg>string</eg></td>
-    <td>The animation's color, in <a href="https://htmlcolorcodes.com/" target="_blank">RGB hexadecimal format</a>.</td>
+    <td>Цвет анимации, в <a href="https://htmlcolorcodes.com/" target="_blank">шестнадцатеричном формате RGB</a>.</td>
   </tr>
   <tr>
     <td>anim.duration<br><eg>int</eg></td>
-    <td>Time length of the animation, in frames.</td>
+    <td>Длина анимации (в кадрах).</td>
   </tr>
   <tr>
     <td>anim.flipX<br><eg>bool</eg></td>
-    <td>If true, flips the art horizontally, over its pivot.</td>
+    <td>Если true, анимация отражена горизонтально.</td>
   </tr>
   <tr>
     <td>anim.flipY<br><eg>bool</eg></td>
-    <td>If true, flips the art vertically, over its pivot.</td>
+    <td>Если true, анимация отражена вертикально.</td>
   </tr>
   <tr>
     <td>anim.frame<br><eg>int</eg></td>
-    <td>Current animation frame being drawn. Can be changed to set an animation to a specific frame.</td>
+    <td>Номер кадра анимации, отрисовываемый в данный момент. Можно поменять, чтобы перевести анимацию на конкретный кадр.</td>
   </tr>
   <tr>
     <td>anim.gamePause<br><eg>bool</eg></td>
-    <td>If true, the animation automatically pauses playback if the player pauses the game and resumes playback if the player exits the pause screen.</td>
+    <td>Если true, анимация ставится на паузу, когда игрок заходит в меню паузы и продолжается, когда игрок из него выходит.</td>
   </tr>
   <tr>
     <td>anim.loop<br><eg>bool</eg></td>
-    <td>If true, the animation will restart from the begining as soon as it reaches the end of its duration.</td>
+    <td>Если true, по окончании анимация перезапустится.</td>
   </tr>
   <tr>
     <td>anim.playing<br><eg>bool<br>read-only</eg></td>
-    <td>True if the animation is currently playing.</td>
+    <td>True, если анимация проигрывается.</td>
   </tr>
   <tr>
     <td>anim.paused<br><eg>bool<br>read-only</eg></td>
-    <td>True if the animation is playing, but has been paused with a call to <eg>anim.Pause()</eg>.</td>
+    <td>True, если анимация проигрывается, но поставлена на паузу с помощью <eg>anim.Pause()</eg>.</td>
   </tr>
   <tr>
     <td>anim.pivotX<br>anim.pivotY<br><eg>int</eg></td>
-    <td>Additional pivot offset that can be used for fine-tuning where the ASCII-art draws in relationship to its position.</td>
+    <td>Дополнительное смещение, которое можно использовать, чтобы подрехтовать, где должен рисоваться ASCII-арт по отношению к своей позиции.</td>
   </tr>
   <tr>
     <td>anim.playOnStart<br><eg>bool</eg></td>
-    <td>If true, the animation will begin playing as soon as possible.</td>
+    <td>Если true, анимация начнет проигрываться при первой возможности.</td>
   </tr>
   <tr>
     <td>anim.AddLayer(string)<br><eg>Возвращает Anim</eg></td>
-    <td>Adds a new ASCII sprite on top of this one. As the animation plays (or its frame is changed with <eg>anim.frame</eg>) all layers stay in sync. Each layer has their own set of properties for color, pivot, etc. Advantages of using animation layers for complex ASCII-art include improved performance and better code quality. If the animation is recycled all layers clean up simultaneously.<eg><br>Например:<br>var a = ui.AddAnim(asciiArtA)<br>var layer2 = a.AddLayer(asciiArtB)<br>layer2.color = #bbbbbb</eg></td>
+    <td>Добавляет новый спрайт ASCII поверх этого. Пока анимация проигрывается (или ее кадр меняют с помощью <eg>anim.frame</eg>), все слои синхронизированы. Каждый слой имеет свой набор значений для цвета, точки, и т.д.. Преимущества использования слоев анимации для сложных артов ASCII включают улучшенную производительность и более качественный код. Если анимация удалена, все слои очищаются одновременно.<eg><br>Например:<br>var a = ui.AddAnim(asciiArtA)<br>var layer2 = a.AddLayer(asciiArtB)<br>layer2.color = #bbbbbb</eg></td>
   </tr>
   <tr>
     <td>anim.Load(string)<br><eg>Ничего не возвращает</eg></td>
-    <td>Assigns a new ASCII sprite sheet.</td>
+    <td>Назначает новый набор спрайтов ASCII.</td>
   </tr>
   <tr>
     <td>anim.Pause()<br><eg>Ничего не возвращает</eg></td>
-    <td>Suspends playback of the animation at its current frame. A subsequent call to <eg>anim.Play()</eg> resumes playback.</td>
+    <td>Приостанавливает проигрывание анимации на нынешнем кадре. Последующий вызов <eg>anim.Play()</eg> продолжит анимацию.</td>
   </tr>
   <tr>
     <td>anim.Play()<br><eg>Ничего не возвращает</eg></td>
-    <td>Begins playing the animation, or resumes playback in case it had been paused.<br><eg>Например:<br>var dance<br>?loc.begin<br>  dance = ui.AddAnim(ascii<br>(O/<br>%%<br>\O)<br>asciiend)<br>  dance.duration = 20<br>  dance.loop = true<br>  dance.Play()</eg></td>
+    <td>Начинает проигрывание анимации или продолжает его, если оно поставлено на паузу.<br><eg>Например:<br>var dance<br>?loc.begin<br>  dance = ui.AddAnim(ascii<br>(O/<br>%%<br>\O)<br>asciiend)<br>  dance.duration = 20<br>  dance.loop = true<br>  dance.Play()</eg></td>
   </tr>
   <tr>
     <td>anim.Stop()<br><eg>Ничего не возвращает</eg></td>
-    <td>Suspends playback and sets the animation back to its first frame.</td>
+    <td>Останавливает проигрывание анимации и возвращает ее на первый кадр.</td>
   </tr>
-  <tr><td><br>Canvas &gt; Component<br>‾‾‾‾‾‾</td><td><br>Container optimized for drawing arbitrary glyphs and colors.</td></tr>
+  <tr><td><br>Canvas &gt; Component<br>‾‾‾‾‾‾</td><td><br>Контейнер, оптимизированный для отрисовки символов и цветов.</td></tr>
   <tr>
     <td>canvas.blend<br><eg>string</eg></td>
-    <td>The blend mode of the canvas, when composed with elements behind it. Possible values: Opaque, Multiply, Divide, Add, Subtract. Default value is "opaque".<br><eg>Например:<br>var filter1 = ui.AddCanvas()<br>var filter2 = ui.AddCanvas()<br>filter1.w = screen.w<br>filter1.h = screen.h<br>filter2.w = screen.w<br>filter2.h = screen.h<br><br>filter1.blend = multiply
+    <td>Режим смешивания холста с элементами за ним. Доступные значения: Opaque, Multiply, Divide, Add, Subtract. По умолчанию используется "opaque".<br><eg>Например:<br>var filter1 = ui.AddCanvas()<br>var filter2 = ui.AddCanvas()<br>filter1.w = screen.w<br>filter1.h = screen.h<br>filter2.w = screen.w<br>filter2.h = screen.h<br><br>filter1.blend = multiply
 <br>filter1.SetFG(#aa5555)<br>filter1.SetBG(#dddddd)<br><br>filter2.blend = add
 <br>filter2.SetFG(#aa6600)<br>filter2.SetBG(#662200)</eg></td>
   </tr>
   <tr>
     <td>canvas.Get(int,int)<br><eg>Возвращает string</eg></td>
-    <td>Возвращает the glyph at a specific position x,y on the canvas.</td>
+    <td>Возвращает символ на указанной позиции на холсте.</td>
   </tr>
   <tr>
     <td>canvas.Set(str)<br><eg>Ничего не возвращает</eg></td>
-    <td>Fills the entire canvas with a given glyph.<br><eg>Например:<br>?loc.begin<br>  var canvas = ui.AddCanvas()<br>  canvas.Set("X")</eg></td>
+    <td>Заполняет весь холст указанным символом.<br><eg>Например:<br>?loc.begin<br>  var canvas = ui.AddCanvas()<br>  canvas.Set("X")</eg></td>
   </tr>
   <tr>
     <td>canvas.Set(int,int,str)<br><eg>Ничего не возвращает</eg></td>
-    <td>Changes a specific position x,y on the canvas to a given glyph.<br><eg>Например:<br>?loc.begin<br>  var canvas = ui.AddCanvas()<br>  canvas.Set(0, 0, "A")</eg></td>
+    <td>Меняет символ на позиции x,y на указанный.<br><eg>Например:<br>?loc.begin<br>  var canvas = ui.AddCanvas()<br>  canvas.Set(0, 0, "A")</eg></td>
   </tr>
   <tr>
     <td>canvas.Set(int,int, fg,str)<br>canvas.Set(int,int, fg,bg,str)<br><eg>Ничего не возвращает</eg></td>
-    <td>Overloads for changing a canvas at a specific position, while simultaneously setting the foreground and background colors.<br><eg>Например:<br>?loc.begin<br>  var canvas = ui.AddCanvas()<br>  for x = 0..canvas.w<br>    for y = 0..canvas.h<br>      var fg = color.Random()<br>      var bg = color.Random()<br>      canvas.Set(x, y, fg, bg, ▄)</eg></td>
+    <td>Перегрузки для изменения символа на холсте на указанное позиции, также меняя цвета переднего плана и/или фона.<br><eg>Например:<br>?loc.begin<br>  var canvas = ui.AddCanvas()<br>  for x = 0..canvas.w<br>    for y = 0..canvas.h<br>      var fg = color.Random()<br>      var bg = color.Random()<br>      canvas.Set(x, y, fg, bg, ▄)</eg></td>
   </tr>
   <tr>
     <td>canvas.SetFG(color)<br><eg>Ничего не возвращает</eg></td>
-    <td>Sets a foreground color to the entire canvas.<br><eg>Например:<br>?loc.begin<br>  var canvas = ui.AddCanvas()<br>  canvas.Set("R")<br>  canvas.SetFG(#red)</eg></td>
+    <td>Устанавливает цвет переднего плана всему холсту.<br><eg>Например:<br>?loc.begin<br>  var canvas = ui.AddCanvas()<br>  canvas.Set("R")<br>  canvas.SetFG(#red)</eg></td>
   </tr>
   <tr>
     <td>canvas.SetFG(int,int, color)<br><eg>Ничего не возвращает</eg></td>
-    <td>Changes the foreground color at a specific position x,y.<br><eg>Например:<br>?loc.begin<br>  var canvas = ui.AddCanvas()<br>  canvas.Set("X")<br>  canvas.SetFG(2, 1, #ff00ff)<br></eg></td>
+    <td>Меняет цвет переднего плана на указанной позиции x,y.<br><eg>Например:<br>?loc.begin<br>  var canvas = ui.AddCanvas()<br>  canvas.Set("X")<br>  canvas.SetFG(2, 1, #ff00ff)<br></eg></td>
   </tr>
   <tr>
     <td>canvas.SetBG(color)<br><eg>Ничего не возвращает</eg></td>
-    <td>Sets a background color to the entire canvas.<br><eg>Например:<br>?loc.begin<br>  var canvas = ui.AddCanvas()<br>  canvas.Set("g")<br>  canvas.SetBG(#00aa00)</eg></td>
+    <td>Устанавливает цвет фона всему холсту.<br><eg>Например:<br>?loc.begin<br>  var canvas = ui.AddCanvas()<br>  canvas.Set("g")<br>  canvas.SetBG(#00aa00)</eg></td>
   </tr>
   <tr>
     <td>canvas.SetBG(int,int, color)<br><eg>Ничего не возвращает</eg></td>
-    <td>Changes the background color at a specific position x,y.<br><eg>Например:<br>?loc.begin<br>  var canvas = ui.AddCanvas()<br>  canvas.Set("X")<br>  canvas.SetBG(2, 1, #yellow)</eg></td>
+    <td>Меняет цвет фона на указанной позиции x,y.<br><eg>Например:<br>?loc.begin<br>  var canvas = ui.AddCanvas()<br>  canvas.Set("X")<br>  canvas.SetBG(2, 1, #yellow)</eg></td>
   </tr>
 </tbody></table></font>
 <a href="#"><font color="#505050">^К началу</font></a>
