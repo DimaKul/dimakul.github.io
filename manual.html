@@ -67,7 +67,7 @@
 <f>  <a href="#variables">7. Переменные +</a></f>
 <f>  <a href="#math-operations">8. Математические операции +</a></f>
 <f>  <a href="#functions">9. Функции +</a></f>
-<f>  <a href="#native-functions">10. Встроенные функции</a></f>
+<f>  <a href="#native-functions">10. Встроенные функции +-</a></f>
 <f>  <a href="#import">11. Импорт сторонних скриптов +</a></f>
 <f>  <a href="#ascii-art">12. ASCII-арт +</a></f>
 <f>  <a href="#loops">13. Циклы</a></f>
@@ -962,144 +962,144 @@ While scripts can define their own functions, Stonescript comes with a set of pr
   </tr>
   <tr><td><br>BigNumber<br>‾‾‾‾‾‾‾‾‾</td><td><br>BigNumber (БольшоеЧисло) - специальный тип объекта, дающий возможность работать с большими числами размером выше 32 бит. Хоть они и могут содержать только положительные и отрицательные целочисленные значения, операции с ними работают как с дробными, так и с обычными целыми числами наравне с другими числами типа BigNumber.</td></tr>
   <tr>
-    <td>b.Add(num)<br>b.Add(BigNumber)<br><eg>Returns itself</eg></td>
-    <td>Adds a number to a BigNumber (+)<br><eg>Например:<br>var bn = math.BigNumber(12)<br>bn.Add(5)<br>&gt;@bn@<br>// 17</eg></td>
+    <td>b.Add(num)<br>b.Add(BigNumber)<br><eg>Возвращает itself</eg></td>
+    <td>Прибавляет число к BigNumber (+)<br><eg>Например:<br>var bn = math.BigNumber(12)<br>bn.Add(5)<br>&gt;@bn@<br>// 17</eg></td>
   </tr>
   <tr>
-    <td>b.Sub(num)<br>b.Sub(BigNumber)<br><eg>Returns itself</eg></td>
-    <td>Subtracts a number from a BigNumber (-)<br><eg>Например:<br>var bn = math.BigNumber(12)<br>bn.Sub(5)<br>&gt;@bn@<br>// 7</eg></td>
+    <td>b.Sub(num)<br>b.Sub(BigNumber)<br><eg>Возвращает itself</eg></td>
+    <td>Вычитает число из BigNumber (-)<br><eg>Например:<br>var bn = math.BigNumber(12)<br>bn.Sub(5)<br>&gt;@bn@<br>// 7</eg></td>
   </tr>
   <tr>
-    <td>b.Mul(num)<br>b.Mul(BigNumber)<br><eg>Returns itself</eg></td>
-    <td>Multiplies a BigNumber by a number (*)<br><eg>Например:<br>var myBigNum1 = math.BigNumber(12)<br>var myBigNum2 = math.BigNumber(12)<br>myBigNum1.Mul(5)<br>myBigNum2.Mul(1.5)<br>&gt;@myBigNum1@ @myBigNum2@<br>// 60 18</eg></td>
+    <td>b.Mul(num)<br>b.Mul(BigNumber)<br><eg>Возвращает itself</eg></td>
+    <td>Умножает BigNumber на число (*)<br><eg>Например:<br>var myBigNum1 = math.BigNumber(12)<br>var myBigNum2 = math.BigNumber(12)<br>myBigNum1.Mul(5)<br>myBigNum2.Mul(1.5)<br>&gt;@myBigNum1@ @myBigNum2@<br>// 60 18</eg></td>
   </tr>
   <tr>
-    <td>b.Div(num)<br>b.Div(BigNumber)<br><eg>Returns itself</eg></td>
-    <td>Divides a BigNumber by a number (/)<br><eg>Например:<br>var myBigNum1 = math.BigNumber(12)<br>var myBigNum2 = math.BigNumber(12)<br>myBigNum1.Div(5)<br>myBigNum2.Div(1.5)<br>&gt;@myBigNum1@ @myBigNum2@<br>// 2 8</eg></td>
+    <td>b.Div(num)<br>b.Div(BigNumber)<br><eg>Возвращает itself</eg></td>
+    <td>Делит BigNumber на число (/)<br><eg>Например:<br>var myBigNum1 = math.BigNumber(12)<br>var myBigNum2 = math.BigNumber(12)<br>myBigNum1.Div(5)<br>myBigNum2.Div(1.5)<br>&gt;@myBigNum1@ @myBigNum2@<br>// 2 8</eg></td>
   </tr>
   <tr>
-    <td>b.Eq(num)<br>b.Eq(BigNumber)<br><eg>Returns bool</eg></td>
-    <td>Determines if a BigNumber is equal to a number (=)<br><eg>Например:<br>var bn = math.BigNumber(5)<br>&gt;@bn.Eq(5)@ @bn.Eq(3)@<br>// true false</eg></td>
+    <td>b.Eq(num)<br>b.Eq(BigNumber)<br><eg>Возвращает bool</eg></td>
+    <td>Определяет, равно ли BigNumber числу(=)<br><eg>Например:<br>var bn = math.BigNumber(5)<br>&gt;@bn.Eq(5)@ @bn.Eq(3)@<br>// true false</eg></td>
   </tr>
   <tr>
-    <td>b.Gt(num)<br>b.Gt(BigNumber)<br><eg>Returns bool</eg></td>
-    <td>Determines if a BigNumber is greater than a number (&gt;)<br><eg>Например:<br>var bn = math.BigNumber(5)<br>&gt;@bn.Gt(3)@ @bn.Gt(10)@<br>// true false</eg></td>
+    <td>b.Gt(num)<br>b.Gt(BigNumber)<br><eg>Возвращает bool</eg></td>
+    <td>Определяет, больше ли BigNumber числа (&gt;)<br><eg>Например:<br>var bn = math.BigNumber(5)<br>&gt;@bn.Gt(3)@ @bn.Gt(10)@<br>// true false</eg></td>
   </tr>
   <tr>
-    <td>b.Ge(num)<br>b.Ge(BigNumber)<br><eg>Returns bool</eg></td>
-    <td>Determines if a BigNumber is greater than or equal to a number (&gt;=)<br><eg>Например:<br>var bn = math.BigNumber(5)<br>&gt;@bn.Ge(3)@ @bn.Ge(5)@<br>// true true</eg></td>
+    <td>b.Ge(num)<br>b.Ge(BigNumber)<br><eg>Возвращает bool</eg></td>
+    <td>Определяет, больше или равно BigNumber числу (&gt;=)<br><eg>Например:<br>var bn = math.BigNumber(5)<br>&gt;@bn.Ge(3)@ @bn.Ge(5)@<br>// true true</eg></td>
   </tr>
   <tr>
-    <td>b.Lt(num)<br>b.Lt(BigNumber)<br><eg>Returns bool</eg></td>
-    <td>Determines if a BigNumber is less than a number (&lt;)<br><eg>Например:<br>var bn = math.BigNumber(5)<br>&gt;@bn.Lt(3)@ @bn.Lt(10)@<br>// false true</eg></td>
+    <td>b.Lt(num)<br>b.Lt(BigNumber)<br><eg>Возвращает bool</eg></td>
+    <td>Определяет, меньше ли BigNumber числа (&lt;)<br><eg>Например:<br>var bn = math.BigNumber(5)<br>&gt;@bn.Lt(3)@ @bn.Lt(10)@<br>// false true</eg></td>
   </tr>
   <tr>
-    <td>b.Le(num)<br>b.Le(BigNumber)<br><eg>Returns bool</eg></td>
-    <td>Determines if a BigNumber is less than or equal to a number (&lt;=)<br><eg>Например:<br>var bn = math.BigNumber(5)<br>&gt;@bn.Le(10)@ @bn.Le(5)@<br>// true true</eg></td>
+    <td>b.Le(num)<br>b.Le(BigNumber)<br><eg>Возвращает bool</eg></td>
+    <td>Определяет, меньше или равно BigNumber числу (&lt;=)<br><eg>Например:<br>var bn = math.BigNumber(5)<br>&gt;@bn.Le(10)@ @bn.Le(5)@<br>// true true</eg></td>
   </tr>
   <tr>
-    <td>b.ToFloat()<br><eg>Returns float</eg></td>
-    <td>Converts a big number to float value. Throws error if the number is too large or too small.<br><eg>Например:<br>var bn = math.BigNumber(5)<br>var fNumber = bn.ToFloat()<br>&gt;float = @fNumber@</eg></td>
+    <td>b.ToFloat()<br><eg>Возвращает float</eg></td>
+    <td>Конвертирует значение в дробное. Выдает ошибку, если число слишком маленькое или слишком большое.<br><eg>Например:<br>var bn = math.BigNumber(5)<br>var fNumber = bn.ToFloat()<br>&gt;float = @fNumber@</eg></td>
   </tr>
   <tr>
-    <td>b.ToInt()<br><eg>Returns int</eg></td>
-    <td>Converts a big number to integer value. Throws error if the number is too large or too small.<br><eg>Например:<br>var bn = math.BigNumber(5)<br>var iNumber = bn.ToInt()<br>&gt;integer = @iNumber@</eg></td>
+    <td>b.ToInt()<br><eg>Возвращает int</eg></td>
+    <td>Конвертирует значение в обычное целочисленное. Выдает ошибку, если число слишком маленькое или слишком большое.<br><eg>Например:<br>var bn = math.BigNumber(5)<br>var iNumber = bn.ToInt()<br>&gt;integer = @iNumber@</eg></td>
   </tr>
   <tr>
-    <td>b.ToString()<br><eg>Returns string</eg></td>
-    <td>Returns a string representation of the BigNumber. Can be used to serialize it for storage.<br><eg>Например:<br>var myBigNum = math.BigNumber("123456789123456789")<br>storage.Set("myBN", myBigNum.ToString())<br>---<br>var bnStr = storage.Get("myBN")<br>var myBigNum = math.BigNumber(bnStr)</eg></td>
+    <td>b.ToString()<br><eg>Возвращает string</eg></td>
+    <td>Возвращает BigNumber в строковом виде. Можно использовать для сериализации с целью хранения.<br><eg>Например:<br>var myBigNum = math.BigNumber("123456789123456789")<br>storage.Set("myBN", myBigNum.ToString())<br>---<br>var bnStr = storage.Get("myBN")<br>var myBigNum = math.BigNumber(bnStr)</eg></td>
   </tr>
   <tr>
-    <td>b.ToUI()<br><eg>Returns string</eg></td>
-    <td>Returns a shortened string representation of the number for use in user interfaces.<br><eg>Например:<br>var myBigNum = math.BigNumber("123456789123456789")<br>&gt;@myBigNum.ToUI()@<br>// 123.5Qa</eg></td>
+    <td>b.ToUI()<br><eg>Возвращает string</eg></td>
+    <td>Возвращает число в кратком виде для использования в UI.<br><eg>Например:<br>var myBigNum = math.BigNumber("123456789123456789")<br>&gt;@myBigNum.ToUI()@<br>// 123.5Qa</eg></td>
   </tr>
-  <tr><td><br>color<br>‾‾‾‾‾</td><td><br>Colors in Stonescript are represented with a string in <a href="https://htmlcolorcodes.com/" target="_blank">hexadecimal notation</a>, such as <eg>#ff0000</eg> or with simplified presets such as <eg>#red</eg>.</td></tr>
+  <tr><td><br>color<br>‾‾‾‾‾</td><td><br>Цвета в Stonescript представлены в виде строк в <a href="https://htmlcolorcodes.com/" target="_blank">шестнадцатеричной форме</a>, например, <eg>#ff0000</eg>, либо же с помощью упрощенных шаблонов, например, <eg>#red</eg>.</td></tr>
   <tr>
-    <td>color.FromRGB(r,g,b)<br><eg>Returns string</eg></td>
-    <td>Converts a color from three integer numbers (0 to 255) into a string.<br><eg>Например:<br>var c = color.FromRGB(255, 0, 128)<br>&gt;`0,0,@c@, @c@</eg></td>
-  </tr>
-  <tr>
-    <td>color.ToRGB(string)<br><eg>Returns int[3]</eg></td>
-    <td>Converts a color from string to three integer numbers (0 to 255).<br><eg>Например:<br>var c = color.Random()<br>var rgb = color.ToRGB(c)<br>var r = rgb［0］<br>var g = rgb［1］<br>var b = rgb［2］<br>&gt;`0,0,@c@, @c@ \n @r@ \n @g@ \n @b@</eg></td>
+    <td>color.FromRGB(r,g,b)<br><eg>Возвращает string</eg></td>
+    <td>Конвертирует цвет из трех чисел (от 0 до 255) в строку.<br><eg>Например:<br>var c = color.FromRGB(255, 0, 128)<br>&gt;`0,0,@c@, @c@</eg></td>
   </tr>
   <tr>
-    <td>color.Lerp(c1,c2,t)<br><eg>Returns string</eg></td>
-    <td>Interpolates linearly from color <eg>c1</eg> to color <eg>c2</eg> at time (percentage) <eg>t</eg>.<br><eg>Например:<br>var c1 = "#ff4400"<br>var c2 = "#8888ff"<br>var t = 0.5<br>var c<br>t = math.sin(time*0.1) / 2 + 0.5<br>c = color.Lerp(c1, c2, t)<br>&gt;`0,1,@c@,@c@\n ██████</eg></td>
+    <td>color.ToRGB(string)<br><eg>Возвращает int[3]</eg></td>
+    <td>Конвертирует цвет из строки в массив из трех чисел (от 0 до 255).<br><eg>Например:<br>var c = color.Random()<br>var rgb = color.ToRGB(c)<br>var r = rgb［0］<br>var g = rgb［1］<br>var b = rgb［2］<br>&gt;`0,0,@c@, @c@ \n @r@ \n @g@ \n @b@</eg></td>
   </tr>
   <tr>
-    <td>color.Random()<br><eg>Returns string</eg></td>
-    <td>Returns a random color.<br><eg>Например:<br>var c<br>c = color.Random()<br>&gt;`0,0,@c@,@c@\n ██████</eg></td>
+    <td>color.Lerp(c1,c2,t)<br><eg>Возвращает string</eg></td>
+    <td>Возвращает линейную интерполяцию от цвета <eg>c1</eg> до цвета <eg>c2</eg> в момент времени (процент) <eg>t</eg>.<br><eg>Например:<br>var c1 = "#ff4400"<br>var c2 = "#8888ff"<br>var t = 0.5<br>var c<br>t = math.sin(time*0.1) / 2 + 0.5<br>c = color.Lerp(c1, c2, t)<br>&gt;`0,1,@c@,@c@\n ██████</eg></td>
+  </tr>
+  <tr>
+    <td>color.Random()<br><eg>Возвращает string</eg></td>
+    <td>Возвращает случайный цвет.<br><eg>Например:<br>var c<br>c = color.Random()<br>&gt;`0,0,@c@,@c@\n ██████</eg></td>
   </tr>
   <tr><td>draw<br>‾‾‾‾</td></tr>
   <tr>
     <td>draw.Bg(x, y, color)<br><eg>Ничего не возвращает</eg></td>
-    <td>Sets the background color at a specific screen position.<br><eg>Например:<br>draw.Bg(5, 4, #red)</eg></td>
+    <td>Устанавливает цвет фона в конкретной позиции на экране.<br><eg>Например:<br>draw.Bg(5, 4, #red)</eg></td>
   </tr>
   <tr>
     <td>draw.Bg(x, y, color, w, h)<br><eg>Ничего не возвращает</eg></td>
-    <td>Sets the background color of a rectangular region on screen.<br><eg>Например:<br>draw.Bg(5, 4, #cyan, 10, 6)</eg></td>
+    <td>Устанавливает цвет фона в прямоугольной области на экране.<br><eg>Например:<br>draw.Bg(5, 4, #cyan, 10, 6)</eg></td>
   </tr>
   <tr>
     <td>draw.Box(x, y, w, h, color, style)<br><eg>Ничего не возвращает</eg></td>
-    <td>Draws a rectangular shape at the specified position and size. The rectangle's border is defined by color and a style number. Negative style numbers cause the center of the rectangle to be transparent. CAVEAT - At this time, advanced prints always draw on top of boxes.<br><eg>Use this example to explore the different styles by pressing Left/Right<br>var style = 1<br>?key = leftBegin<br>  style--<br>?key = rightBegin<br>  style++<br>draw.Box(10, 5, 30, 15, #333333, style)<br>&gt;`12,6,#ffffff,Style = @style@<br>&gt;`12,8,#888888,Press Left/Right\nto change style</eg></td>
+    <td>Отрисовывает прямоугольник в указанной позиции указанного размера. Граница определена цветом и номером стиля. Отрицательные значения стиля делают границу прозрачной. ПРЕДОСТЕРЕЖЕНИЕ - В данный момент продвинутые функции вывода печатают текст поверх таких прямоугольников.<br><eg>Используйте этот пример, чтобы исследовать различные стили нажатием кнопок влево/вправо<br>var style = 1<br>?key = leftBegin<br>  style--<br>?key = rightBegin<br>  style++<br>draw.Box(10, 5, 30, 15, #333333, style)<br>&gt;`12,6,#ffffff,Style = @style@<br>&gt;`12,8,#888888,Нажмите Влево/Вправо\nдля смены стиля</eg></td>
   </tr>
   <tr>
     <td>draw.Clear()<br><eg>Ничего не возвращает</eg></td>
-    <td>Clears the entire screen.</td>
+    <td>Полностью очищает экран.</td>
   </tr>
   <tr>
-    <td>draw.GetSymbol(x, y)<br><eg>Returns string</eg></td>
-    <td>Returns the glyph at screen position (x, y).<br><eg>This example selects a screen coordinate and draws the symbol found there in the top left. The selection [ ] can be moved by the player:<br>var s<br>var x = 20<br>var y = 10<br>var drawX<br>?key=leftBegin<br>  x--<br>?key=rightBegin<br>  x++<br>?key=upBegin<br>  y--<br>?key=downBegin<br>  y++<br>s = draw.GetSymbol(x, y)<br>&gt;`0,1,Symbol = @s@<br>drawX = x - 1<br>&gt;`@drawX@,@y@,[#］<br></eg></td>
+    <td>draw.GetSymbol(x, y)<br><eg>Возвращает string</eg></td>
+    <td>Возвращает символ на указанной позиции (x, y).<br><eg>Данный пример выбирает координату на экране и отрисовывает символ в верхнем левом углу экрана. Выбор [ ] может быть передвинут игроком:<br>var s<br>var x = 20<br>var y = 10<br>var drawX<br>?key=leftBegin<br>  x--<br>?key=rightBegin<br>  x++<br>?key=upBegin<br>  y--<br>?key=downBegin<br>  y++<br>s = draw.GetSymbol(x, y)<br>&gt;`0,1,Symbol = @s@<br>drawX = x - 1<br>&gt;`@drawX@,@y@,[#］<br></eg></td>
   </tr>
   <tr>
     <td>draw.Player()<br>draw.Player(x,y)<br><eg>Ничего не возвращает</eg></td>
-    <td>Draws the player character, with all equipment and addons, at a specific point in the script. Optional offset values x, y. For drawing to an absolute screen position, see the <eg>screen</eg> namespace and derive offsets that convert from the player's local position to screen position.</td>
+    <td>Отрисовывает игрока, со всем снаряжением и прочим. Опционально можно передать смещения по х и у. Для отрисовки на абсолютной позиции экрана, обратитесь к пространству имен <eg>screen</eg> и используйте смещения, которые конвертируют позицию игрока в позицию на экране.</td>
   </tr>
   <tr><td><br>int<br>‾‾‾</td></tr>
   <tr>
-    <td>int.Parse(str)<br><eg>Returns integer</eg></td>
-    <td>Converts a string of a number into an integer value. If the given string is not a number an error is thrown.<br><eg>Например:<br>var s = "999"<br>var i = int.Parse(s)<br>i++</eg></td>
+    <td>int.Parse(str)<br><eg>Возвращает integer</eg></td>
+    <td>Конвертирует строку с числом в нормальное число. Если строка не численная, выбрасывает ошибку.<br><eg>Например:<br>var s = "999"<br>var i = int.Parse(s)<br>i++</eg></td>
   </tr>
   <tr><td>event<br>‾‾‾‾‾</td></tr>
   <tr>
-    <td>event.GetObjectiveId(int)<br><eg>Returns string</eg><br><br>event.GetObjectiveProgress<br>(int)<br>event.GetObjectiveGoal(int)<br><eg>Returns int</eg></td>
-    <td>Returns information about active objectives in a community or seasonal event. Pass the index of the desired objective. Events are usually limited to a maximum of 3 active objectives, therefore the first parameter would be 0, 1 or 2.<br><eg>Например:<br>var id<br>var p<br>var g<br>id = event.GetObjectiveId(0)<br>p = event.GetObjectiveProgress(0)<br>g = event.GetObjectiveGoal(0)<br>&gt;`0,1,@id@:@p@/@g@</eg></td>
+    <td>event.GetObjectiveId(int)<br><eg>Возвращает string</eg><br><br>event.GetObjectiveProgress<br>(int)<br>event.GetObjectiveGoal(int)<br><eg>Возвращает int</eg></td>
+    <td>Возвращает информацию об активных целях в событии сообщества или сезонном событии. Принимает индекс желаемой цели. Обычно в событиях есть лимит на 3 активные цели, следовательно, параметр должен быть 0, 1 или 2.<br><eg>Например:<br>var id<br>var p<br>var g<br>id = event.GetObjectiveId(0)<br>p = event.GetObjectiveProgress(0)<br>g = event.GetObjectiveGoal(0)<br>&gt;`0,1,@id@:@p@/@g@</eg></td>
   </tr>
   <tr><td>item<br>‾‾‾‾</td></tr>
   <tr>
-    <td>item.CanActivate()<br><eg>Returns boolean</eg></td>
-    <td>Returns true if it's possible to activate item abilities. False otherwise. In some gameplay situations all ability activations are disabled, even if they are not on cooldown, such as moments before a boss fight or during a cinematic.<br><eg>Например:<br>?item.CanActivate()<br>  equip Bardiche<br>  activate R</eg></td>
+    <td>item.CanActivate()<br><eg>Возвращает boolean</eg></td>
+    <td>Возвращает true, если сейчас можно использовать способность предмета, и false в противном случае. В некоторых ситуациях все способности заблокированы, даже если они не на перезарядке, например, до боя с боссом, во время катсцены или на 1 кадре.<br><eg>Например:<br>?item.CanActivate()<br>  equip Bardiche<br>  activate R</eg></td>
   </tr>
   <tr>
-    <td>item.CanActivate(str)<br><eg>Returns boolean</eg></td>
-    <td>Returns true if it's possible to activate a specific item. Will only ever be true if the item is equipped. Some items can have mechanics that don't allow them to be activated unless specific criteria are met. This is a sub-set of item.GetCooldown(), as an item's cooldown may be zero and it cannot be activated, but it will never be possible to activate an item that is on cooldown.<br><eg>Например:<br>equip bardiche<br>?item.GetCooldown("skeleton_arm") &lt;= 0<br>  equip skeleton arm<br>  ?item.CanActivate("skeleton_arm")<br>    activate R</eg></td>
+    <td>item.CanActivate(str)<br><eg>Возвращает boolean</eg></td>
+    <td>Возвращает true, если сейчас можно использовать конкретную способность. Может быть истинно, только если предмет надет. Некоторые предметы имеют способности, которые требуют особых условий для активации способности. Эта функция является подфункцией item.GetCooldown(), так как перезарядка предмета может быть равна 0 и предмет не может быть активирован, хотя и активировать предмет, находящийся на перезарядке, невозможно никогда.<br><eg>Например:<br>equip bardiche<br>?item.GetCooldown("skeleton_arm") &lt;= 0<br>  equip skeleton arm<br>  ?item.CanActivate("skeleton_arm")<br>    activate R</eg></td>
   </tr>
   <tr>
-    <td>item.GetCooldown(str)<br><eg>Returns integer</eg></td>
-    <td>Returns the remaining cooldown time (in frames) for a given ability.<br>See <a href="#ability_ids">Appendix A</a> for all available ability strings. NOTE: Invalid ability strings will return -1. Some abilities from weapons that have not been used yet will return -1.<br><eg>Например:<br>?foe = boss &amp; item.GetCooldown("bardiche") &lt;= 0<br>  equip bardiche<br>  activate R</eg>
+    <td>item.GetCooldown(str)<br><eg>Возвращает integer</eg></td>
+    <td>Возвращает оставшееся время перезарядки (в кадрах) для указанной способности.<br>См. <a href="#ability_ids">Приложение A</a>  для всех видов способности. ВНИМАНИЕ: Несуществующие способности вернут -1. Некоторые способности предметов, которые еще не были использованы, также будут возвращать -1.<br><eg>Например:<br>?foe = boss &amp; item.GetCooldown("bardiche") &lt;= 0<br>  equip bardiche<br>  activate R</eg>
   </td></tr>
   <tr>
-    <td>item.GetCount(str)<br><eg>Returns integer</eg></td>
-    <td>Returns the number of copies of an item in the inventory. Returns 0 if no item is found.<br><eg>Например:<br>var searchCriteria = "sword *0 -big -socket"<br>var swordCount = item.GetCount(searchCriteria)<br>&gt;I have @swordCount@ basic swords
+    <td>item.GetCount(str)<br><eg>Возвращает integer</eg></td>
+    <td>Возвращает количество копий предмета в инвентаре. Возвращает 0, если их нет.<br><eg>Например:<br>var searchCriteria = "sword *0 -big -socket"<br>var swordCount = item.GetCount(searchCriteria)<br>&gt;У меня @swordCount@ обычных мечей
   </eg></td></tr>
   <tr>
-    <td>item.GetLoadoutL(int)<br>item.GetLoadoutR(int)<br><eg>Returns string</eg></td>
-    <td>Returns the items in a specific loadout. The integer parameter is the loadout number to query. Returns a blank string if that loadout has no item in that slot.<br><eg>Например:<br>&gt;`0,1,Left: @item.GetLoadoutL(1)@<br>&gt;`0,2,Right: @item.GetLoadoutR(1)@
+    <td>item.GetLoadoutL(int)<br>item.GetLoadoutR(int)<br><eg>Возвращает string</eg></td>
+    <td>Возвращает предмет в указанной выкладке. Передаваемый параметр равен номеру выкладки. Возвращает пустую строку, если в выкладке нет предмета на данном слоте.<br><eg>Например:<br>&gt;`0,1,Слева: @item.GetLoadoutL(1)@<br>&gt;`0,2,Справа: @item.GetLoadoutR(1)@
   </eg></td></tr>
   <tr>
-    <td>item.GetTreasureCount()<br><eg>Returns integer</eg></td>
-    <td>Returns the current number of treasure chests in your inventory.
+    <td>item.GetTreasureCount()<br><eg>Возвращает integer</eg></td>
+    <td>Возвращает количество сундуков в инвентаре игрока.
   </td></tr>
   <tr>
-    <td>item.GetTreasureLimit()<br><eg>Returns integer</eg></td>
-    <td>Returns the total space for treasure chests in your inventory. In other words, the maximum capacity.<br><eg>Например:<br>var trs<br>var max<br>trs = item.GetTreasureCount()<br>max = item.GetTreasureLimit()<br>&gt;`0,2,Treasures: @trs@/@max@
+    <td>item.GetTreasureLimit()<br><eg>Возвращает integer</eg></td>
+    <td>Возвращает лимит сундуков в инвентаре игрока. Другими словами, это максимальная вместимость.<br><eg>Например:<br>var trs<br>var max<br>trs = item.GetTreasureCount()<br>max = item.GetTreasureLimit()<br>&gt;`0,2,Сокровищ: @trs@/@max@
   </eg></td></tr>
-  <tr><td>key<br>‾‾‾</td><td><br>The key namespace allows for the customization of standard game inputs and shortcuts. This system is based on <eg>actions (abbreviated "act")</eg> and <eg>keys</eg>, where each action corresponds to a type of input/shortcut and each key corresponds to a physical key press. The list of all possible keys that can be assigned to actions can be found <a href="https://docs.unity3d.com/ScriptReference/KeyCode.html" target="_Blank">here</a>. Changes to action bindings persist between runs (they currently do not save to storage). For optimization purposes, it is recommended to not change bindings every frame.<br>
+  <tr><td>key<br>‾‾‾</td><td><br>Пространство имен key позволяет кастомизировать дефолтные клавиши и комбинации клавиш. Эта система основана на  <eg>действиях (сокращенно "act")</eg> и <eg>клавишах</eg>, где каждое действие соответствует определенному типу ввода/комбинации клавиш, а каждый ключ соответствует физическому нажатию клавиши. Список всех доступных клавиш, которые можно назначить действиям, можно найти <a href="https://docs.unity3d.com/ScriptReference/KeyCode.html" target="_Blank">здесь</a>. Такие изменения сохраняются между забегами (в данный момент они не сохраняются в хранилище). Для оптимизации рекомендуется не менять бинды каждый кадр.<br>
 <table>
   <tbody><tr>
-    <td>Action<br>------</td>
-    <td>Default Key<br>-----------</td>
-    <td>Default Key 2<br>-------------</td>
+    <td>Действие<br>--------</td>
+    <td>Клавиша по умолчанию<br>--------------------</td>
+    <td>Клавиша по умолчанию 2<br>----------------------</td>
     <td><br></td>
   </tr>
   <tr>
@@ -1205,186 +1205,186 @@ While scripts can define their own functions, Stonescript comes with a set of pr
 </tbody></table></td>
   </tr><tr>
     <td>key.Bind(act, key1)<br>key.Bind(act, key1, key2)<br><eg>Ничего не возвращает</eg></td>
-    <td>Assigns a new set of keys to a specific action. If another action already has one of those keys, then the key already in use is abandoned for the original action. Up to two keys may be assigned to an action.<br><eg>Например:<br>?loc.begin<br>  key.Bind("Potion", "P")<br>  // In this example, the "P" key that originally is assigned to Pause, no longer pauses the game and activates the potion instead. Also, the Potion's original "Q" key no longer works. "Q" is bound to no action.</eg></td>
+    <td>Назначает новый набор клавиш конкретному действию. Если у другого действия уже задана такая клавиша, то она сбрасывается. Одному действию можно назначить до двух различных клавиш.<br><eg>Например:<br>?loc.begin<br>  key.Bind("Potion", "P")<br>  // В данном примере клавиша "P", которая изначально назначена для паузы, больше не ставит игру на паузу и вместо этого активирует зелье. Помимо этого, клавиша "Q" для зелья больше не работает. "Q" не назначена никакому действию.</eg></td>
   </tr>
   <tr>
-    <td>key.GetKeyAct(key)<br><eg>Returns string</eg></td>
-    <td>Returns the action bound to a given key. Returns "None" if the given key is not bound to any actions.</td>
+    <td>key.GetKeyAct(key)<br><eg>Возвращает string</eg></td>
+    <td>Возвращает действие, назначенное на конкретную клавишу. Возвращает "None", если клавиша не назначена никакому действию.</td>
   </tr>
   <tr>
-    <td>key.GetActKey(act)<br><eg>Returns string</eg></td>
-    <td>Returns the first key bound to a given action. Returns "None" if the given action has no keys bound to it.</td>
+    <td>key.GetActKey(act)<br><eg>Возвращает string</eg></td>
+    <td>Возвращает первую клавишу, назначенную действию. Возвращает "None", если действию не назначены никакие клавиши.</td>
   </tr>
   <tr>
-    <td>key.GetActKey2(act)<br><eg>Returns string</eg></td>
-    <td>Returns the second key bound to a given action. Returns "None" if the given action does not have a secondary key bound to it.</td>
+    <td>key.GetActKey2(act)<br><eg>Возвращает string</eg></td>
+    <td>Возвращает вторую клавишу, назначенную действию. Возвращает "None", если действию не назначены никакие клавиши.</td>
   </tr>
   <tr>
-    <td>key.GetActLabel(act)<br><eg>Returns string</eg></td>
-    <td>Returns a user-facing label that represents the first key bound to a given action. The current implementation returns the first letter of the bound key, which can be confusing in cases such as "LeftShift".</td>
+    <td>key.GetActLabel(act)<br><eg>Возвращает string</eg></td>
+    <td>Возвращает назначенную действию клавишу в удобном для пользователя формате. В данный момент функция возвращает первую букву назначенной клавиши, что может сбить с толку в случаях с клавишами по типу "LeftShift".</td>
   </tr>
   <tr>
     <td>key.ResetBinds()<br><eg>Ничего не возвращает</eg></td>
-    <td>Resets all actions to their default key bindings.</td>
+    <td>Сбрасывает все действия на дефолтные клавиши.</td>
   </tr>
   <tr><td><br>loc<br>‾‾‾</td></tr>
   <tr>
     <td>loc.Leave()<br><eg>Ничего не возвращает</eg></td>
-    <td>Causes the run to be abandoned as if the player had pressed to leave manually.</td>
+    <td>Покидает забег, будто бы игрок вышел самостоятельно.</td>
   </tr>
   <tr>
     <td>loc.Pause()<br><eg>Ничего не возвращает</eg></td>
-    <td>Causes the run to be paused as if the player had pressed the pause button manually.</td>
+    <td>Ставит забег на паузу, будто бы игрок нажал на кнопку паузы.</td>
   </tr>
-  <tr><td><br>math<br>‾‾‾‾</td><td><br>The math API works with both integers and floating-point (float) numbers. When a number is delcared with a decimal period, it's implied to be a float <eg>(Например: var a = 0.5)</eg>. If there is no decimal number, then it's treated as an integer <eg>(Например: var a = 2)</eg>.</td></tr>
+  <tr><td><br>math<br>‾‾‾‾</td><td><br>API математики работает и с целыми, и с дробными (float) числами. Когда число объявлено с десятичной точкой, подразумевается, что оно дробное<eg>(например: var a = 0.5)</eg>. Если ее нет, то число рассматривается как целое <eg>(например: var a = 2)</eg>.</td></tr>
   <tr>
-    <td>math.Abs(num)<br><eg>Returns number</eg></td>
-    <td>Returns the absolute value of a given number.<br><eg>Например:<br>var number = -2<br>number = math.Abs(number)<br>// number now equals 2</eg></td>
-  </tr>
-  <tr>
-    <td>math.Acos(num)<br><eg>Returns number</eg></td>
-    <td>Returns the arc-cosine of a number, in radians. The input bounds are -1 to 1. If the input value is out of bounds then "NaN" is returned.<br><eg>Например:<br>var number = math.Acos(-1)<br>// number equals π</eg></td>
+    <td>math.Abs(num)<br><eg>Возвращает число</eg></td>
+    <td>Возвращает значение числа по модулю.<br><eg>Например:<br>var number = -2<br>number = math.Abs(number)<br>// number теперь равно 2</eg></td>
   </tr>
   <tr>
-    <td>math.Asin(num)<br><eg>Returns number</eg></td>
-    <td>Returns the arc-sine of a number, in radians. The input bounds are -1 to 1. If the input value is out of bounds then "NaN" is returned.<br><eg>Например:<br>var number = math.Asin(1)<br>// number equals π/2</eg></td>
+    <td>math.Acos(num)<br><eg>Возвращает число</eg></td>
+    <td>Возвращает арккосинус числа в радианах. Принимает на вход числа от -1 до 1. Если число за их пределами, возвращает "NaN".<br><eg>Например:<br>var number = math.Acos(-1)<br>// number равно π</eg></td>
   </tr>
   <tr>
-    <td>math.Atan(num)<br><eg>Returns number</eg></td>
-    <td>Returns the arc-tangent of a number, in radians.<br><eg>Например:<br>var number = math.Atan(2)<br>// number equals 1.107149</eg></td>
+    <td>math.Asin(num)<br><eg>Возвращает число</eg></td>
+    <td>Возвращает арксинус числа в радианах. The input bounds are -1 to 1. Если число за их пределами, возвращает "NaN".<br><eg>Например:<br>var number = math.Asin(1)<br>// number равно π/2</eg></td>
   </tr>
   <tr>
-    <td>math.Atan2(y, x)<br><eg>Returns number</eg></td>
-    <td>Returns the angle, in radians, between the x-axis and the line from the origin to the point (x,y)<br><eg>Например:<br>var number = math.Atan2(3, 2)<br>// number equals 0.9827937</eg></td>
+    <td>math.Atan(num)<br><eg>Возвращает число</eg></td>
+    <td>Возвращает арктангенс числа в радианах.<br><eg>Например:<br>var number = math.Atan(2)<br>// number равно 1.107149</eg></td>
   </tr>
   <tr>
-    <td>math.BigNumber()<br>math.BigNumber(number)<br>math.BigNumber(str)<br><eg>Returns BigNumber</eg></td>
-    <td>Creates a new BigNumber object from a float or int, or parses a string into a BigNumber object.<br><eg>Например:<br>var myBigNum = math.BigNumber("500")<br>myBigNum.Add(500).Mul(1000).Mul(1000).Mul(1000)<br>&gt;@myBigNum@<br>// 1000000000000</eg></td>
+    <td>math.Atan2(y, x)<br><eg>Возвращает число</eg></td>
+    <td>Возвращает угол в радианах между осью Х и линии от точки отсчета до точки (x,y).<br><eg>Например:<br>var number = math.Atan2(3, 2)<br>// number равно 0.9827937</eg></td>
   </tr>
   <tr>
-    <td>math.Ceil(num)<br><eg>Returns number</eg></td>
-    <td>Rounds a number up, to the first whole number greater than it.<br><eg>Например:<br>var number = math.Ceil(4.2)<br>// number equals 5.0</eg></td>
+    <td>math.BigNumber()<br>math.BigNumber(number)<br>math.BigNumber(str)<br><eg>Возвращает BigNumber</eg></td>
+    <td>Создает новый объект типа BigNumber из дробного или целого числа, либо парсит строку в объект такого типа.<br><eg>Например:<br>var myBigNum = math.BigNumber("500")<br>myBigNum.Add(500).Mul(1000).Mul(1000).Mul(1000)<br>&gt;@myBigNum@<br>// 1000000000000</eg></td>
   </tr>
   <tr>
-    <td>math.CeilToInt(num)<br><eg>Returns integer</eg></td>
-    <td>Rounds a number up, to the first integer greater than it.<br><eg>Например:<br>var number = math.CeilToInt(4.2)<br>// number equals 5</eg></td>
+    <td>math.Ceil(num)<br><eg>Возвращает число</eg></td>
+    <td>Округляет число вверх, до ближайшего целого.<br><eg>Например:<br>var number = math.Ceil(4.2)<br>// number равно 5.0</eg></td>
   </tr>
   <tr>
-    <td>math.Clamp(num, min, max)<br><eg>Returns number</eg></td>
-    <td>Constrains a number to within the range 'min' and 'max'. If the number is already within the range then it will be returned without change.<br><eg>Например:<br>var number = 50<br>number = math.Clamp(number, 0, 10)<br>// number has been clamped down and will equal 10</eg></td>
+    <td>math.CeilToInt(num)<br><eg>Возвращает integer</eg></td>
+    <td>Округляет число вверх, до ближайшего целого, но возвращает int.<br><eg>Например:<br>var number = math.CeilToInt(4.2)<br>// number равно 5</eg></td>
   </tr>
   <tr>
-    <td>math.Cos(num)<br><eg>Returns number</eg></td>
-    <td>Returns the cosine of a given radian angle.<br><eg>Например:<br>var number = math.Cos(0)<br>// number equals 1</eg></td>
+    <td>math.Clamp(num, min, max)<br><eg>Возвращает число</eg></td>
+    <td>Ограничивает число в пределах 'min' и 'max'. Если число уже в диапазоне, то будет возвращено без изменения.<br><eg>Например:<br>var number = 50<br>number = math.Clamp(number, 0, 10)<br>// number было урезано до указанного диапазона и равно 10</eg></td>
+  </tr>
+  <tr>
+    <td>math.Cos(num)<br><eg>Возвращает число</eg></td>
+    <td>Возвращает косинус угла в радианах.<br><eg>Например:<br>var number = math.Cos(0)<br>// number равен 1</eg></td>
   </tr>
   <tr>
     <td>math.e<br><eg>float</eg></td>
-    <td>The constant <eg>e</eg>, also known as Euler's number, approximately 2.71828<br><eg>Например:<br>&gt;E = @math.e@<br>// prints the value of e to the screen</eg></td>
+    <td>Константа <eg>e</eg>, также известная как число Эйлера, примерно равная 2.71828.<br><eg>Например:<br>&gt;E = @math.e@<br>// выводит е на экран</eg></td>
   </tr>
   <tr>
-    <td>math.Exp(num)<br><eg>Returns number</eg></td>
-    <td>Returns <eg>e</eg> raised to a given power.<br><eg>Например:<br>var number = math.Exp(3)<br>// number equals 20.08554</eg></td>
+    <td>math.Exp(num)<br><eg>Возвращает число</eg></td>
+    <td>Возвращает <eg>e</eg> в указанной степени.<br><eg>Например:<br>var number = math.Exp(3)<br>// number равно 20.08554</eg></td>
   </tr>
   <tr>
-    <td>math.Floor(num)<br><eg>Returns number</eg></td>
-    <td>Rounds a number down, to the first whole number smaller than it.<br><eg>Например:<br>var number = math.Floor(2.7)<br>// number equals 2.0</eg></td>
+    <td>math.Floor(num)<br><eg>Возвращает число</eg></td>
+    <td>Округляет число вниз, до ближайшего целого.<br><eg>Например:<br>var number = math.Floor(2.7)<br>// number равно 2.0</eg></td>
   </tr>
   <tr>
-    <td>math.FloorToInt(num)<br><eg>Returns integer</eg></td>
-    <td>Rounds a number down, to the first integer smaller than it.<br><eg>Например:<br>var number = math.FloorToInt(2.7)<br>// number equals 2</eg></td>
+    <td>math.FloorToInt(num)<br><eg>Возвращает integer</eg></td>
+    <td>Округляет число вниз, до ближайшего целого, но возвращает int.<br><eg>Например:<br>var number = math.FloorToInt(2.7)<br>// number равно 2</eg></td>
   </tr>
   <tr>
-    <td>math.Lerp(a, b, t)<br><eg>Returns number</eg></td>
-    <td>Performs a linear interpolation, from value <eg>a</eg> to <eg>b</eg> at time (percentage) <eg>t</eg>.<br><eg>Например:<br>var number = math.Lerp(0.0, 20.0, 0.75)<br>// number equals 15.0<br><br>Например:2:<br>var n = 0.0<br>?key = Begin<br>  n = 0.0<br>n = math.Lerp(n, 100, 0.02)<br>&gt;n = @n@<br>// Variable n eases towards 100, at 2% per frame. When a key is pressed it resets</eg></td>
+    <td>math.Lerp(a, b, t)<br><eg>Возвращает число</eg></td>
+    <td>Производит линейную интерполяцию от <eg>a</eg> до <eg>b</eg> в момент времени (процент) <eg>t</eg>.<br><eg>Например:<br>var number = math.Lerp(0.0, 20.0, 0.75)<br>// number равно 15.0<br><br>Например:2:<br>var n = 0.0<br>?key = Begin<br>  n = 0.0<br>n = math.Lerp(n, 100, 0.02)<br>&gt;n = @n@<br>// Variable n движется к 100, со скоростью 2% в кадр. Когда клавиша нажата, сбрасывается</eg></td>
   </tr>
   <tr>
-    <td>math.Log(num, base)<br><eg>Returns number</eg></td>
-    <td>Returns the logarithm of a number at a given base.<br><eg>Например:<br>var number = math.Log(5, 2)<br>// number equals 2.321928</eg></td>
+    <td>math.Log(num, base)<br><eg>Возвращает число</eg></td>
+    <td>Возвращает логарифм числа по указанному основанию.<br><eg>Например:<br>var number = math.Log(5, 2)<br>// number равно 2.321928</eg></td>
   </tr>
   <tr>
-    <td>math.Max(num1, num2)<br><eg>Returns number</eg></td>
-    <td>Returns the largest of the two numbers.<br><eg>Например:<br>var number = math.Max(3, 10)<br>// number equals 10</eg></td>
+    <td>math.Max(num1, num2)<br><eg>Возвращает число</eg></td>
+    <td>Возвращает большее из двух чисел.<br><eg>Например:<br>var number = math.Max(3, 10)<br>// number равно 10</eg></td>
   </tr>
   <tr>
-    <td>math.Min(num1, num2)<br><eg>Returns number</eg></td>
-    <td>Returns the smallest of the two numbers.<br><eg>Например:<br>var number = math.Min(3, 10)<br>// number equals 3</eg></td>
+    <td>math.Min(num1, num2)<br><eg>Возвращает число</eg></td>
+    <td>Возвращает меньшее из двух чисел.<br><eg>Например:<br>var number = math.Min(3, 10)<br>// number равно 3</eg></td>
   </tr>
   <tr>
     <td>math.pi<br><eg>float</eg></td>
-    <td>The constant π, approximately 3.1415926<br><eg>Например:<br>&gt;PI = @math.pi@<br>// prints the value of π to the screen</eg></td>
+    <td>Константа π, примерно равная 3.1415926<br><eg>Например:<br>&gt;PI = @math.pi@<br>// выводит π на экран</eg></td>
   </tr>
   <tr>
-    <td>math.Pow(num, p)<br><eg>Returns number</eg></td>
-    <td>Returns the number raised to a power.<br><eg>Например:<br>var number = math.Pow(3, 2)<br>// number equals 9</eg></td>
+    <td>math.Pow(num, p)<br><eg>Возвращает число</eg></td>
+    <td>Возвращает число в указанной степени.<br><eg>Например:<br>var number = math.Pow(3, 2)<br>// number равно 9</eg></td>
   </tr>
   <tr>
-    <td>math.Round(num)<br><eg>Returns number</eg></td>
-    <td>Rounds a number to the nearest whole number.<br><eg>Например:<br>var number = math.Round(2.7)<br>// number equals 3.0</eg></td>
+    <td>math.Round(num)<br><eg>Возвращает число</eg></td>
+    <td>Округляет число до ближайшего целого.<br><eg>Например:<br>var number = math.Round(2.7)<br>// number равно 3.0</eg></td>
   </tr>
   <tr>
-    <td>math.RoundToInt(num)<br><eg>Returns integer</eg></td>
-    <td>Rounds a number to the nearest whole integer.<br><eg>Например:<br>var number = math.RoundToInt(2.7)<br>// number equals 3</eg></td>
+    <td>math.RoundToInt(num)<br><eg>Возвращает integer</eg></td>
+    <td>Округляет число до ближайшего целого, но возвращает int.<br><eg>Например:<br>var number = math.RoundToInt(2.7)<br>// number равно 3</eg></td>
   </tr>
   <tr>
-    <td>math.Sign(num)<br><eg>Returns number</eg></td>
-    <td>Returns -1 if the given number is negative. Otherwise, returns 1.<br><eg>Например:<br>var sign = math.Sign(-21)<br>var n = 10 * sign<br>// n equals -10</eg></td>
+    <td>math.Sign(num)<br><eg>Возвращает число</eg></td>
+    <td>Возвращает -1, если число отрицательное, в других случаях возвращает 1.<br><eg>Например:<br>var sign = math.Sign(-21)<br>var n = 10 * sign<br>// n равно -10</eg></td>
   </tr>
   <tr>
-    <td>math.Sin(num)<br><eg>Returns number</eg></td>
-    <td>Returns the sine of a given radian angle.<br><eg>Например:<br>var number = math.Sin(math.pi / 2)<br>// number equals 1</eg></td>
+    <td>math.Sin(num)<br><eg>Возвращает число</eg></td>
+    <td>Возвращает синус угла в радианах.<br><eg>Например:<br>var number = math.Sin(math.pi / 2)<br>// number равно 1</eg></td>
   </tr>
   <tr>
-    <td>math.Sqrt(num)<br><eg>Returns number</eg></td>
-    <td>Returns the square root of a number.<br><eg>Например:<br>var number = math.Sqrt(9)<br>// number equals 3</eg></td>
+    <td>math.Sqrt(num)<br><eg>Возвращает число</eg></td>
+    <td>Возвращает квадратный корень из числа.<br><eg>Например:<br>var number = math.Sqrt(9)<br>// number равно 3</eg></td>
   </tr>
   <tr>
-    <td>math.Tan(num)<br><eg>Returns number</eg></td>
-    <td>Returns the tangent of a given radian angle.<br><eg>Например:<br>var number = math.Tan(2)<br>// number equals -2.18504</eg></td>
+    <td>math.Tan(num)<br><eg>Возвращает число</eg></td>
+    <td>Возвращает тангенс угла в радианах.<br><eg>Например:<br>var number = math.Tan(2)<br>// number равно -2.18504</eg></td>
   </tr>
   <tr>
-    <td>math.ToDeg(num)<br><eg>Returns number</eg></td>
-    <td>Converts a radian number to degrees.<br><eg>Например:<br>var number = math.ToDeg(2 * math.pi)<br>// number equals 360</eg></td>
+    <td>math.ToDeg(num)<br><eg>Возвращает число</eg></td>
+    <td>Конвертирует радианы в градусы.<br><eg>Например:<br>var number = math.ToDeg(2 * math.pi)<br>// number равно 360</eg></td>
   </tr>
   <tr>
-    <td>math.ToRad(num)<br><eg>Returns number</eg></td>
-    <td>Converts a degrees number to radians.<br><eg>Например:<br>var number = math.ToRad(360)<br>// number equals 2π</eg></td>
+    <td>math.ToRad(num)<br><eg>Возвращает число</eg></td>
+    <td>Конвертирует градусы в радианы.<br><eg>Например:<br>var number = math.ToRad(360)<br>// number равно 2π</eg></td>
   </tr>
   <tr><td></td></tr>
   <tr><td>music<br>‾‾‾‾‾</td></tr>
   <tr>
-    <td>?music<br><eg>Return string</eg></td>
-    <td>Returns the ID of the currently playing music.<br><eg>Например:<br>&gt;`0,0,Current Music = @music@</eg></td>
+    <td>?music<br><eg>Возвращает string</eg></td>
+    <td>Возвращает ID музыки, играющей в данный момент.<br><eg>Например:<br>&gt;`0,0,Музыка = @music@</eg></td>
   </tr>
   <tr>
     <td>music.Play(str)<br><eg>Ничего не возвращает</eg></td>
-    <td>Plays a music, with the given sound ID. There can only be one music playing at a time.<br><eg>Например:<br>?loc.begin | loc.loop<br>  music.Play(temple_0)</eg></td>
+    <td>Проигрывает музыку с указанным ID. Может играть только один музыкальный трек.<br><eg>Например:<br>?loc.begin | loc.loop<br>  music.Play(temple_0)</eg></td>
   </tr>
   <tr>
     <td>music.Stop()<br><eg>Ничего не возвращает</eg></td>
-    <td>Stops all music.<br><eg>Например:<br>?!string.Equals(music, "")<br>  music.Stop()</eg></td>
+    <td>Останавливает всю музыку.<br><eg>Например:<br>?!string.Equals(music, "")<br>  music.Stop()</eg></td>
   </tr>
   <tr><td></td></tr>
   <tr><td>player<br>‾‾‾‾‾‾</td></tr>
   <tr>
     <td>player.ShowScaredFace(num)<br><eg>Ничего не возвращает</eg></td>
-    <td>If the player has big-head enabled, their facial expression will change to scared for a given amount of time.<eg><br>Например:<br>?key = primaryBegin<br>  player.ShowScaredFace(1)</eg></td>
+    <td>Если у игрока включена большая голова, то лицо на ней будет испуганным заданное количество времени.<eg><br>Например:<br>?key = primaryBegin<br>  player.ShowScaredFace(1)</eg></td>
   </tr>
   <tr><td></td></tr>
   <tr><td>screen<br>‾‾‾‾‾‾</td></tr>
   <tr>
-    <td>screen.FromWorldX(int)<br><eg>Returns integer</eg></td>
-    <td>Converts a value on the X-axis from world-space to screen-space.</td>
+    <td>screen.FromWorldX(int)<br><eg>Возвращает integer</eg></td>
+    <td>Конвертирует значение координаты X из всего пространства мира в пространство экрана.</td>
   </tr>
   <tr>
-    <td>screen.FromWorldZ(int)<br><eg>Returns integer</eg></td>
-    <td>Converts a value from the world-space Z-axis to screen-space Y-axis.<eg><br>Например:<br>var x<br>var y<br>x = screen.FromWorldX(pos.x)<br>y = screen.FromWorldZ(pos.z - pos.y)<br>&gt;`0,1,Player position on screen: @x@,@y@</eg></td>
+    <td>screen.FromWorldZ(int)<br><eg>Возвращает integer</eg></td>
+    <td>Конвертирует значение координаты Z из пространства мира в координату Y на экране.<eg><br>Например:<br>var x<br>var y<br>x = screen.FromWorldX(pos.x)<br>y = screen.FromWorldZ(pos.z - pos.y)<br>&gt;`0,1,Позиция игрока на экране: @x@,@y@</eg></td>
   </tr>
   <tr>
-    <td>screen.ToWorldX(int)<br><eg>Returns integer</eg></td>
-    <td>Converts a value on the X-axis from screen-space to world-space.</td>
+    <td>screen.ToWorldX(int)<br><eg>Возвращает integer</eg></td>
+    <td>Конвертирует значение координаты X из пространства экрана в пространство мира.</td>
   </tr>
   <tr>
-    <td>screen.ToWorldZ(int)<br><eg>Returns integer</eg></td>
+    <td>screen.ToWorldZ(int)<br><eg>Возвращает integer</eg></td>
     <td>Converts a value from the screen-space Y-axis to world-space Z-axis.<eg><br>Например:<br>var x<br>var y<br>var z<br>x = input.x<br>y = input.y<br>&gt;`0,1,Screen position of cursor: @x@,@y@<br><br>x = screen.ToWorldX(input.x)<br>z = screen.ToWorldZ(input.y)<br>&gt;`0,2,World position of cursor: @x@,@z@</eg></td>
   </tr>
   <tr>
@@ -1405,28 +1405,28 @@ While scripts can define their own functions, Stonescript comes with a set of pr
     <td>Deletes any value that may exist at the specified key.<br><eg>Например:<br>storage.Delete("highscore")</eg></td>
   </tr>
   <tr>
-    <td>storage.Get(string)<br><eg>Returns value</eg></td>
+    <td>storage.Get(string)<br><eg>Возвращает value</eg></td>
     <td>Retrieves a permanent value stored at the specified key.<br><eg>Например:<br>var value = storage.Get("highscore")<br>?value<br>  &gt;High Score = @value@<br>:<br>  &gt;No High Score found.</eg></td>
   </tr>
   <tr>
-    <td>storage.Get(string, value)<br><eg>Returns value</eg></td>
-    <td>Retrieves a permanent value stored at the specified key. If it's not found, returns the second parameter as a default value.<br><eg>Например:<br>var value = storage.Get("highscore", 0)<br>&gt;High Score = @value@</eg></td>
+    <td>storage.Get(string, value)<br><eg>Возвращает value</eg></td>
+    <td>Retrieves a permanent value stored at the specified key. If it's not found, Возвращает the second parameter as a default value.<br><eg>Например:<br>var value = storage.Get("highscore", 0)<br>&gt;High Score = @value@</eg></td>
   </tr>
   <tr>
-    <td>storage.Has(string)<br><eg>Returns boolean</eg></td>
-    <td>Returns <eg>true</eg> if the specified key exists in permanent storage; <eg>false</eg> otherwise.<br><eg>Например:<br>?storage.Has("highscore")<br>  var value = storage.Get("highscore")<br>  &gt;High Score = @value@<br>:<br>  &gt;No High Score found.</eg></td>
+    <td>storage.Has(string)<br><eg>Возвращает boolean</eg></td>
+    <td>Возвращает <eg>true</eg> if the specified key exists in permanent storage; <eg>false</eg> otherwise.<br><eg>Например:<br>?storage.Has("highscore")<br>  var value = storage.Get("highscore")<br>  &gt;High Score = @value@<br>:<br>  &gt;No High Score found.</eg></td>
   </tr>
   <tr>
-    <td>storage.Incr(string)<br><eg>Returns integer</eg></td>
-    <td>Increases by 1 the value stored at the specified key, then returns the new value.<br><eg>Например:<br>?gameOver<br>  storage.Incr("stat_TimesPlayed")</eg></td>
+    <td>storage.Incr(string)<br><eg>Возвращает integer</eg></td>
+    <td>Increases by 1 the value stored at the specified key, then Возвращает the new value.<br><eg>Например:<br>?gameOver<br>  storage.Incr("stat_TimesPlayed")</eg></td>
   </tr>
   <tr>
-    <td>storage.Keys()<br><eg>Returns array</eg></td>
+    <td>storage.Keys()<br><eg>Возвращает array</eg></td>
     <td>Retrieves an array of strings containing all the storage keys available in the current context.<br><eg>Например:<br>var a<br>?time % 30 = 0<br>  a = storage.Keys()<br>  for i = 0 .. a.Count()-1<br>    &gt;Key @i@ = @a[i]@</eg></td>
   </tr>
   <tr>
-    <td>storage.Incr(string, integer)<br><eg>Returns integer</eg></td>
-    <td>Increases the value stored at the specified key by a given amount, then returns the new value.<br><eg>Например:<br>var amount<br>?foundCoins<br>  amount = rng%5 + 5<br>  storage.Incr("coins", amount)</eg></td>
+    <td>storage.Incr(string, integer)<br><eg>Возвращает integer</eg></td>
+    <td>Increases the value stored at the specified key by a given amount, then Возвращает the new value.<br><eg>Например:<br>var amount<br>?foundCoins<br>  amount = rng%5 + 5<br>  storage.Incr("coins", amount)</eg></td>
   </tr>
   <tr>
     <td>storage.Set(string, value)<br><eg>Ничего не возвращает</eg></td>
@@ -1434,55 +1434,55 @@ While scripts can define their own functions, Stonescript comes with a set of pr
   </tr>
   <tr><td>string<br>‾‾‾‾‾‾</td></tr>
   <tr>
-    <td>string.Break(string, integer)<br><eg>Returns array</eg></td>
+    <td>string.Break(string, integer)<br><eg>Возвращает array</eg></td>
     <td>Breaks a string into multiple strings, given a max width.<eg><br>Например:<br>var s = "The brown fox jumps over the lazy dog"<br>var a = string.Break(s, 14)<br>for i = 0 .. a.Count()-1<br>  &gt;`0,@i@,@a[i]@</eg></td>
   </tr>
   <tr>
-    <td>string.Capitalize(str)<br><eg>Returns string</eg></td>
+    <td>string.Capitalize(str)<br><eg>Возвращает string</eg></td>
     <td>Changes the first letter of a string to be upper-case.<eg><br>Например:<br>var a = "foo"<br>a = string.Capitalize(a)<br>&gt;@a@<br>(Prints "Foo")</eg></td>
   </tr>
   <tr>
-    <td>string.Equals(str1, str2)<br><eg>Returns boolean</eg></td>
-    <td>Takes two string parameters and returns true if they are exactly the same. Returns false otherwise. Case sensitive.<eg><br>Например:<br>var a = "foo"<br>?string.Equals(a, "foo")<br>  &gt;The strings are equal<br>:<br>  &gt;They are NOT equal<br>// The strings are equal in this case. string.Equals() evaluates to true</eg></td>
+    <td>string.Equals(str1, str2)<br><eg>Возвращает boolean</eg></td>
+    <td>Takes two string parameters and Возвращает true if they are exactly the same. Возвращает false otherwise. Case sensitive.<eg><br>Например:<br>var a = "foo"<br>?string.Equals(a, "foo")<br>  &gt;The strings are equal<br>:<br>  &gt;They are NOT equal<br>// The strings are equal in this case. string.Equals() evaluates to true</eg></td>
   </tr>
   <tr>
-    <td>string.Format(str1, ...)<br><eg>Returns string</eg></td>
-    <td>Modifies a string by replacing format-templates with the values of the other parameters, then returns the final composed string. This is a powerful function that supports lots of <a href="https://docs.microsoft.com/en-us/dotnet/api/system.string.format?view=net-5.0" target="_Blank">formatting options</a>.<eg><br>Например:<br>var str = "My name is {0} and I have {1} power!"<br>var result = string.Format(<br>^  str,<br>^  player.name,<br>^  totalgp<br>^)<br>&gt;@result@</eg></td>
+    <td>string.Format(str1, ...)<br><eg>Возвращает string</eg></td>
+    <td>Modifies a string by replacing format-templates with the values of the other parameters, then Возвращает the final composed string. This is a powerful function that supports lots of <a href="https://docs.microsoft.com/en-us/dotnet/api/system.string.format?view=net-5.0" target="_Blank">formatting options</a>.<eg><br>Например:<br>var str = "My name is {0} and I have {1} power!"<br>var result = string.Format(<br>^  str,<br>^  player.name,<br>^  totalgp<br>^)<br>&gt;@result@</eg></td>
   </tr>
   <tr>
-    <td>string.IndexOf(str, criteria)<br><eg>Returns integer</eg></td>
-    <td>Takes a string variable and a string criteria as parameters and finds the position of the criteria inside the string. Returns -1 if not found.<eg><br>Например:<br>var a = Hello World!<br>var index = string.IndexOf(a, llo)<br>// index equals 2</eg></td>
+    <td>string.IndexOf(str, criteria)<br><eg>Возвращает integer</eg></td>
+    <td>Takes a string variable and a string criteria as parameters and finds the position of the criteria inside the string. Возвращает -1 if not found.<eg><br>Например:<br>var a = Hello World!<br>var index = string.IndexOf(a, llo)<br>// index equals 2</eg></td>
   </tr>
   <tr>
-    <td>string.IndexOf(str, criteria, startAt)<br><eg>Returns integer</eg></td>
-    <td>Takes a string variable, a string criteria and a starting index as parameters. Finds the position of the criteria inside the string, but begins the search at 'startAt'. Returns -1 if not found.<eg><br>Например:<br>var a = Hello World!<br>var index = string.IndexOf(a, llo, 4)<br>// index equals -1 because the search began at position 4<br>// therefore 'llo' was not found</eg></td>
+    <td>string.IndexOf(str, criteria, startAt)<br><eg>Возвращает integer</eg></td>
+    <td>Takes a string variable, a string criteria and a starting index as parameters. Finds the position of the criteria inside the string, but begins the search at 'startAt'. Возвращает -1 if not found.<eg><br>Например:<br>var a = Hello World!<br>var index = string.IndexOf(a, llo, 4)<br>// index equals -1 because the search began at position 4<br>// therefore 'llo' was not found</eg></td>
   </tr>
   <tr>
-    <td>string.Join(s, [])<br>string.Join(s, [], int)<br>string.Join(s, [], int,int)<br><eg>Returns string</eg></td>
+    <td>string.Join(s, [])<br>string.Join(s, [], int)<br>string.Join(s, [], int,int)<br><eg>Возвращает string</eg></td>
     <td>Takes an array of strings <eg>[]</eg> and combines it into a single string with the separator <eg>s</eg>. Optional integer parameters can be passed that specify the <eg>starting index</eg> and <eg>number of elements</eg> to combine. If no index parameters are provided, the entire array is combined.<eg><br>Например:<br>var a = ［"Hello", "World", "!"］<br>var b = string.Join(";", a)<br>&gt;`0,0,@b@<br>// Prints "Hello;World;!"<br><br>Например:2<br>var a = ［"Hello", "World", "!"］<br>var b = string.Join(";", a, 1)<br>&gt;`0,0,@b@<br>// Prints "World;!"<br><br>Например:3<br>var a = ［"Hello", "World", "!"］<br>var b = string.Join(";", a, 0, 2)<br>&gt;`0,0,@b@<br>// Prints "Hello;World"</eg></td>
   </tr>
   <tr>
-    <td>string.Size(str)<br><eg>Returns integer</eg></td>
+    <td>string.Size(str)<br><eg>Возвращает integer</eg></td>
     <td>Takes a string variable as parameter and calculates how long it is, in number of glyphs.<eg><br>Например:<br>var a = Hello World!<br>var size = string.Size(a)<br>&gt;size = @size@</eg></td>
   </tr>
   <tr>
-    <td>string.Split(str)<br>string.Split(str, s…)<br>string.Split(str, s…, bool)<br>string.Split(str, bool)<br><eg>Returns array</eg></td>
+    <td>string.Split(str)<br>string.Split(str, s…)<br>string.Split(str, s…, bool)<br>string.Split(str, bool)<br><eg>Возвращает array</eg></td>
     <td>Takes a string and breaks it down into an array of strings, given a set of string separators <eg>s…</eg>. If no separators are provided, then the string is broken wherever there is a space. An optional boolean parameter specifies if empty entries should be discarded.<eg><br>Например:<br>var a = string.Split("Hello World !")<br>for i = 0 .. a.Count()-1<br>  &gt;`0,@i@,［@i@］ = @a［i］@<br>// Breaks up the string into: "Hello", "World", "!"<br><br>Например:2<br>var a = string.Split("Hello World !", " ", "l")<br>for i = 0 .. a.Count()-1<br>  &gt;`0,@i@,［@i@］ = @a［i］@<br>// Breaks up the string into: "He", " ", "o", "Wor", "d", "!"<br><br>Например:3<br>var a<br>a = string.Split("Hello World !","l","r",true)<br>for i = 0 .. a.Count()-1<br>  &gt;`0,@i@,［@i@］ = @a［i］@<br>// Breaks up the string into: "He", "o Wo", "d !"</eg></td>
   </tr>
   <tr>
-    <td>string.Sub(str, startAt)<br><eg>Returns string</eg></td>
+    <td>string.Sub(str, startAt)<br><eg>Возвращает string</eg></td>
     <td>Takes a string variable and a starting index as parameters and splits the string from that point forward.<eg><br>Например:<br>var a = Hello World!<br>var subString = string.Sub(a, 6)<br>&gt;substring = @subString@<br>// subString equals "World!"</eg></td>
   </tr>
   <tr>
-    <td>string.Sub(str, startAt, length)<br><eg>Returns string</eg></td>
+    <td>string.Sub(str, startAt, length)<br><eg>Возвращает string</eg></td>
     <td>Takes a string variable, a starting index and a length as parameters and splits the string from that starting point, stopping at the given length.<eg><br>Например:<br>var a = Hello World!<br>var subString = string.Sub(a, 6, 3)<br>&gt;substring = @subString@<br>// subString equals "Wor"</eg></td>
   </tr>
   <tr>
-    <td>string.ToLower(str)<br><eg>Returns string</eg></td>
+    <td>string.ToLower(str)<br><eg>Возвращает string</eg></td>
     <td>Changes all letters in a string to lower-case.<eg><br>Например:<br>var a = "Foo"<br>a = string.ToLower(a)<br>&gt;@a@<br>// Prints "foo" to the screen</eg></td>
   </tr>
   <tr>
-    <td>string.ToUpper(str)<br><eg>Returns string</eg></td>
+    <td>string.ToUpper(str)<br><eg>Возвращает string</eg></td>
     <td>Changes all letters in a string to upper-case.<eg><br>Например:<br>var a = "Foo"<br>a = string.ToUpper(a)<br>&gt;@a@<br>// Prints "FOO" to the screen</eg></td>
   </tr>
   <tr><td>sys<br>‾‾‾</td><td>(The sys namespace is not functioning as intended at the moment)</td></tr>
@@ -1514,50 +1514,50 @@ While scripts can define their own functions, Stonescript comes with a set of pr
     <td>sys.os<br><eg>Возвращает string</eg></td>
     <td>Операционная система, например, "Android", "iOS", "Linux", "OSX" или "Windows".
   </td></tr>
-  <tr><td>Text Localization<br>‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾</td><td>Stonescript supports 12 languages as of this writing. A few operations allow custom scripts to adapt to the player's chosen language.</td></tr>
+  <tr><td>Локализация<br>‾‾‾‾‾‾‾‾‾‾‾</td><td>Stonescript поддерживает 12 языков на момент написания. Некоторые команды позволяют скриптам адаптироваться к языку игрока.</td></tr>
   <tr>
   </tr><tr>
     <td>te.language<br><eg>string</eg></td>
-    <td>The code for the language selected by the player in settings. Possible values: EN, PT-BR, ZH-CN, ZH-TW, FR, DE, RU, ES-LA, ES-EU, JP, KR and TK.<eg><br>Например:<br>var lang = te.language<br>&gt;Language = @lang@</eg></td>
+    <td>Код выбранного игроком языка. Возможные значения: EN, PT-BR, ZH-CN, ZH-TW, FR, DE, RU, ES-LA, ES-EU, JP, KR and TK.<eg><br>Например:<br>var lang = te.language<br>&gt;Язык = @lang@</eg></td>
   </tr>
   <tr>
-    <td>te.xt(str)<br><eg>Returns string</eg></td>
-    <td>Translates a given English text into the player's selected language. If a translated version is not found, then the input text is returned instead. Alternatively, a text identifier (TID) can be used as input--albeit the exhausting list of TIDs is beyond the scope of this manual.<eg><br>Например:<br>var button = ui.AddButton()<br>button.text = te.xt(Play)<br>// Change your language in settings to see this example at work</eg></td>
+    <td>te.xt(str)<br><eg>Возвращает string</eg></td>
+    <td>Переводит текст на английском в выбранный игроком язык. Если переведенный текст не найден, то возвращается переданное значение. Также в эту функцию можно передать ID текста (TID), однако огромный лист этих TID не влезет в руководство.<eg><br>Например:<br>var button = ui.AddButton()<br>button.text = te.xt(Play)<br>// Измените язык в настройках, чтобы увидеть работу скрипта</eg></td>
   </tr>
   <tr>
-    <td>te.GetTID(str)<br><eg>Returns string</eg></td>
-    <td>Returns the text identifier (TID) for a given text. The input text is expected in the language selected by the player.<eg><br>Например:<br>var tid = te.GetTID("Play")<br>&gt;`0,1,@tid@<br>// Prints tid_button_play to the screen</eg></td>
+    <td>te.GetTID(str)<br><eg>Возвращает string</eg></td>
+    <td>Возвращает айди текста (TID) для указанного текста. Текст на вход ожидается в выбранном игроком языке.<eg><br>Например:<br>var tid = te.GetTID("Play")<br>&gt;`0,1,@tid@<br>// Выводит tid_button_play на экран</eg></td>
   </tr>
   <tr>
-    <td>te.ToEnglish(str)<br><eg>Returns string</eg></td>
-    <td>Translates a given text from the player's selected language into the original English text. If a translated version is not found, then the input text is returned instead.<eg><br>Например:<br>&gt;`0,1,@te.ToEnglish("Jogar")@<br>// If Portuguese is chosen in settings it will print "Play"<br>// otherwise it will print "Jogar"</eg></td>
+    <td>te.ToEnglish(str)<br><eg>Возвращает string</eg></td>
+    <td>Переводит текст с языка, выбранного игроком, на оригинальный английский текст. Если переведенный текст не найден, то возвращается переданное значение.<eg><br>Например:<br>&gt;`0,1,@te.ToEnglish("Jogar")@<br>// если в настройках выбран португальский, то выведется "Play"<br>// иначе выведется просто "Jogar"</eg></td>
   </tr>
   <tr><td>time<br>‾‾‾‾</td></tr>
   <tr>
-    <td>time.FormatCasual(int)<br>time.FormatCasual(int,bool)<br><eg>Returns string</eg></td>
-    <td>Converts an amount of frames into a human-readable string representation of time, such as "1m 23s". The second parameter (bool) is optional; If 'true', then precision is maximized in the result.<eg><br>Например:<br>&gt;`0,0,Current time =<br>^ @time.FormatCasual(totaltime, true)@</eg></td>
+    <td>time.FormatCasual(int)<br>time.FormatCasual(int,bool)<br><eg>Возвращает string</eg></td>
+    <td>Конвертирует количество кадров в удобное отображение времени, например: "1м 23к". Второй параметр (bool) опционален; если он 'true', то значение возвращается с точностью до кадров.<eg><br>Например:<br>&gt;`0,0,Время =<br>^ @time.FormatCasual(totaltime, true)@</eg></td>
   </tr>
   <tr>
-    <td>time.FormatDigital(int)<br>time.FormatDigital(int,bool)<br><eg>Returns string</eg></td>
-    <td>Converts an amount of frames into a human-readable string representation of time, such as "1:23". The second parameter (bool) is optional; If 'true', then precision is maximized in the result.<eg><br>Например:<br>&gt;`0,0,Current time =<br>^ @time.FormatDigital(totaltime, true)@</eg></td>
+    <td>time.FormatDigital(int)<br>time.FormatDigital(int,bool)<br><eg>Возвращает string</eg></td>
+    <td>Конвертирует количество кадров в удобное отображение времени, например: "1:23". Второй параметр (bool) опционален; если он 'true', то значение возвращается с точностью до кадров.<eg><br>Например:<br>&gt;`0,0,Время =<br>^ @time.FormatDigital(totaltime, true)@</eg></td>
   </tr>
-  <tr><td>UI<br>‾‾</td><td><br>See the <a href="#user-interface">User Interface</a> section for details about Stonescript's advanced UI system. Miscellaneous functions of the <eg>ui</eg> namespace:</td></tr>
+  <tr><td>UI<br>‾‾</td><td><br>В разделе <a href="#user-interface">Пользовательский интерфейс</a> есть больше информации об UI. Различные функции пространства имен <eg>ui</eg>:</td></tr>
   <tr>
     <td>ui.OpenInv()<br><eg>Ничего не возвращает</eg></td>
-    <td>Opens the inventory screen.</td>
+    <td>Открывает экран инвентаря.</td>
   </tr>
   <tr>
     <td>ui.OpenMind()<br><eg>Ничего не возвращает</eg></td>
-    <td>Opens the Mind Stone screen.</td>
+    <td>Открывает экран Камня Разума.</td>
   </tr>
   <tr>
     <td>ui.ShowBanner(str)<br>ui.ShowBanner(str,str)<br><eg>Ничего не возвращает</eg></td>
-    <td>Displays the animated banner with up to two messages. The banner animation restarts each time ui.ShowBanner() is called.<eg><br>Например:<br>?time = 120<br>  ui.ShowBanner("Hello World!")</eg></td>
+    <td>Показывает баннер с сообщениями (до двух). Анимация баннера перезапускается при каждом вызове ui.ShowBanner().<eg><br>Например:<br>?time = 120<br>  ui.ShowBanner("Hello World!")</eg></td>
   </tr>
-  <tr><td>Other<br>‾‾‾‾‾</td></tr>
+  <tr><td>Прочее<br>‾‾‾‾‾</td></tr>
   <tr>
-    <td>Type(var)<br><eg>Returns string</eg></td>
-    <td>Evaluates the type of a variable and returns a string representation. Possible types include 'string', 'int', 'bool', 'function', 'object' and 'null'.<eg><br>Например:<br>var a = 0<br>?Type(a) = int<br>  &gt;Variable 'a' is an integer.</eg></td>
+    <td>Type(var)<br><eg>Возвращает string</eg></td>
+    <td>Возвращает тип переменной в строковом формате. Типы могут быть: 'string', 'int', 'bool', 'function', 'object' и 'null'.<eg><br>Например:<br>var a = 0<br>?Type(a) = int<br>  &gt;Переменная 'a' является целым числом.</eg></td>
   </tr>
 </tbody></table></font>
 <a href="#"><font color="#505050">^К началу</font></a>
@@ -1791,11 +1791,11 @@ Arrays are a special type of variable. They provide a way to sequentially organi
   </tr>
   <tr>
     <td>a.Contains(value)</td>
-    <td>Determines if a given value is inside the array. Returns true if found; false otherwise.<br><eg>Например:<br>var myArray = [10, 3]<br>?myArray.Contains(3)<br>  &gt;Yes</eg></td>
+    <td>Determines if a given value is inside the array. Возвращает true if found; false otherwise.<br><eg>Например:<br>var myArray = [10, 3]<br>?myArray.Contains(3)<br>  &gt;Yes</eg></td>
   </tr>
   <tr>
     <td>a.Count()</td>
-    <td>Returns the number of elements in the array.<br><eg>Например:<br>var myArray = ["apple","banana"]<br>var size = myArray.Count()<br>&gt;Array size = @size@</eg></td>
+    <td>Возвращает the number of elements in the array.<br><eg>Например:<br>var myArray = ["apple","banana"]<br>var size = myArray.Count()<br>&gt;Array size = @size@</eg></td>
   </tr>
   <tr>
     <td>a.Emplace(integer, value)</td>
@@ -1803,7 +1803,7 @@ Arrays are a special type of variable. They provide a way to sequentially organi
   </tr>
   <tr>
     <td>a.IndexOf(value)</td>
-    <td>Searches for a given value inside the array. Returns an integer indicating the position of the first occurrance of the value. If the value is not found returns -1.<br><eg>Например:<br>var myArray = [10, 3]<br>var index = myArray.IndexOf(3)<br>&gt;Found at position @index@</eg></td>
+    <td>Searches for a given value inside the array. Возвращает an integer indicating the position of the first occurrance of the value. If the value is not found Возвращает -1.<br><eg>Например:<br>var myArray = [10, 3]<br>var index = myArray.IndexOf(3)<br>&gt;Found at position @index@</eg></td>
   </tr>
   <tr>
     <td>a.Insert(integer, value)</td>
@@ -1811,7 +1811,7 @@ Arrays are a special type of variable. They provide a way to sequentially organi
   </tr>
   <tr>
     <td>a.RemoveAt(integer)</td>
-    <td>Removes an element in the array from a specific position. Returns the value removed.<br>Zero-based: <eg>myArray.RemoveAt(0)</eg> removes the first element.<br>Elements to the right are shifted to the previous position.<br><eg>Например:<br>var myArray = [1, 2, 3]<br>myArray.RemoveAt(1)<br>// The array is now [1, 3]</eg></td>
+    <td>Removes an element in the array from a specific position. Возвращает the value removed.<br>Zero-based: <eg>myArray.RemoveAt(0)</eg> removes the first element.<br>Elements to the right are shifted to the previous position.<br><eg>Например:<br>var myArray = [1, 2, 3]<br>myArray.RemoveAt(1)<br>// The array is now [1, 3]</eg></td>
   </tr>
   <tr>
     <td>a.Sort()</td>
@@ -2020,23 +2020,23 @@ root
     <td>The base UI object on top of which the entire tree is built.<eg><br>Например:<br>disable hud<br>ui.root.visible = true</eg></td>
   </tr>
   <tr>
-    <td>ui.AddAnim(string)<br><eg>Returns Anim</eg></td>
+    <td>ui.AddAnim(string)<br><eg>Возвращает Anim</eg></td>
     <td>Adds an Anim object to the root Panel. Accepts an animation sprite sheet as parameter.<eg><br>Например:<br>?loc.begin<br>  ui.AddAnim(ascii<br>\o)<br>%%<br>(o/<br>asciiend)</eg></td>
   </tr>
   <tr>
-    <td>ui.AddButton()<br><eg>Returns Button</eg></td>
+    <td>ui.AddButton()<br><eg>Возвращает Button</eg></td>
     <td>Adds a Button object to the root Panel.<eg><br>Например:<br>func OnPressed()<br>  &gt; Hello World!<br><br>?loc.begin<br>  var button = ui.AddButton()<br>  button.y = 1<br>  button.text = Press me<br>  button.SetPressed(OnPressed)</eg></td>
   </tr>
   <tr>
-    <td>ui.AddPanel()<br><eg>Returns Panel</eg></td>
+    <td>ui.AddPanel()<br><eg>Возвращает Panel</eg></td>
     <td>Adds a Panel object to the root Panel. Panels are an important object type, serving as containers for other elements.<eg><br>Например:<br>?loc.begin<br>  var p = ui.AddPanel()<br>  p.color = #red</eg></td>
   </tr>
   <tr>
-    <td>ui.AddStyle()<br><eg>Returns int</eg></td>
-    <td>Adds a new style that can be used for drawing rectangular Components such as Panels and Buttons. Returns an ID number of the new style. Is protected against the same style being added multiple times, in which case nothing changes and the same ID is returned. Because different scripts may all call ui.AddStyle(), it's recommended to save the ID as a variable instead of hard-coding style numbers into the script.<eg><br>Например:<br>var customStyle = ui.AddStyle("<br>^123<br>^456<br>^789")<br>?loc.begin<br>  var p = ui.AddPanel()<br>  p.style = customStyle</eg></td>
+    <td>ui.AddStyle()<br><eg>Возвращает int</eg></td>
+    <td>Adds a new style that can be used for drawing rectangular Components such as Panels and Buttons. Возвращает an ID number of the new style. Is protected against the same style being added multiple times, in which case nothing changes and the same ID is returned. Because different scripts may all call ui.AddStyle(), it's recommended to save the ID as a variable instead of hard-coding style numbers into the script.<eg><br>Например:<br>var customStyle = ui.AddStyle("<br>^123<br>^456<br>^789")<br>?loc.begin<br>  var p = ui.AddPanel()<br>  p.style = customStyle</eg></td>
   </tr>
   <tr>
-    <td>ui.AddText()<br>ui.AddText(string)<br><eg>Returns Text</eg></td>
+    <td>ui.AddText()<br>ui.AddText(string)<br><eg>Возвращает Text</eg></td>
     <td>Adds a Text object to the root Panel.<eg><br>Например:<br>?loc.begin<br>  var t = ui.AddText()<br>  t.text = "Hello World!"</eg></td>
   </tr>
   <tr>
@@ -2229,7 +2229,7 @@ root
     <td>If true, the animation will begin playing as soon as possible.</td>
   </tr>
   <tr>
-    <td>anim.AddLayer(string)<br><eg>Returns Anim</eg></td>
+    <td>anim.AddLayer(string)<br><eg>Возвращает Anim</eg></td>
     <td>Adds a new ASCII sprite on top of this one. As the animation plays (or its frame is changed with <eg>anim.frame</eg>) all layers stay in sync. Each layer has their own set of properties for color, pivot, etc. Advantages of using animation layers for complex ASCII-art include improved performance and better code quality. If the animation is recycled all layers clean up simultaneously.<eg><br>Например:<br>var a = ui.AddAnim(asciiArtA)<br>var layer2 = a.AddLayer(asciiArtB)<br>layer2.color = #bbbbbb</eg></td>
   </tr>
   <tr>
@@ -2256,8 +2256,8 @@ root
 <br>filter2.SetFG(#aa6600)<br>filter2.SetBG(#662200)</eg></td>
   </tr>
   <tr>
-    <td>canvas.Get(int,int)<br><eg>Returns string</eg></td>
-    <td>Returns the glyph at a specific position x,y on the canvas.</td>
+    <td>canvas.Get(int,int)<br><eg>Возвращает string</eg></td>
+    <td>Возвращает the glyph at a specific position x,y on the canvas.</td>
   </tr>
   <tr>
     <td>canvas.Set(str)<br><eg>Ничего не возвращает</eg></td>
