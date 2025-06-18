@@ -63,10 +63,10 @@
 <f>  <a href="#game-state">3. Состояние игры +</a></f>
 <f>  <a href="#commands">4. Команды +</a></f>
 <f>  <a href="#search-filters">5. Фильтры поиска +</a></f>
-<f>  <a href="#comparisons">6. Сравнения</a></f>
-<f>  <a href="#variables">7. Переменные</a></f>
-<f>  <a href="#math-operations">8. Математические операции</a></f>
-<f>  <a href="#functions">9. Функции</a></f>
+<f>  <a href="#comparisons">6. Сравнения +</a></f>
+<f>  <a href="#variables">7. Переменные +</a></f>
+<f>  <a href="#math-operations">8. Математические операции +</a></f>
+<f>  <a href="#functions">9. Функции +</a></f>
 <f>  <a href="#native-functions">10. Встроенные функции</a></f>
 <f>  <a href="#import">11. Импорт сторонних скриптов +</a></f>
 <f>  <a href="#ascii-art">12. ASCII-арт +</a></f>
@@ -715,7 +715,7 @@
 <font color="#bbbbbb">
 Используются для проверки врагов, локаций и предметов.
 
-<eg><f>Например::
+<eg><f>Например:
 ?foe = insect | foe = poison
   loadout 3</f></eg>
 
@@ -758,42 +758,42 @@ immune_to_physical
 
 <div id="comparisons"><div id="separator"><!---------------------------></div>
 
-·:·:· Comparisons ·:·:·
+·:·:· Сравнения ·:·:·
 <font color="#bbbbbb">
-<f>Used in conjunction with game state to make decisions</f>
+<f>Используются вместе с состояниями игры для принятия решений.</f>
 
 <table>
   <tbody><tr>
     <td style="min-width: 3em"> =</td>
-    <td>Compares values equal or string contains.<eg><br>Например:<br>?hp = maxhp<br>  loadout 2</eg></td>
+    <td>Проверяет равенство значений или вхождение строки в другую строку.<eg><br>Например:<br>?hp = maxhp<br>  loadout 2</eg></td>
   </tr>
   <tr>
     <td style="min-width: 3em"> !</td>
-    <td>Compares values not equal or string does not contain.<eg><br>Например:<br>?foe ! poison<br>  equipL sword</eg></td>
+    <td>Проверяет неравенство значений или невхождение строки в другую строку.<eg><br>Например:<br>?foe ! poison<br>  equipL sword</eg></td>
   </tr>
   <tr>
     <td style="min-width: 3em"> &amp;</td>
-    <td>Logical AND operator.<eg><br>Например:<br>?loc=caves &amp; foe=boss</eg></td>
+    <td>Логические оператор И.<eg><br>Например:<br>?loc=caves &amp; foe=boss</eg></td>
   </tr>
   <tr>
     <td style="min-width: 3em"> |</td>
-    <td>Logical OR operator. If '&amp;' and '|' are mixed in a single complex expression, all '&amp;' operate first.<eg><br>Например:<br>?foe=slow | foe.count&gt;3<br>  activate potion</eg></td>
+    <td>Логический оператор ИЛИ. Если '&amp;' и '|' используются вместе, операторы '&amp;' просчитываются первыми.<eg><br>Например:<br>?foe=slow | foe.count&gt;3<br>  activate potion</eg></td>
   </tr>
   <tr>
     <td style="min-width: 3em"> &gt;</td>
-    <td>Greater-than compare. Can be used with a location's difficulty, number of foes, health, etc.<eg><br>Например:<br>?foe.count &gt; 10<br>  equip shiny bardiche</eg></td>
+    <td>Сравнение 'больше чем'. Можно использовать, например, со сложностью локаици, количеством врагов, здоровьем, и т.д.<eg><br>Например:<br>?foe.count &gt; 10<br>  equip shiny bardiche</eg></td>
   </tr>
   <tr>
     <td style="min-width: 3em"> &lt;</td>
-    <td>Less-than compare.<eg><br>Например:<br>?hp &lt; 6<br>  activate potion</eg></td>
+    <td>Сравнение 'меньше чем'.<eg><br>Например:<br>?hp &lt; 6<br>  activate potion</eg></td>
   </tr>
   <tr>
     <td style="min-width: 3em"> &gt;=</td>
-    <td>Greater-than or equal compare. The combination of '&gt;' and '=' into a single comparison.<eg><br>The following two examples are equivalent:<br><br>?loc.stars &gt;= 6<br>  equipR vigor shield<br><br>?loc.stars &gt; 6 | loc.stars = 6<br>  equipR vigor shield</eg></td>
+    <td>Сравнение 'больше или равно'. Является комбинацией '&gt;' и '=' в одно выражение.<eg><br>Следующие два примера идентичны:<br><br>?loc.stars &gt;= 6<br>  equipR vigor shield<br><br>?loc.stars &gt; 6 | loc.stars = 6<br>  equipR vigor shield</eg></td>
   </tr>
   <tr>
     <td style="min-width: 3em"> &lt;=</td>
-    <td>Less-than or equal compare. The combination of '&lt;' and '=' into a single comparison.<eg><br>Например:<br>?hp &lt;= 6<br>  activate potion</eg></td>
+    <td>Сравнение 'меньше или равно'. Является комбинацией '&lt;' и '=' в одно выражение.<eg><br>Например:<br>?hp &lt;= 6<br>  activate potion</eg></td>
   </tr>
 </tbody></table></font>
 <a href="#"><font color="#505050">^К началу</font></a>
@@ -801,41 +801,41 @@ immune_to_physical
 
 <div id="variables"><div id="separator"><!---------------------------></div>
 
-·:·:· Variables ·:·:·
+·:·:· Переменные ·:·:·
 <font color="#bbbbbb">
-Variables are a way of storing value to use later. Declare a new variable with the keyword 'var'.
+Переменные - это способ хранить значение чего-либо для последующего использования. Объявить переменную можно ключевым словом 'var'.
 
-<eg>Например::
+<eg>Например:
 var myVar = 10</eg>
-(myVar is the name of the variable, and it's initialized with value 10)
+(myVar - название переменной, и она инициализируется со значением 10)
 
 <eg>myVar = myVar + 5</eg>
-(myVar now equals 15)
+(myVar теперь равно 15)
 
 <eg>var secondVar = 3
 myVar = myVar - secondVar</eg>
-(Many variables can be combined in math operations. myVar now equals 12)
+(Множество переменных можно использовать в математических операциях. myVar теперь равно 12)
 
 
-When a variable is declared it is initialized only once, the first time 'var' executes.
+Когда переменная объявлена, она инициализируется только один раз, впервые при выполнении 'var'.
 
-<eg>Например::
+<eg>Например:
 var i = 0
 i++
 &gt;i = @i@</eg>
-In this example, variable 'i' is declared and starts with value 0. During each frame of the run, the value of 'i' increases by 1 and then is printed to the screen.
+В данном примере, переменная 'i' объявлена и стартует со значением 0. Каждый кадр ее значение увеличивается на 1 и выводится на экран.
 
-Variables only reset to their initial value if you leave a location and begin a new run manually. They do not reset when the Ouroboros loops or when the Mind Stone is opened then closed again.
+Переменные сбрасываются к изначальным значениям только тогда, когда вы вручную начинаете новый забег. Они не сбрасываются при открытии/закрытии Камня Разума или циклах Уробороса.
 
-String variables can optionally be declared with quotes. This allows special symbols and trailing spaces.
-<eg>Например::
+Строковые значения можно опционально объявлять с помощью кавычек. Это позволяет использовать спецсимволы и оставлять пробелы в конце.
+<eg>Например:
 var a = 10
 var b = 5
 var myVar = a + " x " + b + " = " + (a * b)
 &gt;@myVar@</eg>
-(This example also demonstrates how to join strings with the '+' operator)
+(Этот пример также показывает, как объединять строки с помощью оператора '+')
 
-Variables in imported scripts are contained within those scripts and their names won't collide with variables or functions in other scripts.
+Переменные в импортированных скриптах находятся внутри этих скриптов, и их названия не помешают работе переменных или функций в других скриптах.
 </font>
 
 <a href="#"><font color="#505050">^К началу</font></a>
@@ -843,46 +843,46 @@ Variables in imported scripts are contained within those scripts and their names
 
 <div id="math-operations"><div id="separator"><!---------------------------></div>
 
-·:·:· Math Operations ·:·:·
+·:·:· Математические операции ·:·:·
 <font color="#bbbbbb">
-<f>Operators modify numbers. Can be used in conjunction with variables or directly in game state expressions.</f>
+<f>Операторы изменяют числа. Можно использовать вместе с переменными или прямо в проверках состояний игры.</f>
 
 <table>
   <tbody><tr>
     <td style="min-width: 3em"> +</td>
-    <td>Adds two numbers or variables together.<eg><br>Например::<br>var a = 2 + 3<br>(a equals 5)</eg></td>
+    <td>Складывает два числа или переменные.<eg><br>Например:<br>var a = 2 + 3<br>(a равно 5)</eg></td>
   </tr>
   <tr>
     <td style="min-width: 3em"> -</td>
-    <td>Subtracts two numbers or variables from each other.<eg><br>Например::<br>?hp &lt; maxhp - 5<br>  equip vigor sword dL</eg></td>
+    <td>Вычитает два числа или переменные друг из друга.<eg><br>Например:<br>?hp &lt; maxhp - 5<br>  equip vigor sword dL</eg></td>
   </tr>
   <tr>
     <td style="min-width: 3em"> *</td>
-    <td>Multiplies two numbers or variables together.<eg><br>Например::<br>var a = 2<br>var b = 5<br>a = a * b<br>// a equals 10<br><br>Например:2:<br>var a = 2 * 0.4<br>// a equals 0.8</eg></td>
+    <td>Перемножает два числа или переменные.<eg><br>Например:<br>var a = 2<br>var b = 5<br>a = a * b<br>// a равно 10<br><br>Или:<br>var a = 2 * 0.4<br>// a равно 0.8</eg></td>
   </tr>
   <tr>
     <td style="min-width: 3em"> /</td>
-    <td>Divides one number or variable by another. In the case of integers, the result is rounded down.<eg><br>Например::<br>var a = 8<br>a = a / 4<br>// a equals 2<br><br>Например:2:<br>var a = 5.0<br>a = a / 2<br>// a equals 2.5</eg></td>
+    <td>Делит одно число на другое. Целые числа (int) округляются вниз.<eg><br>Например:<br>var a = 8<br>a = a / 4<br>// a равно 2<br><br>Или:<br>var a = 5.0<br>a = a / 2<br>// a равно 2.5</eg></td>
   </tr>
   <tr>
     <td style="min-width: 3em"> ++</td>
-    <td>Increments a variable.<eg><br>Например::<br>var a = 3<br>a++<br>// a equals 4</eg></td>
+    <td>Инкремент (увеличение переменной на 1).<eg><br>Например:<br>var a = 3<br>a++<br>// a равно 4</eg></td>
   </tr>
   <tr>
     <td style="min-width: 3em"> --</td>
-    <td>Decrements a variable.<eg><br>Например::<br>var a = 3<br>a--<br>// a equals 2</eg></td>
+    <td>Декремент (уменьшение переменной на 1).<eg><br>Например:<br>var a = 3<br>a--<br>// a равно 2</eg></td>
   </tr>
   <tr>
     <td style="min-width: 3em"> %</td>
-    <td>Modulo. Gives the remainder of dividing one number by another.<eg><br>Например::<br>var a = 5 % 4<br>(a equals 1)<br><br>Например:2:<br>?time % 8 &lt; 4<br>  &gt; \O)<br>?time % 8 &gt; 3<br>  &gt; (O/<br>// this draws an animated emoji</eg></td>
+    <td>Деление с остатком. Возвращает остаток от деления одного числа на другое.<eg><br>Например:<br>var a = 5 % 4<br>(a равно 1)<br><br>Или:<br>?time % 8 &lt; 4<br>  &gt; \O)<br>?time % 8 &gt; 3<br>  &gt; (O/<br>// этот код рисует анимированный смайлик</eg></td>
   </tr>
   <tr>
     <td style="min-width: 3em"> ( )</td>
-    <td>Parenthesis can be used to prioritize operations.<eg><br>Например::<br>var a = 2 * (3 - 1)<br>// a equals 4</eg></td>
+    <td>Скобки можно использовать для приоритизации операций.<eg><br>Например:<br>var a = 2 * (3 - 1)<br>// a равно 4</eg></td>
   </tr>
   <tr>
     <td style="min-width: 3em"> !</td>
-    <td>Negation. Inverts the value when used in front of a boolean expression.<eg><br>Например::<br>? !ai.enabled<br>  &gt;The AI is not enabled.</eg></td>
+    <td>Отрицание. Инвертирует значение (истина -> ложь, а ложь -> истина).<eg><br>Например:<br>? !ai.enabled<br>  &gt;ИИ игрока не включен.</eg></td>
   </tr>
 </tbody></table></font>
 <a href="#"><font color="#505050">^К началу</font></a>
@@ -890,11 +890,11 @@ Variables in imported scripts are contained within those scripts and their names
 
 <div id="functions"><div id="separator"><!---------------------------></div>
 
-·:·:· Functions ·:·:·
+·:·:· Функции ·:·:·
 <font color="#bbbbbb">
-Custom functions serve an important organizational purpose to scripts as they grow in complexity. They make scripts easier to read and reduce repetition. When a function is declared its contents are not executed immediately. Instead, lines of script inside a function execute when the function is called at a later point.
+Пользовательские функции довольно полезны для скриптов, чья сложность растет с каждым разом. Функции позволяют делать скрипты читабельнее и убирают лишние повторения. Когда функция объявлена, ее тело не выполняется сразу же. Вместо этого они выполнятся каждый раз, когда функция будет вызвана позже в коде.
 
-This example creates a counter that increases by 1 each frame. When any custom input key is pressed, ResetCounter() is called and the counter value goes back to zero:
+Данный пример создает счетчик, который увеличивается на 1 каждый кадр. Когда любая кастомная клавиша нажата, вызывается функция ResetCounter(), обнуляя счетчик:
 <f><eg>
 var count = 0
 count++
@@ -906,16 +906,16 @@ func ResetCounter()
 ?key=begin
   ResetCounter()
 </eg>
-Another aspect of functions is that they can return a value. In this example we declare a simple function that calculates the duration of the main location (non-boss area):
+Еще один важный аспект функций: они могут возвращать значение. В данном примере объявлена простая функция, которая возвращает время основной локации (не локации с боссом):
 <eg>
 func NonBossDuration()
   return totalTime - time
 
 var duration
 duration = NonBossDuration()
-&gt;Time was: @duration@
+&gt;Время: @duration@
 </eg>
-Functions also accept any number of arguments/parameters, making them even more powerful, with the ability to operate on arbitrary input. Here, we declare a utility function that generates a random number within a range, then we use it to generate random numbers between 5 and 10:
+Функции также могут принимать любое количество аргументов/параметров, что делает их еще мощнее, давая возможность взаимодействовать с любыми значениями. В данном примере объявлена полезная функция, генерирующая случайное число из диапазона, после чего она использована, чтобы сгенерировать число от 5 до 10:
 <eg>
 func RandomRange(min, max)
   ?min &gt;= max
@@ -924,17 +924,17 @@ func RandomRange(min, max)
 
 var randomValue
 randomValue = RandomRange(5, 10)
-&gt;RNG: @randomValue@
+&gt;Рандом: @randomValue@
 </eg>
-The prefix 'this' can be used inside a funtion when referencing variables that belong to the outside script. Use of 'this' is optional, and script variables can be accessed by a function without the prefix. However, in the following example the variable 'a' appears both inside and outside of the function, so 'this.a' is used for differentiation:
+Префикс 'this' можно использовать внутри функций для взаимодействия с переменными, находящимися во внешнем скрипте. Использовать 'this' не обязательно, так как доступ к ним можно получить и без префикса. Однако, в следующем примере переменная 'a' есть как внутри, так и снаружи функции, так что 'this.a' используется, чтобы их отличать:
 <eg>
 var a = 1
 func TestScope(a)
-  &gt;Script var = @this.a@, function var = @a@
+  &gt;В скрипте = @this.a@, в функции = @a@
 
 TestScope(3)
 </eg>
-When functions call other functions, or themselves, this creates an execution stack that can build in size until the application crashes. To safeguard computer resources Stonescript has a stack limit of 215 and will throw an error if the limit is exceeded.
+Когда функции вызывают другие функции или сами себя, создается стек выполнения, который может расти до необъятных размеров, пока игра ен вылетит. Для того, чтобы сберечь ресурсы компьютера, в Stonescript есть лимит стека (215), и при его превышении будет выброшено исключение.
 </f></font>
 
 <a href="#"><font color="#505050">^К началу</font></a>
@@ -949,18 +949,18 @@ While scripts can define their own functions, Stonescript comes with a set of pr
 <table>
   <tbody><tr><td>ambient<br>‾‾‾‾‾‾‾</td></tr>
   <tr>
-    <td>?ambient<br><eg>Return string</eg></td>
-    <td>Returns a comma-separated list of all active ambient audio IDs.<br><eg>Например:<br>&gt;`0,0,Ambient Layers = @ambient@</eg></td>
+    <td>?ambient<br><eg>Возвращает string</eg></td>
+    <td>Возвращает список ID всех активных в данный момент звуков окружающей среды, разделенный запятыми.<br><eg>Например:<br>&gt;`0,0,Эмбиенты = @ambient@</eg></td>
   </tr>
   <tr>
     <td>ambient.Add(str)<br><eg>Ничего не возвращает</eg></td>
-    <td>Adds a layer of ambient audio, with the given sound ID. Up to 4 layers. If a 5th layer is added, the oldest layer is removed.<br><eg>Например:<br>?loc.begin<br>  ambient.Add(ambient_crypt)</eg></td>
+    <td>Добавляет слой аудио окружающей среды с указанным ID. Не больше 4 слоев. При добавлении 5-го слоя самый старый слой автоматически удаляется.<br><eg>Например:<br>?loc.begin<br>  ambient.Add(ambient_crypt)</eg></td>
   </tr>
   <tr>
     <td>ambient.Stop()<br><eg>Ничего не возвращает</eg></td>
-    <td>Clears all ambient layers.<br><eg>Например:<br>?time = 3<br>  ambient.Stop()<br>  ambient.Add(ambient_mines)</eg></td>
+    <td>Очищает все слои звуков окружающей среды.<br><eg>Например:<br>?time = 3<br>  ambient.Stop()<br>  ambient.Add(ambient_mines)</eg></td>
   </tr>
-  <tr><td><br>BigNumber<br>‾‾‾‾‾‾‾‾‾</td><td><br>BigNumbers are a special type of object that provide a way to work with large integers that exceed 32 bits. While they can only hold positive and negative whole number values, their arithmetic and comparison operations work with floats as well as integers and other BigNumbers.</td></tr>
+  <tr><td><br>BigNumber<br>‾‾‾‾‾‾‾‾‾</td><td><br>BigNumber (БольшоеЧисло) - специальный тип объекта, дающий возможность работать с большими числами размером выше 32 бит. Хоть они и могут содержать только положительные и отрицательные целочисленные значения, операции с ними работают как с дробными, так и с обычными целыми числами наравне с другими числами типа BigNumber.</td></tr>
   <tr>
     <td>b.Add(num)<br>b.Add(BigNumber)<br><eg>Returns itself</eg></td>
     <td>Adds a number to a BigNumber (+)<br><eg>Например:<br>var bn = math.BigNumber(12)<br>bn.Add(5)<br>&gt;@bn@<br>// 17</eg></td>
@@ -1503,16 +1503,16 @@ While scripts can define their own functions, Stonescript comes with a set of pr
     <td>(Experimental feature) Works only when <eg>sys.MindConnect()</eg> is the only line of text in your Mind Stone. Enables an interface that waits for a connection from other programs, such as a python script. Once connected, the external program can run Stonescript commands and evaluate game state variables.<br>Learn more here:<br><a href="https://github.com/artificial-potato/SSRPGInterface">https://github.com/artificial-potato/SSRPGInterface</a>
   </td></tr>
   <tr>
-    <td>sys.isMobile<br><eg>Returns bool</eg></td>
-    <td>Returns <eg>true</eg> if the users is on Android or iOS.
+    <td>sys.isMobile<br><eg>Возвращает bool</eg></td>
+    <td><eg>true</eg>, если игра запущена с Android или iOS.
   </td></tr>
   <tr>
-    <td>sys.isPC<br><eg>Returns bool</eg></td>
-    <td>Returns <eg>true</eg> if the users is on Win/Mac/Linux.
+    <td>sys.isPC<br><eg>Возвращает bool</eg></td>
+    <td><eg>true</eg>, если игра запущена с компьютера.
   </td></tr>
   <tr>
-    <td>sys.os<br><eg>Returns string</eg></td>
-    <td>The user's operating system, such as "Android", "iOS", "Linux", "OSX" or "Windows".
+    <td>sys.os<br><eg>Возвращает string</eg></td>
+    <td>Операционная система, например, "Android", "iOS", "Linux", "OSX" или "Windows".
   </td></tr>
   <tr><td>Text Localization<br>‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾</td><td>Stonescript supports 12 languages as of this writing. A few operations allow custom scripts to adapt to the player's chosen language.</td></tr>
   <tr>
@@ -1779,43 +1779,43 @@ Arrays are a special type of variable. They provide a way to sequentially organi
   </tr>
   <tr>
     <td>a[integer]</td>
-    <td>Reads the value at a given position.<br><eg>Например::<br>var myArray = [10, 3]<br>?myArray[1] = 3<br>  &gt;Yes, the value at [1] equals 3</eg></td>
+    <td>Reads the value at a given position.<br><eg>Например:<br>var myArray = [10, 3]<br>?myArray[1] = 3<br>  &gt;Yes, the value at [1] equals 3</eg></td>
   </tr>
   <tr>
     <td>a.Add(value)</td>
-    <td>Adds a new value/object to the end of the array.<br><eg>Например::<br>var myArray = []<br>myArray.Add(10)</eg></td>
+    <td>Adds a new value/object to the end of the array.<br><eg>Например:<br>var myArray = []<br>myArray.Add(10)</eg></td>
   </tr>
   <tr>
     <td>a.Clear()</td>
-    <td>Removes all elements from the array, making it empty. This is more efficient than re-declaring the array with [].<br><eg>Например::<br>var myArray = [10, 3]<br>myArray.Clear()</eg></td>
+    <td>Removes all elements from the array, making it empty. This is more efficient than re-declaring the array with [].<br><eg>Например:<br>var myArray = [10, 3]<br>myArray.Clear()</eg></td>
   </tr>
   <tr>
     <td>a.Contains(value)</td>
-    <td>Determines if a given value is inside the array. Returns true if found; false otherwise.<br><eg>Например::<br>var myArray = [10, 3]<br>?myArray.Contains(3)<br>  &gt;Yes</eg></td>
+    <td>Determines if a given value is inside the array. Returns true if found; false otherwise.<br><eg>Например:<br>var myArray = [10, 3]<br>?myArray.Contains(3)<br>  &gt;Yes</eg></td>
   </tr>
   <tr>
     <td>a.Count()</td>
-    <td>Returns the number of elements in the array.<br><eg>Например::<br>var myArray = ["apple","banana"]<br>var size = myArray.Count()<br>&gt;Array size = @size@</eg></td>
+    <td>Returns the number of elements in the array.<br><eg>Например:<br>var myArray = ["apple","banana"]<br>var size = myArray.Count()<br>&gt;Array size = @size@</eg></td>
   </tr>
   <tr>
     <td>a.Emplace(integer, value)</td>
-    <td>Replaces the value at a given position with a new value.<br><eg>Например::<br>var myArray = [10, 3]<br>myArray.Emplace(0, 4)<br>var value = myArray[0]<br>&gt;Value at [0] is now @value@</eg></td>
+    <td>Replaces the value at a given position with a new value.<br><eg>Например:<br>var myArray = [10, 3]<br>myArray.Emplace(0, 4)<br>var value = myArray[0]<br>&gt;Value at [0] is now @value@</eg></td>
   </tr>
   <tr>
     <td>a.IndexOf(value)</td>
-    <td>Searches for a given value inside the array. Returns an integer indicating the position of the first occurrance of the value. If the value is not found returns -1.<br><eg>Например::<br>var myArray = [10, 3]<br>var index = myArray.IndexOf(3)<br>&gt;Found at position @index@</eg></td>
+    <td>Searches for a given value inside the array. Returns an integer indicating the position of the first occurrance of the value. If the value is not found returns -1.<br><eg>Например:<br>var myArray = [10, 3]<br>var index = myArray.IndexOf(3)<br>&gt;Found at position @index@</eg></td>
   </tr>
   <tr>
     <td>a.Insert(integer, value)</td>
-    <td>Adds a new value/object to a specific position of the array. Elements to the right are shifted to the next position.<br><eg>Например::<br>var myArray = [10, 3]<br>myArray.Insert(1, "apple")<br>// The array is now [10, "apple", 3]</eg></td>
+    <td>Adds a new value/object to a specific position of the array. Elements to the right are shifted to the next position.<br><eg>Например:<br>var myArray = [10, 3]<br>myArray.Insert(1, "apple")<br>// The array is now [10, "apple", 3]</eg></td>
   </tr>
   <tr>
     <td>a.RemoveAt(integer)</td>
-    <td>Removes an element in the array from a specific position. Returns the value removed.<br>Zero-based: <eg>myArray.RemoveAt(0)</eg> removes the first element.<br>Elements to the right are shifted to the previous position.<br><eg>Например::<br>var myArray = [1, 2, 3]<br>myArray.RemoveAt(1)<br>// The array is now [1, 3]</eg></td>
+    <td>Removes an element in the array from a specific position. Returns the value removed.<br>Zero-based: <eg>myArray.RemoveAt(0)</eg> removes the first element.<br>Elements to the right are shifted to the previous position.<br><eg>Например:<br>var myArray = [1, 2, 3]<br>myArray.RemoveAt(1)<br>// The array is now [1, 3]</eg></td>
   </tr>
   <tr>
     <td>a.Sort()</td>
-    <td>Organizes the array's elements into ascending order. If the array contains objects of different types it will still be sorted, but no expected results are defined and elements are not guaranteed to be grouped by type.<br><eg>Например::<br>var myArray = ["Cherry", 2, "Apple", 1, true, false, "Banana", 3]<br>var value<br><br>myArray.Sort()<br><br>for i = 0 .. myArray.Count() - 1<br>  value = myArray[i]<br>  &gt;`0,@i@,@value@</eg></td>
+    <td>Organizes the array's elements into ascending order. If the array contains objects of different types it will still be sorted, but no expected results are defined and elements are not guaranteed to be grouped by type.<br><eg>Например:<br>var myArray = ["Cherry", 2, "Apple", 1, true, false, "Banana", 3]<br>var value<br><br>myArray.Sort()<br><br>for i = 0 .. myArray.Count() - 1<br>  value = myArray[i]<br>  &gt;`0,@i@,@value@</eg></td>
   </tr>
 </tbody></table>
 
