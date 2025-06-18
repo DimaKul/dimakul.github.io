@@ -60,26 +60,26 @@
 
 <f>  <a href="#example">1. Пример +</a></f>
 <f>  <a href="#basics">2. Основы +</a></f>
-<f>  <a href="#game-state">3. Game State</a></f>
-<f>  <a href="#commands">4. Commands</a></f>
-<f>  <a href="#search-filters">5. Search Filters</a></f>
-<f>  <a href="#comparisons">6. Comparisons</a></f>
-<f>  <a href="#variables">7. Variables</a></f>
-<f>  <a href="#math-operations">8. Math Operations</a></f>
-<f>  <a href="#functions">9. Functions</a></f>
-<f>  <a href="#native-functions">10. Native Functions</a></f>
+<f>  <a href="#game-state">3. Состояние игры</a></f>
+<f>  <a href="#commands">4. Команды</a></f>
+<f>  <a href="#search-filters">5. Фильтры поиска</a></f>
+<f>  <a href="#comparisons">6. Сравнения</a></f>
+<f>  <a href="#variables">7. Переменные</a></f>
+<f>  <a href="#math-operations">8. Математические операции</a></f>
+<f>  <a href="#functions">9. Функции</a></f>
+<f>  <a href="#native-functions">10. Встроенные функции</a></f>
 <f>  <a href="#import">11. Importing External Scripts</a></f>
 <f>  <a href="#ascii-art">12. ASCII-art</a></f>
 <f>  <a href="#loops">13. Loops</a></f>
 <f>  <a href="#arrays">14. Arrays</a></f>
 <f>  <a href="#custom-input">15. Custom Input</a></f>
 <f>  <a href="#user-interface">16. User Interface</a></f>
-<f>  <a href="#tips">17. Tips</a></f>
-<f>  <a href="#default-script">18. Default script</a></f>
-<f>  <a href="#ability_ids">Appendix A - ID перезарядки способностей</a></f>
-<f>  <a href="#sounds">Appendix B - Звуковые эффекты</a></f>
-<f>  <a href="#music">Appendix C - Музыка +</a></f>
-<f>  <a href="#ambient">Appendix D - Атмосферные звуки +</a></f>
+<f>  <a href="#tips">17. Советы</a></f>
+<f>  <a href="#default-script">18. Скрипт по умолчанию</a></f>
+<f>  <a href="#ability_ids">Приложение A - ID перезарядки способностей +</a></f>
+<f>  <a href="#sounds">Приложение B - Звуковые эффекты +</a></f>
+<f>  <a href="#music">Приложение C - Музыка +</a></f>
+<f>  <a href="#ambient">Приложение D - Атмосферные звуки +</a></f>
 <f>  <a href="#scripts">Приложение E - Все импортируемые скрипты +</a></f>
 
 
@@ -212,63 +212,63 @@
   </tr>
   <tr>
     <td>?foe.id</td>
-    <td>Уникальный ID (или тип) противника.</td>
+    <td>Уникальный ID (или тип) выбранного противника.</td>
   </tr>
   <tr>
     <td>?foe.name</td>
-    <td>Имя противника на языке игры.</td>
+    <td>Имя выбранного противника на языке игры.</td>
   </tr>
   <tr>
     <td>?foe.damage</td>
-    <td>Урон противника за одну атаку.<eg><br>Например:<br>&gt;`0,1,Урон = @foe.damage@</eg></td>
+    <td>Урон выбранного противника за одну атаку.<eg><br>Например:<br>&gt;`0,1,Урон = @foe.damage@</eg></td>
   </tr>
   <tr>
     <td>?foe.distance</td>
-    <td>Расстояние между игроком и противником.</td>
+    <td>Расстояние между игроком и выбранным противником.</td>
   </tr>
   <tr>
     <td>?foe.z</td>
-    <td>Положение противника по координате Z.</td>
+    <td>Положение выбранного противника по координате Z.</td>
   </tr>
   <tr>
     <td>?foe.count</td>
-    <td>The number of foes within 46 units of the player.</td>
+    <td>Количество врагов на расстоянии 46 единиц от игрока.</td>
   </tr>
   <tr>
     <td>?foe.GetCount(int)</td>
-    <td>The number of foes within a specific number of units.</td>
+    <td>Количество врагов на указанном расстоянии от игрока.</td>
   </tr>
   <tr>
     <td>?foe.hp</td>
-    <td>The current hitpoints of the foe being targeted by the player.</td>
+    <td>Здоровье выбранного противника.</td>
   </tr>
   <tr>
     <td>?foe.maxhp</td>
-    <td>The maximum hitpoints of the foe being targeted by the player.</td>
+    <td>Максимальное здоровье выбранного противника.</td>
   </tr>
   <tr>
     <td>?foe.armor</td>
-    <td>The current armor of the foe being targeted by the player.</td>
+    <td>Количество брони у выбранного противника в данный момент.</td>
   </tr>
   <tr>
     <td>?foe.maxarmor</td>
-    <td>The maximum armor of the foe being targeted by the player.</td>
+    <td>Максимальное количество брони у выбранного противника.</td>
   </tr>
   <tr>
     <td>?foe.buffs.count</td>
-    <td>The number of buffs (positive effects) on the foe being targeted.</td>
+    <td>Количество баффов (положительных эффектов) на выбранном противнике.</td>
   </tr>
   <tr>
     <td>?foe.buffs.string</td>
-    <td>A composite of information about all the buffs on the target foe.<eg><br>Например:<br>?foe.buffs.count &gt; 0<br>  &gt;`0,3,Foe buffs = @foe.buffs.string@</eg></td>
+    <td>Строка с информацией обо всех наложенных на выбранного противника баффах.<eg><br>Например:<br>?foe.buffs.count &gt; 0<br>  &gt;`0,3,Баффы = @foe.buffs.string@</eg></td>
   </tr>
   <tr>
     <td>?foe.buffs.GetCount(str)</td>
-    <td>The number of a specific buff on the target foe.</td>
+    <td>Количество баффов конкретного вида на противнике.</td>
   </tr>
   <tr>
     <td>?foe.buffs.GetTime(str)</td>
-    <td>The duration of a specific buff on the target foe.</td>
+    <td>Длительность конкретного баффа на противнике.</td>
   </tr>
   <tr>
     <td>?buffs.oldest</td>
@@ -942,7 +942,7 @@ When functions call other functions, or themselves, this creates an execution st
 
 <div id="native-functions"><div id="separator"><!---------------------------></div>
 
-·:·:· Native Functions ·:·:·
+·:·:· Встроенные функции ·:·:·
 <font color="#bbbbbb">
 While scripts can define their own functions, Stonescript comes with a set of pre-defined/native functions that behave similar to commands, but differ in that they are more clearly grouped by subject, can accept parameters and sometimes return a value.
 
@@ -953,11 +953,11 @@ While scripts can define their own functions, Stonescript comes with a set of pr
     <td>Returns a comma-separated list of all active ambient audio IDs.<br><eg>Например:<br>&gt;`0,0,Ambient Layers = @ambient@</eg></td>
   </tr>
   <tr>
-    <td>ambient.Add(str)<br><eg>No return value</eg></td>
+    <td>ambient.Add(str)<br><eg>Ничего не возвращает</eg></td>
     <td>Adds a layer of ambient audio, with the given sound ID. Up to 4 layers. If a 5th layer is added, the oldest layer is removed.<br><eg>Например:<br>?loc.begin<br>  ambient.Add(ambient_crypt)</eg></td>
   </tr>
   <tr>
-    <td>ambient.Stop()<br><eg>No return value</eg></td>
+    <td>ambient.Stop()<br><eg>Ничего не возвращает</eg></td>
     <td>Clears all ambient layers.<br><eg>Например:<br>?time = 3<br>  ambient.Stop()<br>  ambient.Add(ambient_mines)</eg></td>
   </tr>
   <tr><td><br>BigNumber<br>‾‾‾‾‾‾‾‾‾</td><td><br>BigNumbers are a special type of object that provide a way to work with large integers that exceed 32 bits. While they can only hold positive and negative whole number values, their arithmetic and comparison operations work with floats as well as integers and other BigNumbers.</td></tr>
@@ -1032,19 +1032,19 @@ While scripts can define their own functions, Stonescript comes with a set of pr
   </tr>
   <tr><td>draw<br>‾‾‾‾</td></tr>
   <tr>
-    <td>draw.Bg(x, y, color)<br><eg>No return value</eg></td>
+    <td>draw.Bg(x, y, color)<br><eg>Ничего не возвращает</eg></td>
     <td>Sets the background color at a specific screen position.<br><eg>Например:<br>draw.Bg(5, 4, #red)</eg></td>
   </tr>
   <tr>
-    <td>draw.Bg(x, y, color, w, h)<br><eg>No return value</eg></td>
+    <td>draw.Bg(x, y, color, w, h)<br><eg>Ничего не возвращает</eg></td>
     <td>Sets the background color of a rectangular region on screen.<br><eg>Например:<br>draw.Bg(5, 4, #cyan, 10, 6)</eg></td>
   </tr>
   <tr>
-    <td>draw.Box(x, y, w, h, color, style)<br><eg>No return value</eg></td>
+    <td>draw.Box(x, y, w, h, color, style)<br><eg>Ничего не возвращает</eg></td>
     <td>Draws a rectangular shape at the specified position and size. The rectangle's border is defined by color and a style number. Negative style numbers cause the center of the rectangle to be transparent. CAVEAT - At this time, advanced prints always draw on top of boxes.<br><eg>Use this example to explore the different styles by pressing Left/Right<br>var style = 1<br>?key = leftBegin<br>  style--<br>?key = rightBegin<br>  style++<br>draw.Box(10, 5, 30, 15, #333333, style)<br>&gt;`12,6,#ffffff,Style = @style@<br>&gt;`12,8,#888888,Press Left/Right\nto change style</eg></td>
   </tr>
   <tr>
-    <td>draw.Clear()<br><eg>No return value</eg></td>
+    <td>draw.Clear()<br><eg>Ничего не возвращает</eg></td>
     <td>Clears the entire screen.</td>
   </tr>
   <tr>
@@ -1052,7 +1052,7 @@ While scripts can define their own functions, Stonescript comes with a set of pr
     <td>Returns the glyph at screen position (x, y).<br><eg>This example selects a screen coordinate and draws the symbol found there in the top left. The selection [ ] can be moved by the player:<br>var s<br>var x = 20<br>var y = 10<br>var drawX<br>?key=leftBegin<br>  x--<br>?key=rightBegin<br>  x++<br>?key=upBegin<br>  y--<br>?key=downBegin<br>  y++<br>s = draw.GetSymbol(x, y)<br>&gt;`0,1,Symbol = @s@<br>drawX = x - 1<br>&gt;`@drawX@,@y@,[#］<br></eg></td>
   </tr>
   <tr>
-    <td>draw.Player()<br>draw.Player(x,y)<br><eg>No return value</eg></td>
+    <td>draw.Player()<br>draw.Player(x,y)<br><eg>Ничего не возвращает</eg></td>
     <td>Draws the player character, with all equipment and addons, at a specific point in the script. Optional offset values x, y. For drawing to an absolute screen position, see the <eg>screen</eg> namespace and derive offsets that convert from the player's local position to screen position.</td>
   </tr>
   <tr><td><br>int<br>‾‾‾</td></tr>
@@ -1204,7 +1204,7 @@ While scripts can define their own functions, Stonescript comes with a set of pr
   </tr>
 </tbody></table></td>
   </tr><tr>
-    <td>key.Bind(act, key1)<br>key.Bind(act, key1, key2)<br><eg>No return value</eg></td>
+    <td>key.Bind(act, key1)<br>key.Bind(act, key1, key2)<br><eg>Ничего не возвращает</eg></td>
     <td>Assigns a new set of keys to a specific action. If another action already has one of those keys, then the key already in use is abandoned for the original action. Up to two keys may be assigned to an action.<br><eg>Например:<br>?loc.begin<br>  key.Bind("Potion", "P")<br>  // In this example, the "P" key that originally is assigned to Pause, no longer pauses the game and activates the potion instead. Also, the Potion's original "Q" key no longer works. "Q" is bound to no action.</eg></td>
   </tr>
   <tr>
@@ -1224,16 +1224,16 @@ While scripts can define their own functions, Stonescript comes with a set of pr
     <td>Returns a user-facing label that represents the first key bound to a given action. The current implementation returns the first letter of the bound key, which can be confusing in cases such as "LeftShift".</td>
   </tr>
   <tr>
-    <td>key.ResetBinds()<br><eg>no return value</eg></td>
+    <td>key.ResetBinds()<br><eg>Ничего не возвращает</eg></td>
     <td>Resets all actions to their default key bindings.</td>
   </tr>
   <tr><td><br>loc<br>‾‾‾</td></tr>
   <tr>
-    <td>loc.Leave()<br><eg>No return value</eg></td>
+    <td>loc.Leave()<br><eg>Ничего не возвращает</eg></td>
     <td>Causes the run to be abandoned as if the player had pressed to leave manually.</td>
   </tr>
   <tr>
-    <td>loc.Pause()<br><eg>No return value</eg></td>
+    <td>loc.Pause()<br><eg>Ничего не возвращает</eg></td>
     <td>Causes the run to be paused as if the player had pressed the pause button manually.</td>
   </tr>
   <tr><td><br>math<br>‾‾‾‾</td><td><br>The math API works with both integers and floating-point (float) numbers. When a number is delcared with a decimal period, it's implied to be a float <eg>(Например: var a = 0.5)</eg>. If there is no decimal number, then it's treated as an integer <eg>(Например: var a = 2)</eg>.</td></tr>
@@ -1356,17 +1356,17 @@ While scripts can define their own functions, Stonescript comes with a set of pr
     <td>Returns the ID of the currently playing music.<br><eg>Например:<br>&gt;`0,0,Current Music = @music@</eg></td>
   </tr>
   <tr>
-    <td>music.Play(str)<br><eg>No return value</eg></td>
+    <td>music.Play(str)<br><eg>Ничего не возвращает</eg></td>
     <td>Plays a music, with the given sound ID. There can only be one music playing at a time.<br><eg>Например:<br>?loc.begin | loc.loop<br>  music.Play(temple_0)</eg></td>
   </tr>
   <tr>
-    <td>music.Stop()<br><eg>No return value</eg></td>
+    <td>music.Stop()<br><eg>Ничего не возвращает</eg></td>
     <td>Stops all music.<br><eg>Например:<br>?!string.Equals(music, "")<br>  music.Stop()</eg></td>
   </tr>
   <tr><td></td></tr>
   <tr><td>player<br>‾‾‾‾‾‾</td></tr>
   <tr>
-    <td>player.ShowScaredFace(num)<br><eg>No return value</eg></td>
+    <td>player.ShowScaredFace(num)<br><eg>Ничего не возвращает</eg></td>
     <td>If the player has big-head enabled, their facial expression will change to scared for a given amount of time.<eg><br>Например:<br>?key = primaryBegin<br>  player.ShowScaredFace(1)</eg></td>
   </tr>
   <tr><td></td></tr>
@@ -1388,20 +1388,20 @@ While scripts can define their own functions, Stonescript comes with a set of pr
     <td>Converts a value from the screen-space Y-axis to world-space Z-axis.<eg><br>Например:<br>var x<br>var y<br>var z<br>x = input.x<br>y = input.y<br>&gt;`0,1,Screen position of cursor: @x@,@y@<br><br>x = screen.ToWorldX(input.x)<br>z = screen.ToWorldZ(input.y)<br>&gt;`0,2,World position of cursor: @x@,@z@</eg></td>
   </tr>
   <tr>
-    <td>screen.Next()<br><eg>No return value</eg></td>
+    <td>screen.Next()<br><eg>Ничего не возвращает</eg></td>
     <td>For locations that are multi-screen, moves the camera one screen forward in relation to the player.<eg><br>Например:<br>?key = rightBegin<br>  screen.Next()</eg></td>
   </tr>
   <tr>
-    <td>screen.Previous()<br><eg>No return value</eg></td>
+    <td>screen.Previous()<br><eg>Ничего не возвращает</eg></td>
     <td>For locations that are multi-screen, moves the camera one screen back in relation to the player.<eg><br>Например:<br>?key = leftBegin<br>  screen.Previous()</eg></td>
   </tr>
   <tr>
-    <td>screen.ResetOffset()<br><eg>No return value</eg></td>
+    <td>screen.ResetOffset()<br><eg>Ничего не возвращает</eg></td>
     <td>Resets the camera to follow the player, undoing changes made by screen.Next() and screen.Previous()<eg><br>Например:<br>var lastScreenI = -1<br>?lastScreenI ! screen.i<br>  screen.ResetOffset()<br>lastScreenI = screen.i</eg></td>
   </tr>
   <tr><td>storage<br>‾‾‾‾‾‾‾</td><td>Values saved into permanent storage persist when you leave a location, as well as when the game is shut down. They are not part of your primary_save, existing instead in a series of separate files within the Stonescript folder. Imported scripts access storage in isolation from each other, allowing different modules to use the same keys without modifying each other's data.</td></tr>
   <tr>
-    <td>storage.Delete(string)<br><eg>No return value</eg></td>
+    <td>storage.Delete(string)<br><eg>Ничего не возвращает</eg></td>
     <td>Deletes any value that may exist at the specified key.<br><eg>Например:<br>storage.Delete("highscore")</eg></td>
   </tr>
   <tr>
@@ -1429,7 +1429,7 @@ While scripts can define their own functions, Stonescript comes with a set of pr
     <td>Increases the value stored at the specified key by a given amount, then returns the new value.<br><eg>Например:<br>var amount<br>?foundCoins<br>  amount = rng%5 + 5<br>  storage.Incr("coins", amount)</eg></td>
   </tr>
   <tr>
-    <td>storage.Set(string, value)<br><eg>No return value</eg></td>
+    <td>storage.Set(string, value)<br><eg>Ничего не возвращает</eg></td>
     <td>Saves a value to permanent storage at a specified key.<br><eg>Например:<br>var score = 1000<br>storage.Set("highscore", score)</eg></td>
   </tr>
   <tr><td>string<br>‾‾‾‾‾‾</td></tr>
@@ -1495,11 +1495,11 @@ While scripts can define their own functions, Stonescript comes with a set of pr
     <td>Getter for the current file path to be used when importing scripts. The default value depends on your device. On PC the default value is <eg>local</eg>. On mobile the default is <eg>https://StonestoryRPG.com/stonescript/</eg><eg><br>Например:<br>&gt;`0,1,fileUrl = @sys.fileUrl@</eg></td>
   </tr>
   <tr>
-    <td>sys.SetFileUrl(str)<br><eg>No return value</eg></td>
+    <td>sys.SetFileUrl(str)<br><eg>Ничего не возвращает</eg></td>
     <td>Changes the origin of imported scripts when using the commands <eg>import</eg> or <eg>new</eg>. Can only be called on the Mind Stone and will error if written on an imported script. Accepts any URL as a remote location, but also accepts the values <eg>"local"</eg> and <eg>"remote"</eg> as shortcuts to easily point at your local drive or to the official Stone Story RPG repository, respectively. If <eg>null</eg> is passed as parameter, then the file URL resets to the default value for your device. This global property persists between runs.<eg><br>Например:<br>sys.SetFileUrl(<br>^"https://MyCoolDomain.com/scripts/")<br>import MyCombatScript</eg></td>
   </tr>
   <tr>
-    <td>sys.MindConnect()<br><eg>No return value</eg></td>
+    <td>sys.MindConnect()<br><eg>Ничего не возвращает</eg></td>
     <td>(Experimental feature) Works only when <eg>sys.MindConnect()</eg> is the only line of text in your Mind Stone. Enables an interface that waits for a connection from other programs, such as a python script. Once connected, the external program can run Stonescript commands and evaluate game state variables.<br>Learn more here:<br><a href="https://github.com/artificial-potato/SSRPGInterface">https://github.com/artificial-potato/SSRPGInterface</a>
   </td></tr>
   <tr>
@@ -1543,15 +1543,15 @@ While scripts can define their own functions, Stonescript comes with a set of pr
   </tr>
   <tr><td>UI<br>‾‾</td><td><br>See the <a href="#user-interface">User Interface</a> section for details about Stonescript's advanced UI system. Miscellaneous functions of the <eg>ui</eg> namespace:</td></tr>
   <tr>
-    <td>ui.OpenInv()<br><eg>No return value</eg></td>
+    <td>ui.OpenInv()<br><eg>Ничего не возвращает</eg></td>
     <td>Opens the inventory screen.</td>
   </tr>
   <tr>
-    <td>ui.OpenMind()<br><eg>No return value</eg></td>
+    <td>ui.OpenMind()<br><eg>Ничего не возвращает</eg></td>
     <td>Opens the Mind Stone screen.</td>
   </tr>
   <tr>
-    <td>ui.ShowBanner(str)<br>ui.ShowBanner(str,str)<br><eg>No return value</eg></td>
+    <td>ui.ShowBanner(str)<br>ui.ShowBanner(str,str)<br><eg>Ничего не возвращает</eg></td>
     <td>Displays the animated banner with up to two messages. The banner animation restarts each time ui.ShowBanner() is called.<eg><br>Например:<br>?time = 120<br>  ui.ShowBanner("Hello World!")</eg></td>
   </tr>
   <tr><td>Other<br>‾‾‾‾‾</td></tr>
@@ -2040,7 +2040,7 @@ root
     <td>Adds a Text object to the root Panel.<eg><br>Например:<br>?loc.begin<br>  var t = ui.AddText()<br>  t.text = "Hello World!"</eg></td>
   </tr>
   <tr>
-    <td>ui.Clear()<br><eg>No return value</eg></td>
+    <td>ui.Clear()<br><eg>Ничего не возвращает</eg></td>
     <td>Removes all UI elements from the main container.<eg><br>Например:<br>?key = backBegin<br>  ui.Clear()</eg></td>
   </tr>
   <tr><td><br>Component<br>‾‾‾‾‾‾‾‾‾</td><td><br>Component is a base type for all other UI types. This means that other elements (Panels, Text, Buttons and Anim) all have the following properties:</td></tr>
@@ -2097,7 +2097,7 @@ root
     <td>Visibility of the component. Default value is "inherit". Possible values: true, false and inherit. If set to 'true', the component will always be visible, ignoring the status of its parent. If set to 'false', the component will be invisible, regardless of its parent. However, if set to 'inherit', the component will follow the visibility of its parent.</td>
   </tr>
   <tr>
-    <td>component.Recycle()<br><eg>No return value</eg></td>
+    <td>component.Recycle()<br><eg>Ничего не возвращает</eg></td>
     <td>Removes the component from its parent Panel. It will be repurposed in future ui.Add_() calls. Any variable references to the recycled element should be nulled or reassigned to avoid bugs.</td>
   </tr>
   <tr><td><br>Panel &gt; Component<br>‾‾‾‾‾</td><td><br>Panels are rectangular Components that serve as containers for other Components. A chain of Panels added to each other form a tree structure.</td></tr>
@@ -2118,15 +2118,15 @@ root
     <td>ID number of the Panel's current style. Default value is 1. Possible values from -8 to 8. Additional styles can be added with <eg>ui.AddStyle()</eg></td>
   </tr>
   <tr>
-    <td>panel.Add(Component)<br>panel.Add(Component, int)<br><eg>No return value</eg></td>
+    <td>panel.Add(Component)<br>panel.Add(Component, int)<br><eg>Ничего не возвращает</eg></td>
     <td>Adds a Component to a Panel. The Component becomes a child of the Panel and the Panel becomes the parent of the Component. The order in which elements are added to a Panel affects the draw order. Components may be inserted to a specific sorting position by use of the optional integer parameter. No integer parameter means the Component is added as the last child of the Panel. This function can also be used for changing the draw order of Components that are already children of the Panel.</td>
   </tr>
   <tr>
-    <td>panel.Clear()<br><eg>No return value</eg></td>
+    <td>panel.Clear()<br><eg>Ничего не возвращает</eg></td>
     <td>Removes all UI elements from the Panel. Components removed this way are recycled into the UI system and will be repurposed in future ui.Add_() calls. Any variable references to those elements should be nulled or reassigned to avoid bugs.</td>
   </tr>
   <tr>
-    <td>panel.Remove(Component)<br>panel.Remove(int)<br><eg>No return value</eg></td>
+    <td>panel.Remove(Component)<br>panel.Remove(int)<br><eg>Ничего не возвращает</eg></td>
     <td>Removes a specific Component from a Panel or removes the Component at a specified index number. Components removed this way are recycled into the UI system and will be repurposed in future ui.Add_() calls. Any variable references to those elements should be nulled or reassigned to avoid bugs.</td>
   </tr>
   <tr><td><br>Text &gt; Component<br>‾‾‾‾</td><td><br>Multi-line text box. Supports color metadata.</td></tr>
@@ -2233,19 +2233,19 @@ root
     <td>Adds a new ASCII sprite on top of this one. As the animation plays (or its frame is changed with <eg>anim.frame</eg>) all layers stay in sync. Each layer has their own set of properties for color, pivot, etc. Advantages of using animation layers for complex ASCII-art include improved performance and better code quality. If the animation is recycled all layers clean up simultaneously.<eg><br>Например:<br>var a = ui.AddAnim(asciiArtA)<br>var layer2 = a.AddLayer(asciiArtB)<br>layer2.color = #bbbbbb</eg></td>
   </tr>
   <tr>
-    <td>anim.Load(string)<br><eg>No return value</eg></td>
+    <td>anim.Load(string)<br><eg>Ничего не возвращает</eg></td>
     <td>Assigns a new ASCII sprite sheet.</td>
   </tr>
   <tr>
-    <td>anim.Pause()<br><eg>No return value</eg></td>
+    <td>anim.Pause()<br><eg>Ничего не возвращает</eg></td>
     <td>Suspends playback of the animation at its current frame. A subsequent call to <eg>anim.Play()</eg> resumes playback.</td>
   </tr>
   <tr>
-    <td>anim.Play()<br><eg>No return value</eg></td>
+    <td>anim.Play()<br><eg>Ничего не возвращает</eg></td>
     <td>Begins playing the animation, or resumes playback in case it had been paused.<br><eg>Например:<br>var dance<br>?loc.begin<br>  dance = ui.AddAnim(ascii<br>(O/<br>%%<br>\O)<br>asciiend)<br>  dance.duration = 20<br>  dance.loop = true<br>  dance.Play()</eg></td>
   </tr>
   <tr>
-    <td>anim.Stop()<br><eg>No return value</eg></td>
+    <td>anim.Stop()<br><eg>Ничего не возвращает</eg></td>
     <td>Suspends playback and sets the animation back to its first frame.</td>
   </tr>
   <tr><td><br>Canvas &gt; Component<br>‾‾‾‾‾‾</td><td><br>Container optimized for drawing arbitrary glyphs and colors.</td></tr>
@@ -2260,31 +2260,31 @@ root
     <td>Returns the glyph at a specific position x,y on the canvas.</td>
   </tr>
   <tr>
-    <td>canvas.Set(str)<br><eg>No return value</eg></td>
+    <td>canvas.Set(str)<br><eg>Ничего не возвращает</eg></td>
     <td>Fills the entire canvas with a given glyph.<br><eg>Например:<br>?loc.begin<br>  var canvas = ui.AddCanvas()<br>  canvas.Set("X")</eg></td>
   </tr>
   <tr>
-    <td>canvas.Set(int,int,str)<br><eg>No return value</eg></td>
+    <td>canvas.Set(int,int,str)<br><eg>Ничего не возвращает</eg></td>
     <td>Changes a specific position x,y on the canvas to a given glyph.<br><eg>Например:<br>?loc.begin<br>  var canvas = ui.AddCanvas()<br>  canvas.Set(0, 0, "A")</eg></td>
   </tr>
   <tr>
-    <td>canvas.Set(int,int, fg,str)<br>canvas.Set(int,int, fg,bg,str)<br><eg>No return value</eg></td>
+    <td>canvas.Set(int,int, fg,str)<br>canvas.Set(int,int, fg,bg,str)<br><eg>Ничего не возвращает</eg></td>
     <td>Overloads for changing a canvas at a specific position, while simultaneously setting the foreground and background colors.<br><eg>Например:<br>?loc.begin<br>  var canvas = ui.AddCanvas()<br>  for x = 0..canvas.w<br>    for y = 0..canvas.h<br>      var fg = color.Random()<br>      var bg = color.Random()<br>      canvas.Set(x, y, fg, bg, ▄)</eg></td>
   </tr>
   <tr>
-    <td>canvas.SetFG(color)<br><eg>No return value</eg></td>
+    <td>canvas.SetFG(color)<br><eg>Ничего не возвращает</eg></td>
     <td>Sets a foreground color to the entire canvas.<br><eg>Например:<br>?loc.begin<br>  var canvas = ui.AddCanvas()<br>  canvas.Set("R")<br>  canvas.SetFG(#red)</eg></td>
   </tr>
   <tr>
-    <td>canvas.SetFG(int,int, color)<br><eg>No return value</eg></td>
+    <td>canvas.SetFG(int,int, color)<br><eg>Ничего не возвращает</eg></td>
     <td>Changes the foreground color at a specific position x,y.<br><eg>Например:<br>?loc.begin<br>  var canvas = ui.AddCanvas()<br>  canvas.Set("X")<br>  canvas.SetFG(2, 1, #ff00ff)<br></eg></td>
   </tr>
   <tr>
-    <td>canvas.SetBG(color)<br><eg>No return value</eg></td>
+    <td>canvas.SetBG(color)<br><eg>Ничего не возвращает</eg></td>
     <td>Sets a background color to the entire canvas.<br><eg>Например:<br>?loc.begin<br>  var canvas = ui.AddCanvas()<br>  canvas.Set("g")<br>  canvas.SetBG(#00aa00)</eg></td>
   </tr>
   <tr>
-    <td>canvas.SetBG(int,int, color)<br><eg>No return value</eg></td>
+    <td>canvas.SetBG(int,int, color)<br><eg>Ничего не возвращает</eg></td>
     <td>Changes the background color at a specific position x,y.<br><eg>Например:<br>?loc.begin<br>  var canvas = ui.AddCanvas()<br>  canvas.Set("X")<br>  canvas.SetBG(2, 1, #yellow)</eg></td>
   </tr>
 </tbody></table></font>
@@ -2293,25 +2293,25 @@ root
 
 <div id="tips"><div id="separator"><!---------------------------></div>
 
-·:·:· Tips ·:·:·
+·:·:· Советы ·:·:·
 <font color="#bbbbbb">
-<f>Space (indentation) matters when defining what happens as a result of '?' comparisons (scope).</f>
+<f>Пробелы (отступы) очень важны, когда вы описываете, что должно произойти после проверки условий с помощью '?'.</f>
 
-<f>The script can be changed in the middle of a run by pressing 'M' on your keyboard.</f>
+<f>Скрипт можно редактировать прямо во время забега: для этого необходимо нажать 'M' на клавиатуре.</f>
 
-<f>The Power button in the top-right of the Mind Stone turns the script ON/OFF.</f>
+<f>Кнопка 'Power' в верхней правой части Камня Разума включает/выключает его.</f>
 
-<f>If multiple equip Commands are called, whichever comes last will occur.</f>
+<f>Если одновременно срабатывает несколько команд equip, приоритет имеет та, которая сработает последней.</f>
 
-<f>The script executes 30 times per second (once per frame).</f>
+<f>Скрипт выполняется 30 раз в секунду (или 1 раз за кадр).</f>
 
-<f>To experiment with different scripts it's recommended to copy them into an external text editor, such as Notepad.</f>
+<f>Чтобы экспериментировать с различными скриптами, рекомендуется копировать их в сторонний редактор текста, например, в Блокнот.</f>
 
-<f>Common shortcuts such as Ctrl+A, Ctrl+C and Ctrl+V are useful.</f>
+<f>Полезными могут быть такие популярные комбинации клавиш, как Ctrl+A, Ctrl+C, Ctrl+V.</f>
 
-<f>Holding the Tab key in-game gives you a lot of information about game state and shows a list of recent Stonescript errors.</f>
+<f>Удерживая Tab во время игры, можно увидеть много полезной информации о состоянии игры, а также с последними ошибками в работе Stonescript (если таковые есть).</f>
 
-<f>A print command can be broken into multiple lines by using '\n' in the text.</f>
+<f>Команды вывода могут напечатать несколько линий текста: используйте '\n', чтобы их разграничить.</f>
 </font>
 
 <a href="#"><font color="#505050">^К началу</font></a>
@@ -2319,7 +2319,7 @@ root
 
 <div id="default-script"><div id="separator"><!---------------------------></div>
 
-·:·:· Default script ·:·:·
+·:·:· Скрипт по умолчанию ·:·:·
 <font color="#bbbbbb"><f>
 import UI/MindstoneButton
 
@@ -3032,7 +3032,7 @@ uulaa
 
 ·:·:· Приложение - Атмосферные звуки ·:·:·
 <font color="#bbbbbb">
-Stonescript может играть несколько слоев фонового атмосферного аудио.
+Stonescript может проигрывать несколько слоев фонового атмосферного аудио.
 <eg><f>
 ?loc.begin
   ambient.Stop()
