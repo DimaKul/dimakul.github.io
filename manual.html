@@ -60,7 +60,7 @@
 
 <f>  <a href="#example">1. Пример +</a></f>
 <f>  <a href="#basics">2. Основы +</a></f>
-<f>  <a href="#game-state">3. Состояние игры</a></f>
+<f>  <a href="#game-state">3. Состояние игры +</a></f>
 <f>  <a href="#commands">4. Команды</a></f>
 <f>  <a href="#search-filters">5. Фильтры поиска</a></f>
 <f>  <a href="#comparisons">6. Сравнения</a></f>
@@ -74,8 +74,8 @@
 <f>  <a href="#arrays">14. Arrays</a></f>
 <f>  <a href="#custom-input">15. Custom Input</a></f>
 <f>  <a href="#user-interface">16. User Interface</a></f>
-<f>  <a href="#tips">17. Советы</a></f>
-<f>  <a href="#default-script">18. Скрипт по умолчанию</a></f>
+<f>  <a href="#tips">17. Советы +</a></f>
+<f>  <a href="#default-script">18. Скрипт по умолчанию +</a></f>
 <f>  <a href="#ability_ids">Приложение A - ID перезарядки способностей +</a></f>
 <f>  <a href="#sounds">Приложение B - Звуковые эффекты +</a></f>
 <f>  <a href="#music">Приложение C - Музыка +</a></f>
@@ -296,255 +296,255 @@
   </tr>
   <tr>
     <td>?foe.state</td>
-    <td>Число, обозначающее .<eg><br>Например:<br>?foe.state = 0<br>  &gt;`0,0,Foe is asleep</eg></td>
+    <td>Число, обозначающее состояние противника. Подробнее: <a href="https://github.com/Hukutus/stone-script-reference?tab=readme-ov-file">список состояний от Hukutus</a>.<eg><br>Например:<br>?foe.state = 0<br>  &gt;`0,0,Противник неактивен</eg></td>
   </tr>
   <tr>
     <td>?foe.time</td>
-    <td>Elapsed number of frames in target foe's current state.<eg><br>Например:<br>&gt;`0,0,Foe = @foe.name@:@foe.state@,@foe.time@</eg></td>
+    <td>Количество кадров, которое враг провел в нынешнем состоянии.<eg><br>Например:<br>&gt;`0,0,Враг = @foe.name@:@foe.state@,@foe.time@</eg></td>
   </tr>
   <tr>
     <td>?foe.level</td>
-    <td>The level number of the target foe.<eg><br>Например:<br>&gt;`0,0,Foe = @foe.name@ is level @foe.level@</eg></td>
+    <td>Уровень выбранного противника.<eg><br>Например:<br>&gt;`0,0,Противник = @foe.name@ @foe.level@ уровня</eg></td>
   </tr>
   <tr>
     <td>?harvest</td>
-    <td>The next harvestable object, such as a tree or boulder.<eg><br>Например:<br>?harvest=Boulder<br>  equip shovel</eg></td>
+    <td>Ближайший собираемый объект, например, дерево или булыжник.<eg><br>Например:<br>?harvest=Boulder<br>  equip shovel</eg></td>
   </tr>
   <tr>
     <td>?harvest.distance</td>
-    <td>The distance between the player and the nearest harvestable object.<eg><br>Например:<br>?loc=Rocky &amp; harvest.distance &lt; 7<br>  equip shovel</eg></td>
+    <td>Расстояние между игроком и ближайшим собираемым объектом.<eg><br>Например:<br>?loc=Rocky &amp; harvest.distance &lt; 7<br>  equip shovel</eg></td>
   </tr>
   <tr>
     <td>?harvest.z</td>
-    <td>The z position of the nearest harvestable object.<eg><br>Например:<br>?loc=Rocky &amp; harvest.z &gt; 5<br>  equip shovel</eg></td>
+    <td>Положение ближайшего собираемого объекта по координате Z.<eg><br>Например:<br>?loc=Rocky &amp; harvest.z &gt; 5<br>  equip shovel</eg></td>
   </tr>
   <tr>
     <td>?input.x</td>
-    <td>The X position, on the ASCII grid, of the input device (mouse/touch).</td>
+    <td>Координата X (на сетке ASCII) вашего устройства ввода (мышь/касание).</td>
   </tr>
   <tr>
     <td>?input.y</td>
-    <td>The Y position, on the ASCII grid, of the input device (mouse/touch).<eg><br>Например:<br>&gt; (@input.x@, @input.y@)</eg></td>
+    <td>Координата Y (на сетке ASCII) вашего устройства ввода (мышь/касание).<eg><br>Например:<br>&gt; (@input.x@, @input.y@)</eg></td>
   </tr>
   <tr>
     <td>?item.left</td>
-    <td>The item equipped to the left hand.<eg><br>Например:<br>&gt;`0,1,Left:@item.left@<br>&gt;`0,2,Right:@item.right@</eg></td>
+    <td>Предмет в левой руке игрока.<eg><br>Например:<br>&gt;`0,1,В левой:@item.left@<br>&gt;`0,2,В правой:@item.right@</eg></td>
   </tr>
   <tr>
     <td>?item.right</td>
-    <td>The item equipped to the right hand.<eg><br>Например:<br>?item.right = quarterstaff<br>  activate R</eg></td>
+    <td>Предмет в правой руке игрока.<eg><br>Например:<br>?item.right = quarterstaff<br>  activate R</eg></td>
   </tr>
   <tr>
     <td>?item.left.gp<br>?item.right.gp</td>
-    <td>The gear power value of the item equipped to the left or right hand.<eg><br>Например:<br>&gt;`0,1,Left GP:@item.left.gp@<br>&gt;`0,2,Right GP:@item.right.gp@</eg></td>
+    <td>Сила оружия (GP / Gear Power) предмета в левой или правой руке.<eg><br>Например:<br>&gt;`0,1,GP слева:@item.left.gp@<br>&gt;`0,2,GP справа:@item.right.gp@</eg></td>
   </tr>
   <tr>
     <td>?item.left.id<br>?item.right.id</td>
-    <td>The ID of the item equipped to the left or right hand.<eg><br>Например:<br>&gt;`0,1,Left ID:@item.left.id@<br>&gt;`0,2,Right ID:@item.right.id@</eg></td>
+    <td>ID предмета в левой или правой руке.<eg><br>Например:<br>&gt;`0,1,ID слева:@item.left.id@<br>&gt;`0,2,ID справа:@item.right.id@</eg></td>
   </tr>
   <tr>
     <td>?item.left.state<br>?item.left.time<br>?item.right.state<br>?item.right.time</td>
-    <td>The numeric representation for an equipped weapon's current state and elapsed frames within that state.<eg><br>Например:<br>&gt;`0,1,@item.left.state@:@item.left.time@<br>&gt;`0,2,@item.right.state@:@item.right.time@</eg></td>
+    <td>Числовое значение нынешнего состояния предмета, и количество кадров, которое предмет провел в этом состоянии.<eg><br>Например:<br>&gt;`0,1,@item.left.state@:@item.left.time@<br>&gt;`0,2,@item.right.state@:@item.right.time@</eg></td>
   </tr>
   <tr>
     <td>?item.potion</td>
-    <td>The potion currently brewed. Includes "auto" if auto-refill is enabled on the Cauldron.<eg><br>Например:<br>?item.potion ! empty &amp; item.potion = auto<br>  activate potion</eg></td>
+    <td>Ваше зелье в данный момент. Строка включает "auto", если в котле включен автозалив.<eg><br>Например:<br>?item.potion ! empty &amp; item.potion = auto<br>  activate potion</eg></td>
   </tr>
   <tr>
     <td>?pickup</td>
-    <td>The current pickup being targeted by the player.<eg><br>Например:<br>?pickup<br>  equip star stone<br>:<br>  loadout 1</eg></td>
+    <td>Собираемый объект, выбранный игроком.<eg><br>Например:<br>?pickup<br>  equip star stone<br>:<br>  loadout 1</eg></td>
   </tr>
   <tr>
     <td>?pickup.distance</td>
-    <td>The distance between the player and the pickup being targeted.<eg><br>Например:<br>?pickup.distance &lt; 5<br>  equipL star stone</eg></td>
+    <td>Дистанция между игроком и собираемым объектом.<eg><br>Например:<br>?pickup.distance &lt; 5<br>  equipL star stone</eg></td>
   </tr>
   <tr>
     <td>?pickup.z</td>
-    <td>The z position of the pickup being targeted.<eg><br>Например:<br>?pickup.z &gt; 7<br>  equipL star stone</eg></td>
+    <td>Положение собираемого объекта по координате Z.<eg><br>Например:<br>?pickup.z &gt; 7<br>  equipL star stone</eg></td>
   </tr>
   <tr>
     <td>?armor</td>
-    <td>The player's current armor, rounded down.<br>Например: if the armor says [2.4] ?armor evaluates to 2.</td>
+    <td>Количество брони у игрока (округленное вниз).<br>Например: если написано, что у вас [2.4] брони, ?armor вернет 2.</td>
   </tr>
   <tr>
     <td>?armor.f</td>
-    <td>The player's current armor's fractional amount.<br>Например: if the armor says [2.4] ?armor.f evaluates to 4.</td>
+    <td>Количество брони у игрока (после запятой).<br>Например: если написано, что у вас [2.4] брони, ?armor.f вернет 4.</td>
   </tr>
   <tr>
     <td>?buffs.count</td>
-    <td>The number of buffs (positive effects) on the player.</td>
+    <td>Количество баффов (положительных эффектов) на игроке.</td>
   </tr>
   <tr>
     <td>?buffs.string</td>
-    <td>A composite of information about all buffs on the player.<eg><br>Например:<br>?buffs.count &gt; 0<br>  &gt;`0,1,Player buffs = @buffs.string@</eg></td>
+    <td>Строка со всей информацией о баффах на игроке.<eg><br>Например:<br>?buffs.count &gt; 0<br>  &gt;`0,1,Баффы игрока = @buffs.string@</eg></td>
   </tr>
   <tr>
     <td>?buffs.GetCount(str)</td>
-    <td>The number of a specific buff on the player.</td>
+    <td>Количество баффов конкретного вида на игроке.</td>
   </tr>
   <tr>
     <td>?buffs.GetTime(str)</td>
-    <td>The duration of a specific buff on the player.</td>
+    <td>Длительность конкретного баффа на игроке.</td>
   </tr>
   <tr>
     <td>?debuffs.count</td>
-    <td>The number of debuffs (negative effects) on the player.</td>
+    <td>Количество дебаффов (негативных эффектов) на игроке.</td>
   </tr>
   <tr>
     <td>?debuffs.string</td>
-    <td>A composite of information about all debuffs on the player.<eg><br>Например:<br>?debuffs.count &gt; 0<br>  &gt;`0,2,Player debuffs = @debuffs.string@</eg></td>
+    <td>Строка со всей информацией о дебаффах на игроке.<eg><br>Например:<br>?debuffs.count &gt; 0<br>  &gt;`0,2,Player debuffs = @debuffs.string@</eg></td>
   </tr>
   <tr>
     <td>?debuffs.GetCount(str)</td>
-    <td>The number of a specific debuff on the player.</td>
+    <td>Количество дебаффов конкретного вида.</td>
   </tr>
   <tr>
     <td>?debuffs.GetTime(str)</td>
-    <td>The duration of a specific debuff on the player.</td>
+    <td>Длительность конкретного дебаффа на игроке.</td>
   </tr>
   <tr>
     <td>?hp</td>
-    <td>The player's current hitpoints.</td>
+    <td>Здоровье игрока.</td>
   </tr>
   <tr>
     <td>?maxhp</td>
-    <td>The player's maximum hitpoints.</td>
+    <td>Максимальное здоровье игрока.</td>
   </tr>
   <tr>
     <td>?maxarmor</td>
-    <td>The player's maximum armor, rounded down.</td>
+    <td>Максимальное значение брони игрока, округленное вниз.</td>
   </tr>
   <tr>
     <td>?pos.x</td>
-    <td>The player's current X position.</td>
+    <td>Положение игрока по X.</td>
   </tr>
   <tr>
     <td>?pos.y</td>
-    <td>The player's current Y position.</td>
+    <td>Положение игрока по Y.</td>
   </tr>
   <tr>
     <td>?pos.z</td>
-    <td>The player's current Z position.</td>
+    <td>Положение игрока по Z.</td>
   </tr>
   <tr>
     <td>?ai.enabled</td>
-    <td>True if the AI is on, False if the AI is off (Например: during a cinematic moment).</td>
+    <td>Истинно, если ИИ игрока включен, ложно, если выключен (Например, во время катсцены).</td>
   </tr>
   <tr>
     <td>?ai.paused</td>
-    <td>True if the AI is temporarily suspended, such as when waiting for a treasure to drop.</td>
+    <td>Истинно, если ИИ временно приостановлен, например, когда проигрывается анимация выпавшего с босса сундука.</td>
   </tr>
   <tr>
     <td>?ai.idle</td>
-    <td>True if the player is idle, waiting for something such as an attack to complete.</td>
+    <td>Истинно, если игрок стоит на месте, ожидая завершения какого-то действия, например, атаки.</td>
   </tr>
   <tr>
     <td>?ai.walking</td>
-    <td>True if the player is moving.</td>
+    <td>Истинно, если игрок движется.</td>
   </tr>
   <tr>
     <td>?bighead</td>
-    <td>True if the player has Big Head enabled (Moondial).</td>
+    <td>Истинно, если включена большая голова (на лунном камне).</td>
   </tr>
   <tr>
     <td>?face</td>
-    <td>The player's current facial expression.<eg><br>Например:<br>?face = "^^"<br>  &gt;Happy</eg></td>
+    <td>Выражение лица игрока.<eg><br>Например:<br>?face = "^^"<br>  &gt;Хепи-хепи</eg></td>
   </tr>
   <tr>
     <td>?key</td>
-    <td>The state of <a href="#custom-input">custom game input</a>.<eg><br>The following prints the current input:<br>&gt;@key@</eg></td>
+    <td>Состояние <a href="#custom-input">кастомной клавиши ввода</a>.<eg><br>Данный код выведет нажатую в данный момент клавишу:<br>&gt;@key@</eg></td>
   </tr>
   <tr>
     <td>?res.stone<br>?res.wood<br>?res.tar<br>?res.ki<br>?res.bronze<br>?res.crystals</td>
-    <td>The player's current amount of resources in their inventory.<eg><br>Например:<br>?loc = Deadwood<br>  &gt;Wood = @res.wood@<br><br>Например:2<br>&gt;`0,1,#magenta, ♦ @res.crystals@</eg></td>
+    <td>Количество ресурсов в инвентаре у игрока.<eg><br>Например:<br>?loc = Deadwood<br>  &gt;Wood = @res.wood@<br><br>Или:<br>&gt;`0,1,#magenta, ♦ @res.crystals@</eg></td>
   </tr>
   <tr>
     <td>?player.direction</td>
-    <td>Indicates the direction in which the player is facing. Returns a value of 1 for <eg>right</eg> and -1 for <eg>left</eg>.<eg><br>Например:<br>?player.direction = 1<br>  &gt;`0,0,Walking right<br>:<br>  &gt;`0,0,Walking left</eg></td>
+    <td>Показывает направление, в котором смотрит игрок. Возвращает 1, если <eg>направо</eg>, и -1, если <eg>налево</eg>.<eg><br>Например:<br>?player.direction = 1<br>  &gt;`0,0,Идем направо<br>:<br>  &gt;`0,0,Идем налево</eg></td>
   </tr>
   <tr>
     <td>player.framesPerMove</td>
-    <td>The amount of frames it takes the player to move one position forward.<eg><br>&gt;`0,1,Player Movement: @player.framesPerMove@</eg></td>
+    <td>Количество кадров, за которое игрок сдвинется на одну позицию вперед.<eg><br>&gt;`0,1,Скорость: @player.framesPerMove@</eg></td>
   </tr>
   <tr>
     <td>player.name</td>
-    <td>The name chosen by the player.<eg><br>This example prints the player's name above their head:<br>var name<br>var x<br>name = player.name<br>x = string.Size(name) / -2<br>&gt;o@x@,-2,@name@</eg></td>
+    <td>Имя игрока.<eg><br>Данный пример показывает имя игрока над его головой:<br>var name<br>var x<br>name = player.name<br>x = string.Size(name) / -2<br>&gt;o@x@,-2,@name@</eg></td>
   </tr>
   <tr>
     <td>player.GetNextLegendName()</td>
-    <td>The next unlocked Legend quest the player hasn't completed yet.<eg></eg></td>
+    <td>Следующая разблокированная легенда, которую игрок еще не прошел.<eg></eg></td>
   </tr>
   <tr>
     <td>?rng</td>
-    <td>Returns a random integer between 0 and 9999.<eg><br>Например:<br>?rng &lt; 5000<br>  &gt;Heads!<br>:<br>  &gt;Tails!<br><br>Например:2: Generates a random integer between 5 and 24:<br>var min = 5<br>var max = 24<br>var n = min + rng % (max - min + 1)</eg></td>
+    <td>Возвращает случайное число между 0 и 9999.<eg><br>Например:<br>?rng &lt; 5000<br>  &gt;Орел!<br>:<br>  &gt;Решка!<br><br>Способ сгенерировать случайное число, например, между 5 и 24:<br>var min = 5<br>var max = 24<br>var n = min + rng % (max - min + 1)</eg></td>
   </tr>
   <tr>
     <td>?rngf</td>
-    <td>Returns a random floating-point number between 0 and 1.<eg><br>Например:<br>&gt;random float = @rngf@<br><br>Например:2: Generates a random float between 5.0 and 24.0:<br>var min = 5.0<br>var max = 24.0<br>var n = min + (max - min) * rngf</eg></td>
+    <td>Возвращает случайное дробное число между 0 и 1.<eg><br>Например:<br>&gt;random float = @rngf@<br><br>Способ сгенерировать случайное дробное число между 5.0 и 24.0:<br>var min = 5.0<br>var max = 24.0<br>var n = min + (max - min) * rngf</eg></td>
   </tr>
   <tr>
     <td>?screen.i</td>
-    <td>The screen's position in-game, as an index that increses when the player reaches the right-side and it slides over.<eg><br>Например:<br>&gt;`0,0,Screen index = @screen.i@</eg></td>
+    <td>Позиция внутриигрового экрана (индекс, который увеличивается, когда игрок доходит до края экрана и переходит на следующий экран).<eg><br>Например:<br>&gt;`0,0,Индекс экрана = @screen.i@</eg></td>
   </tr>
   <tr>
     <td>?screen.x</td>
-    <td>The screen's position in-game.<eg><br>Например:<br>&gt;`0,0,Screen position X = @screen.x@</eg></td>
+    <td>Положение внутриигрового экрана.<eg><br>Например:<br>&gt;`0,0,Позиция по X = @screen.x@</eg></td>
   </tr>
   <tr>
     <td>?screen.w</td>
-    <td>The width of the screen's ASCII grid.<eg><br>Например:<br>var sw = screen.w<br>&gt;Screen width = @sw@</eg></td>
+    <td>Ширина сетки ASCII на экране.<eg><br>Например:<br>var sw = screen.w<br>&gt;Ширина экрана = @sw@</eg></td>
   </tr>
   <tr>
     <td>?screen.h</td>
-    <td>The height of the screen's ASCII grid.<eg><br>Например:<br>var sh = screen.h<br>&gt;Screen height = @sh@</eg></td>
+    <td>Высота сетки ASCII на экране.<eg><br>Например:<br>var sh = screen.h<br>&gt;Высота экрана = @sh@</eg></td>
   </tr>
   <tr>
     <td>?summon.count</td>
-    <td>The number of summoned allies currently in game.<eg><br>Например:<br>?summon.count = 0 &amp;<br>^ item.CanActivate()<br>  equipL talisman<br>  activate L</eg></td>
+    <td>Количество призванных союзников в данный момент.<eg><br>Например:<br>?summon.count = 0 &amp;<br>^ item.CanActivate()<br>  equipL talisman<br>  activate L</eg></td>
   </tr>
   <tr>
     <td>summon.GetId(index = 0)</td>
-    <td>Returns the ID of the summon at a given index. The index parameter is optional and defaults to zero (first summon). Returns null if no summons are at that index.<eg><br>Например:<br>?summon.GetId() ! "cinderwisp" &amp;<br>^ item.CanActivate()<br>  equipR fire talisman<br>  activate R</eg></td>
+    <td>Возвращает ID призванного существа по указанному индексу. Индекс не является необходимым параметром и по умолчанию равен нулю (первому призванному). Возвращает null, если по данному индексу нет призывов.<eg><br>Например:<br>?summon.GetId() ! "cinderwisp" &amp;<br>^ item.CanActivate()<br>  equipR fire talisman<br>  activate R</eg></td>
   </tr>
   <tr>
     <td>summon.GetName(index = 0)</td>
-    <td>Returns the localized name of the summon at a given index. The index parameter is optional and defaults to zero (first summon). Returns null if no summons are at that index.<eg><br>Например:<br>&gt;`0,1,Summon:@summon.GetName()@</eg></td>
+    <td>Возвращает имя призванного существа по указанному индексу. Индекс не является необходимым параметром и по умолчанию равен нулю (первому призванному). Возвращает null, если по данному индексу нет призывов.<eg><br>Например:<br>&gt;`0,1,Призван: @summon.GetName()@</eg></td>
   </tr>
   <tr>
     <td>summon.GetVar(varName,<br>index = 0)</td>
-    <td>Returns the value for a custom variable on a summon. Different types of summons expose different variables, based on their unique abilities. The index parameter is optional and defaults to zero (first summon). Returns null if no summons are at that index. Shows an error if <f>varName</f> does not correspond to a valid variable.<eg><br>Например:<br>?summon.GetId() = cinderwisp &amp;<br>^summon.GetVar("ignition") &gt; 2<br>  activate cinderwisp</eg></td>
+    <td>Возвращает значение кастомной переменной у призванного существа. Различные существа используют различные переменные, в зависимости от своих уникальных способностей. Индекс не является необходимым параметром и по умолчанию равен нулю (первому призванному). Возвращает null, если по данному индексу нет призывов. Выдает ошибку, если <f>varName</f> не является действительной переменной.<eg><br>Например:<br>?summon.GetId() = cinderwisp &amp;<br>^summon.GetVar("ignition") &gt; 2<br>  activate cinderwisp</eg></td>
   </tr>
   <tr>
     <td>summon.GetState(index = 0)</td>
-    <td>Returns a number representing the current state of a summon. The index parameter is optional and defaults to zero (first summon). Returns -1 if no summons are at that index.<eg><br>Например:<br>&gt;`0,1,Summon state:@summon.GetState()@</eg></td>
+    <td>Возвращает число, равное нынешнему состоянию призванного существа. Индекс не является необходимым параметром и по умолчанию равен нулю (первому призванному). Возвращает -1, если по данному индексу нет призывов.<eg><br>Например:<br>&gt;`0,1,Summon state:@summon.GetState()@</eg></td>
   </tr>
   <tr>
     <td>summon.GetTime(index = 0)</td>
-    <td>Returns the elapsed number of frames in the current state of a summon. The index parameter is optional and defaults to zero (first summon). Returns -1 if no summons are at that index.<eg><br>Например:<br>&gt;`0,1,Summon time:@summon.GetTime()@</eg></td>
+    <td>Возвращает количество кадров, которое призванное существо провело в нынешнем состоянии. Индекс не является необходимым параметром и по умолчанию равен нулю (первому призванному). Возвращает -1, если по данному индексу нет призывов.<eg><br>Например:<br>&gt;`0,1,Summon time:@summon.GetTime()@</eg></td>
   </tr>
   <tr>
     <td>?totalgp</td>
-    <td>The total "Gear Power" of your inventory, calculated from item star levels and enchantment bonuses.<eg><br>Например:<br>&gt;My gear power = @totalgp@</eg></td>
+    <td>Общая сила оружия (GP / Gear Power) инвентаря игрока, рассчитанная с учетом уровня и зачарований предметов.<eg><br>Например:<br>&gt;Мои GP = @totalgp@</eg></td>
   </tr>
   <tr>
     <td>?time</td>
-    <td>The current frame number of the location.<eg><br>Например:<br>?time % 300 = 0<br>  &gt;Every 10 seconds you'll see this message</eg></td>
+    <td>Номер нынешнего кадра локации.<eg><br>Например:<br>?time % 300 = 0<br>  &gt;Это сообщение выводится каждые 10 минут.</eg></td>
   </tr>
   <tr>
     <td>?totaltime</td>
-    <td>The current frame number of the location, accumulated in case of boss sub-location.<eg><br>Например:<br>&gt;`0,0,Current time = @totaltime@ frames</eg></td>
+    <td>Номер нынешнего кадра всего забега (например, некоторые боссы используют доп.локации).<eg><br>Например:<br>&gt;`0,0,Нынешнее время = @totaltime@ кадров</eg></td>
   </tr>
   <tr>
     <td>time.msbn</td>
-    <td>Unix time represents the number of milliseconds that have elapsed since<br>1970-01-01T00:00:00Z (January 1, 1970, at 12:00 AM UTC). It does not take leap seconds into account. Returns a BigNumber<eg><br>Например:<br>&gt;@time.msbn@</eg></td>
+    <td>Время в формате Unix показывает кол-во миллисекунд, прошедших с <br>00:00:00 1 января 1970 года. Не учитывает високосные года. Возвращает объект типа BigNumber.<eg><br>Например:<br>&gt;@time.msbn@</eg></td>
   </tr>
   <tr>
     <td>time.year, time.month, time.day, time.hour, time.minute, time.second</td>
-    <td>The local system time on the player's computer.<eg><br>Например:<br>&gt;`0,0,@time.year@/@time.month@/@time.day@<br>^ @time.hour@:@time.minute@:@time.second@</eg></td>
+    <td>Системное время на устройстве.<eg><br>Например:<br>&gt;`0,0,@time.day@/@time.month@/@time.year@<br>^ @time.hour@:@time.minute@:@time.second@</eg></td>
   </tr>
   <tr>
     <td>utc.year, utc.month, utc.day, utc.hour, utc.minute, utc.second</td>
-    <td>The current UTC time.<eg><br>Например:<br>var utcZ = utc.year*356*12*24*30 +<br>^utc.month*12*24 + utc.day*24+utc.hour<br>var timeZ = time.year*356*12*24*30 +<br>^time.month*12*24 + time.day*24+time.hour<br>var timeZone = timeZ - utcZ<br>?timeZone &lt; 0<br>  &gt;`0,0,Time Zone: UTC@timeZone@<br>:<br>  &gt;`0,0,Time Zone: UTC+@timeZone@</eg></td>
+    <td>Нынешнее время UTC.<eg><br>Например:<br>var utcZ = utc.year*365*12*24*30 +<br>^utc.month*12*24 + utc.day*24+utc.hour<br>var timeZ = time.year*365*12*24*30 +<br>^time.month*12*24 + time.day*24+time.hour<br>var timeZone = timeZ - utcZ<br>?timeZone &lt; 0<br>  &gt;`0,0,Часовой пояс: UTC@timeZone@<br>:<br>  &gt;`0,0,Часовой пояс: UTC+@timeZone@</eg></td>
   </tr>
 </tbody></table></font>
 <a href="#"><font color="#505050">^К началу</font></a>
@@ -552,7 +552,7 @@
 
 <div id="commands"><div id="separator"><!---------------------------></div>
 
-·:·:· Commands ·:·:·
+·:·:· Команды ·:·:·
 <font color="#bbbbbb">
 These tell the game to do something.
 
