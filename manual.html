@@ -56,7 +56,7 @@
 
 <f>Данное руководство является всеобъемлющим справочником всех доступных возможностей Stonescript. Большинство приведенных примеров можно скопировать/вставить прямо в Камень Разума, что является отличным способом проверить их работу на деле.</f>
 
-<f>Переведено Димакулом примерно на 70%.</f>
+<f>Переведено Димакулом примерно на 90%.</f>
 </f></f></f></font>
 
 
@@ -71,12 +71,12 @@
 <f>  <a href="#variables">7. Переменные +</a></f>
 <f>  <a href="#math-operations">8. Математические операции +</a></f>
 <f>  <a href="#functions">9. Функции +</a></f>
-<f>  <a href="#native-functions">10. Встроенные функции +-</a></f>
+<f>  <a href="#native-functions">10. Встроенные функции +</a></f>
 <f>  <a href="#import">11. Импорт сторонних скриптов +</a></f>
 <f>  <a href="#ascii-art">12. ASCII-арт +</a></f>
-<f>  <a href="#loops">13. Циклы</a></f>
-<f>  <a href="#arrays">14. Массивы</a></f>
-<f>  <a href="#custom-input">15. Кастомные способы ввода</a></f>
+<f>  <a href="#loops">13. Циклы +</a></f>
+<f>  <a href="#arrays">14. Массивы +</a></f>
+<f>  <a href="#custom-input">15. Кастомный ввод +</a></f>
 <f>  <a href="#user-interface">16. Пользовательский интерфейс</a></f>
 <f>  <a href="#tips">17. Советы +</a></f>
 <f>  <a href="#default-script">18. Скрипт по умолчанию +</a></f>
@@ -1422,89 +1422,89 @@ While scripts can define their own functions, Stonescript comes with a set of pr
   </tr>
   <tr>
     <td>storage.Incr(string)<br><eg>Возвращает integer</eg></td>
-    <td>Increases by 1 the value stored at the specified key, then Возвращает the new value.<br><eg>Например:<br>?gameOver<br>  storage.Incr("stat_TimesPlayed")</eg></td>
+    <td>Увеличивает значение по заданному ключу на 1, затем возвращает новое значение.<br><eg>Например:<br>?gameOver<br>  storage.Incr("stat_TimesPlayed")</eg></td>
   </tr>
   <tr>
-    <td>storage.Keys()<br><eg>Возвращает array</eg></td>
-    <td>Retrieves an array of strings containing all the storage keys available in the current context.<br><eg>Например:<br>var a<br>?time % 30 = 0<br>  a = storage.Keys()<br>  for i = 0 .. a.Count()-1<br>    &gt;Key @i@ = @a[i]@</eg></td>
+    <td>storage.Keys()<br><eg>Возвращает массив</eg></td>
+    <td>Возвращает массив строк, содержащий все доступные в данный момент ключи.<br><eg>Например:<br>var a<br>?time % 30 = 0<br>  a = storage.Keys()<br>  for i = 0 .. a.Count()-1<br>    &gt;Key @i@ = @a[i]@</eg></td>
   </tr>
   <tr>
     <td>storage.Incr(string, integer)<br><eg>Возвращает integer</eg></td>
-    <td>Increases the value stored at the specified key by a given amount, then Возвращает the new value.<br><eg>Например:<br>var amount<br>?foundCoins<br>  amount = rng%5 + 5<br>  storage.Incr("coins", amount)</eg></td>
+    <td>Увеличивает значение по заданному ключу на указанное число, затем возвращает новое значение.<br><eg>Например:<br>var amount<br>?foundCoins<br>  amount = rng%5 + 5<br>  storage.Incr("coins", amount)</eg></td>
   </tr>
   <tr>
     <td>storage.Set(string, value)<br><eg>Ничего не возвращает</eg></td>
-    <td>Saves a value to permanent storage at a specified key.<br><eg>Например:<br>var score = 1000<br>storage.Set("highscore", score)</eg></td>
+    <td>Устанавливает значение по заданному ключу в указанное.<br><eg>Например:<br>var score = 1000<br>storage.Set("highscore", score)</eg></td>
   </tr>
   <tr><td>string<br>‾‾‾‾‾‾</td></tr>
   <tr>
-    <td>string.Break(string, integer)<br><eg>Возвращает array</eg></td>
-    <td>Breaks a string into multiple strings, given a max width.<eg><br>Например:<br>var s = "The brown fox jumps over the lazy dog"<br>var a = string.Break(s, 14)<br>for i = 0 .. a.Count()-1<br>  &gt;`0,@i@,@a[i]@</eg></td>
+    <td>string.Break(string, integer)<br><eg>Возвращает массив</eg></td>
+    <td>Разделяет строку на несколько строк с указанной максимальной длиной.<eg><br>Например:<br>var s = "The brown fox jumps over the lazy dog"<br>var a = string.Break(s, 14)<br>for i = 0 .. a.Count()-1<br>  &gt;`0,@i@,@a[i]@</eg></td>
   </tr>
   <tr>
     <td>string.Capitalize(str)<br><eg>Возвращает string</eg></td>
-    <td>Changes the first letter of a string to be upper-case.<eg><br>Например:<br>var a = "foo"<br>a = string.Capitalize(a)<br>&gt;@a@<br>(Prints "Foo")</eg></td>
+    <td>Делает первую букву строки заглавной.<eg><br>Например:<br>var a = "foo"<br>a = string.Capitalize(a)<br>&gt;@a@<br>(Выведет "Foo")</eg></td>
   </tr>
   <tr>
     <td>string.Equals(str1, str2)<br><eg>Возвращает boolean</eg></td>
-    <td>Takes two string parameters and Возвращает true if they are exactly the same. Возвращает false otherwise. Case sensitive.<eg><br>Например:<br>var a = "foo"<br>?string.Equals(a, "foo")<br>  &gt;The strings are equal<br>:<br>  &gt;They are NOT equal<br>// The strings are equal in this case. string.Equals() evaluates to true</eg></td>
+    <td>Проверяет точное равенство двух строк.<eg><br>Например:<br>var a = "foo"<br>?string.Equals(a, "foo")<br>  &gt;Строки равны<br>:<br>  &gt;Строки НЕ равны<br>// В данном случае строки равны, и string.Equals() возвращает true</eg></td>
   </tr>
   <tr>
     <td>string.Format(str1, ...)<br><eg>Возвращает string</eg></td>
-    <td>Modifies a string by replacing format-templates with the values of the other parameters, then Возвращает the final composed string. This is a powerful function that supports lots of <a href="https://docs.microsoft.com/en-us/dotnet/api/system.string.format?view=net-5.0" target="_Blank">formatting options</a>.<eg><br>Например:<br>var str = "My name is {0} and I have {1} power!"<br>var result = string.Format(<br>^  str,<br>^  player.name,<br>^  totalgp<br>^)<br>&gt;@result@</eg></td>
+    <td>Форматирует строку, заменяя шаблоны форматирования значениями прочих параметров, и возвращает итоговую строку. Эта функция поддерживает большинство <a href="https://docs.microsoft.com/en-us/dotnet/api/system.string.format?view=net-5.0" target="_Blank">настроек форматирования</a>.<eg><br>Например:<br>var str = "Меня зовут {0} и у меня {1} GP!"<br>var result = string.Format(<br>^  str,<br>^  player.name,<br>^  totalgp<br>^)<br>&gt;@result@</eg></td>
   </tr>
   <tr>
     <td>string.IndexOf(str, criteria)<br><eg>Возвращает integer</eg></td>
-    <td>Takes a string variable and a string criteria as parameters and finds the position of the criteria inside the string. Возвращает -1 if not found.<eg><br>Например:<br>var a = Hello World!<br>var index = string.IndexOf(a, llo)<br>// index equals 2</eg></td>
+    <td>Принимает строку с текстом и строку для проверки, и возвращает индекс, по которому находится строка для проверки. Возвращает -1, если таковой нет.<eg><br>Например:<br>var a = Hello World!<br>var index = string.IndexOf(a, llo)<br>// index равен 2</eg></td>
   </tr>
   <tr>
     <td>string.IndexOf(str, criteria, startAt)<br><eg>Возвращает integer</eg></td>
-    <td>Takes a string variable, a string criteria and a starting index as parameters. Finds the position of the criteria inside the string, but begins the search at 'startAt'. Возвращает -1 if not found.<eg><br>Например:<br>var a = Hello World!<br>var index = string.IndexOf(a, llo, 4)<br>// index equals -1 because the search began at position 4<br>// therefore 'llo' was not found</eg></td>
+    <td>Принимает строку с текстом, строку для проверки и место начала проверки, и возвращает индекс, по которому находится строка для проверки, но начинает поиск с указанного места. Возвращает -1, если таковой нет.<eg><br>Например:<br>var a = Hello World!<br>var index = string.IndexOf(a, llo, 4)<br>// index равен -1, так как поиск начали с позиции 4<br>// так что 'llo' не было найдено</eg></td>
   </tr>
   <tr>
     <td>string.Join(s, [])<br>string.Join(s, [], int)<br>string.Join(s, [], int,int)<br><eg>Возвращает string</eg></td>
-    <td>Takes an array of strings <eg>[]</eg> and combines it into a single string with the separator <eg>s</eg>. Optional integer parameters can be passed that specify the <eg>starting index</eg> and <eg>number of elements</eg> to combine. If no index parameters are provided, the entire array is combined.<eg><br>Например:<br>var a = ［"Hello", "World", "!"］<br>var b = string.Join(";", a)<br>&gt;`0,0,@b@<br>// Prints "Hello;World;!"<br><br>Например:2<br>var a = ［"Hello", "World", "!"］<br>var b = string.Join(";", a, 1)<br>&gt;`0,0,@b@<br>// Prints "World;!"<br><br>Например:3<br>var a = ［"Hello", "World", "!"］<br>var b = string.Join(";", a, 0, 2)<br>&gt;`0,0,@b@<br>// Prints "Hello;World"</eg></td>
+    <td>Принимает массив строк <eg>[]</eg> и соединяет их в одну, используя <eg>s</eg> как разделитель. Также можно передать два аргумента, указывающие <eg>индекс стартового элемента</eg> и <eg>количество соединяемых элементов</eg>. Если они не переданы, по умолчанию объединяется весь массив.<eg><br>Например:<br>var a = ［"Hello", "World", "!"］<br>var b = string.Join(";", a)<br>&gt;`0,0,@b@<br>// Выведет "Hello;World;!"<br><br>Пример 2:<br>var a = ［"Hello", "World", "!"］<br>var b = string.Join(";", a, 1)<br>&gt;`0,0,@b@<br>// Выведет "World;!"<br><br>Пример 3:<br>var a = ［"Hello", "World", "!"］<br>var b = string.Join(";", a, 0, 2)<br>&gt;`0,0,@b@<br>// Выведет "Hello;World"</eg></td>
   </tr>
   <tr>
     <td>string.Size(str)<br><eg>Возвращает integer</eg></td>
-    <td>Takes a string variable as parameter and calculates how long it is, in number of glyphs.<eg><br>Например:<br>var a = Hello World!<br>var size = string.Size(a)<br>&gt;size = @size@</eg></td>
+    <td>Возвращает длину строки в символах.<eg><br>Например:<br>var a = Hello World!<br>var size = string.Size(a)<br>&gt;size = @size@</eg></td>
   </tr>
   <tr>
     <td>string.Split(str)<br>string.Split(str, s…)<br>string.Split(str, s…, bool)<br>string.Split(str, bool)<br><eg>Возвращает array</eg></td>
-    <td>Takes a string and breaks it down into an array of strings, given a set of string separators <eg>s…</eg>. If no separators are provided, then the string is broken wherever there is a space. An optional boolean parameter specifies if empty entries should be discarded.<eg><br>Например:<br>var a = string.Split("Hello World !")<br>for i = 0 .. a.Count()-1<br>  &gt;`0,@i@,［@i@］ = @a［i］@<br>// Breaks up the string into: "Hello", "World", "!"<br><br>Например:2<br>var a = string.Split("Hello World !", " ", "l")<br>for i = 0 .. a.Count()-1<br>  &gt;`0,@i@,［@i@］ = @a［i］@<br>// Breaks up the string into: "He", " ", "o", "Wor", "d", "!"<br><br>Например:3<br>var a<br>a = string.Split("Hello World !","l","r",true)<br>for i = 0 .. a.Count()-1<br>  &gt;`0,@i@,［@i@］ = @a［i］@<br>// Breaks up the string into: "He", "o Wo", "d !"</eg></td>
+    <td>Принимает строку и разбивает ее на массив строк, основываясь на наборе разделителей <eg>s…</eg>. Если разделители не переданы, то строка делится на пробелы. Опциональный параметр типа bool определяет, будут ли удалены пустые строки.<eg><br>Например:<br>var a = string.Split("Hello World !")<br>for i = 0 .. a.Count()-1<br>  &gt;`0,@i@,［@i@］ = @a［i］@<br>// Разделит строку на: "Hello", "World", "!"<br><br>Пример 2:<br>var a = string.Split("Hello World !", " ", "l")<br>for i = 0 .. a.Count()-1<br>  &gt;`0,@i@,［@i@］ = @a［i］@<br>// Разделит строку на: "He", " ", "o", "Wor", "d", "!"<br><br>Пример 3:<br>var a<br>a = string.Split("Hello World !","l","r",true)<br>for i = 0 .. a.Count()-1<br>  &gt;`0,@i@,［@i@］ = @a［i］@<br>// Разделит строку на: "He", "o Wo", "d !"</eg></td>
   </tr>
   <tr>
     <td>string.Sub(str, startAt)<br><eg>Возвращает string</eg></td>
-    <td>Takes a string variable and a starting index as parameters and splits the string from that point forward.<eg><br>Например:<br>var a = Hello World!<br>var subString = string.Sub(a, 6)<br>&gt;substring = @subString@<br>// subString equals "World!"</eg></td>
+    <td>Принимает строку и стартовый индекс, и разделяет строку, начиная с этого индекса.<eg><br>Например:<br>var a = Hello World!<br>var subString = string.Sub(a, 6)<br>&gt;substring = @subString@<br>// subString equals "World!"</eg></td>
   </tr>
   <tr>
     <td>string.Sub(str, startAt, length)<br><eg>Возвращает string</eg></td>
-    <td>Takes a string variable, a starting index and a length as parameters and splits the string from that starting point, stopping at the given length.<eg><br>Например:<br>var a = Hello World!<br>var subString = string.Sub(a, 6, 3)<br>&gt;substring = @subString@<br>// subString equals "Wor"</eg></td>
+    <td>Принимает строку, стартовый индекс и длину, и возвращает строку конкретной длины, начиная с указанного индекса..<eg><br>Например:<br>var a = Hello World!<br>var subString = string.Sub(a, 6, 3)<br>&gt;substring = @subString@<br>// subString равно "Wor"</eg></td>
   </tr>
   <tr>
     <td>string.ToLower(str)<br><eg>Возвращает string</eg></td>
-    <td>Changes all letters in a string to lower-case.<eg><br>Например:<br>var a = "Foo"<br>a = string.ToLower(a)<br>&gt;@a@<br>// Prints "foo" to the screen</eg></td>
+    <td>Меняет все буквы в строке на строчные.<eg><br>Например:<br>var a = "Foo"<br>a = string.ToLower(a)<br>&gt;@a@<br>// Выведет "foo"</eg></td>
   </tr>
   <tr>
     <td>string.ToUpper(str)<br><eg>Возвращает string</eg></td>
-    <td>Changes all letters in a string to upper-case.<eg><br>Например:<br>var a = "Foo"<br>a = string.ToUpper(a)<br>&gt;@a@<br>// Prints "FOO" to the screen</eg></td>
+    <td>Меняет все буквы в строке на заглавные.<eg><br>Например:<br>var a = "Foo"<br>a = string.ToUpper(a)<br>&gt;@a@<br>// Выведет "FOO"</eg></td>
   </tr>
   <tr><td>sys<br>‾‾‾</td><td>(The sys namespace is not functioning as intended at the moment)</td></tr>
   <tr>
     <td>sys.cacheRemoteFiles<br><eg>boolean</eg></td>
-    <td>Indicates if files imported remotely should be cached between runs. Default is <eg>true</eg>. If set to false, then remote scripts will re-download when you begin play from the Locations screen. It can be useful to change this during development and iteration of new scripts that are deployed remotely. This global property persists between runs.<eg><br>Например:<br>// We use the "up" key as an input to toggle<br>// remote caching on/off during rapid iteration<br>?key = upBegin<br>  sys.cacheRemoteFiles = !sys.cacheRemoteFiles<br>  ?sys.cacheRemoteFiles<br>    &gt;Remote caching ENABLED<br>  :<br>    &gt;Remote caching DISABLED</eg></td>
+    <td>Указывает, стоит ли кэшировать импортированные удаленно файлы между забегами. По умолчанию <eg>true</eg>. Если false, то скрипты будут загружены заново каждый раз, когда вы начинаете новый забег. Полезно, если вы меняете удаленные скрипты во время разработки. Эта переменная сохраняется между забегами.<eg><br>Например:<br>// Переключаем кнопкой 'вверх'<br>// вкл/выкл удаленное кэширование во время быстрых итераций<br>?key = upBegin<br>  sys.cacheRemoteFiles = !sys.cacheRemoteFiles<br>  ?sys.cacheRemoteFiles<br>    &gt;Кэширование ВКЛЮЧЕНО<br>  :<br>    &gt;Кэширование ОТКЛЮЧЕНО</eg></td>
   </tr>
   <tr>
     <td>sys.fileUrl<br><eg>string (get only)</eg></td>
-    <td>Getter for the current file path to be used when importing scripts. The default value depends on your device. On PC the default value is <eg>local</eg>. On mobile the default is <eg>https://StonestoryRPG.com/stonescript/</eg><eg><br>Например:<br>&gt;`0,1,fileUrl = @sys.fileUrl@</eg></td>
+    <td>Геттер нынешнего файлового пути для импорта скриптов. Значение по умолчанию зависит от устройства. На ПК - <eg>local</eg>, на телефоне - <eg>https://StonestoryRPG.com/stonescript/</eg><eg><br>Например:<br>&gt;`0,1,fileUrl = @sys.fileUrl@</eg></td>
   </tr>
   <tr>
     <td>sys.SetFileUrl(str)<br><eg>Ничего не возвращает</eg></td>
-    <td>Changes the origin of imported scripts when using the commands <eg>import</eg> or <eg>new</eg>. Can only be called on the Mind Stone and will error if written on an imported script. Accepts any URL as a remote location, but also accepts the values <eg>"local"</eg> and <eg>"remote"</eg> as shortcuts to easily point at your local drive or to the official Stone Story RPG repository, respectively. If <eg>null</eg> is passed as parameter, then the file URL resets to the default value for your device. This global property persists between runs.<eg><br>Например:<br>sys.SetFileUrl(<br>^"https://MyCoolDomain.com/scripts/")<br>import MyCombatScript</eg></td>
+    <td>Изменяет источник импортируемых с помощью <eg>import</eg> и <eg>new</eg> файлов. Можно вызвать только в Камне Разума, в противном случае выдаст ошибку. Принимает любой URL в качестве удаленного места, но также может принимать значения <eg>"local"</eg> и <eg>"remote"</eg> для простого обращения к вашему локальному диску или официальному репозиторию Stone Story RPG соответственно. Если в качестве параметра передать <eg>null</eg>, то URL сбросится до дефолтного. Сохраняется меджу забегами.<eg><br>Например:<br>sys.SetFileUrl(<br>^"https://MyCoolDomain.com/scripts/")<br>import MyCombatScript</eg></td>
   </tr>
   <tr>
     <td>sys.MindConnect()<br><eg>Ничего не возвращает</eg></td>
-    <td>(Experimental feature) Works only when <eg>sys.MindConnect()</eg> is the only line of text in your Mind Stone. Enables an interface that waits for a connection from other programs, such as a python script. Once connected, the external program can run Stonescript commands and evaluate game state variables.<br>Learn more here:<br><a href="https://github.com/artificial-potato/SSRPGInterface">https://github.com/artificial-potato/SSRPGInterface</a>
+    <td>(Экспериментальная возможность) Работает, только если <eg>sys.MindConnect()</eg> - единственная команда в скрипте. Запускает интерфейс, который ждет подключения от другой программы, например, от скрипта на Python. После соединения сторонняя программа может выполнять команды в Stonescript и проверять переменные состояния игры.<br>Узнать больше:<br><a href="https://github.com/artificial-potato/SSRPGInterface">https://github.com/artificial-potato/SSRPGInterface</a>
   </td></tr>
   <tr>
     <td>sys.isMobile<br><eg>Возвращает bool</eg></td>
@@ -1691,19 +1691,19 @@ asciiend
 
 <div id="loops"><div id="separator"><!---------------------------></div>
 
-·:·:· Loops ·:·:·
+·:·:· Циклы ·:·:·
 <font color="#bbbbbb"><f>
 
-Loops allow a section of code to run multiple times. To create a loop use the 'for' keyword in the form:
+Циклы позволяют выполнить часть кода несколько раз подряд. Для создания цикла используйте ключевое слово 'for' следующим образом:
 <eg>
 for v = a..b
 </eg>
-The variable 'v' begins the loop with value 'a' and increases in value until it reaches 'b', then the loop ends:
+Переменная 'v' в начале цикла равна 'a' и увеличивается, пока не станет равна 'b', затем цикл закончится:
 <eg>
 for i = 1..5
   &gt;`0,@i@,i = @i@
 </eg>
-The iteration variable 'v' should not be declared prior to the 'for' and is contained to the scope of the loop. However, the begin and end values 'a' and 'b' can be declared prior to the loop:
+Итерируемую переменную 'v' не стоит объявлять до цикла 'for', и она хранится лишь в области цикла. С другой стороны, 'a' и 'b' можно определять до цикла:
 <eg>
 var min = 1
 var max = 4
@@ -1713,7 +1713,7 @@ for j = min..max
   sum = sum + j
 &gt;sum = @sum@
 </eg>
-Loops can also go in the opposite direction, as well as use negative numbers:
+Циклы также могут идти в обратном направлении, как и использовать отрицательные числа:
 <eg>
 var g
 g = ""
@@ -1721,13 +1721,13 @@ for k = 5..-2
   g = g + k
 &gt;g = @g@
 </eg>
-Loops can be nested inside each other, as well as inlined with math expressions to form complex algorithms:
+Циклы могут быть вложены друг в друга, а также использовать математические выражения:
 <eg>
 for x = 1..9
   for y = x/2 .. x/2 + 6
     &gt;`@x@,@y@,*
 </eg>
-To break out of the loop early, modify the iteration variable so that it's out of range:
+Чтобы досрочно выйти из цикла, можно установить итерируемую переменную в значение за пределами диапазона:
 <eg>
 var n
 n = ""
@@ -1737,13 +1737,13 @@ for i = 1..5
   n = n + i
 &gt;n = @n@
 </eg>
-Similarly, break out of the loop with the <eg>break</eg> command:
+Для этого также используется команда <eg>break</eg>:
 <eg>
 for i = 1..5
   ?i = 3
     break
 </eg>
-Loops also support the <eg>continue</eg> command. When called, instructions below the <eg>continue</eg> are skipped and the loop continues looping:
+Циклы также поддерживают команду <eg>continue</eg>. При ее вызове последующие команды пропускаются, а цикл начинает новую итерацию:
 <eg>
 var n
 n = ""
@@ -1753,7 +1753,7 @@ for i = 1..5
   n = n + i
 &gt;n = @n@
 </eg>
-It's possible to loop through elements of an <a href="#arrays">array</a> using this form:
+Также можно прогнать цикл по элементам <a href="#arrays">массива</a> следующим образом:
 <eg>
 var a = [1, 2, 3]
 var n
@@ -1768,62 +1768,62 @@ for value : a
 
 <div id="arrays"><div id="separator"><!---------------------------></div>
 
-·:·:· Arrays ·:·:·
+·:·:· Массивы ·:·:·
 <font color="#bbbbbb"><f>
-Arrays are a special type of variable. They provide a way to sequentially organize values and objects into a collection that is assigned to a single variable.
+Массивы - это особый тип переменной. Они предоставляют способ последовательно организовывать различные значения и объекты в коллекцию, хранящуюся в отдельной переменной.
 
 <table>
   <tbody><tr>
-    <td>Operation<br>---------</td>
-    <td>Description<br>-----------</td>
+    <td>Операция<br>--------</td>
+    <td>Описание<br>--------</td>
   </tr>
   <tr>
     <td>a = []</td>
-    <td>Initializes a new array. See below for more information.</td>
+    <td>Инициализирует новый массив. См. далее для более подробной информации.</td>
   </tr>
   <tr>
     <td>a[integer]</td>
-    <td>Reads the value at a given position.<br><eg>Например:<br>var myArray = [10, 3]<br>?myArray[1] = 3<br>  &gt;Yes, the value at [1] equals 3</eg></td>
+    <td>Возвращает значение на указанной позиции.<br><eg>Например:<br>var myArray = [10, 3]<br>?myArray[1] = 3<br>  &gt;Да, значение по индексу [1] равно 3</eg></td>
   </tr>
   <tr>
     <td>a.Add(value)</td>
-    <td>Adds a new value/object to the end of the array.<br><eg>Например:<br>var myArray = []<br>myArray.Add(10)</eg></td>
+    <td>Добавляет новое значение/объект в конец массива.<br><eg>Например:<br>var myArray = []<br>myArray.Add(10)</eg></td>
   </tr>
   <tr>
     <td>a.Clear()</td>
-    <td>Removes all elements from the array, making it empty. This is more efficient than re-declaring the array with [].<br><eg>Например:<br>var myArray = [10, 3]<br>myArray.Clear()</eg></td>
+    <td>Очищает массив. Это более эффективно, чем переопределение массива через a = [].<br><eg>Например:<br>var myArray = [10, 3]<br>myArray.Clear()</eg></td>
   </tr>
   <tr>
     <td>a.Contains(value)</td>
-    <td>Determines if a given value is inside the array. Возвращает true if found; false otherwise.<br><eg>Например:<br>var myArray = [10, 3]<br>?myArray.Contains(3)<br>  &gt;Yes</eg></td>
+    <td>Возвращает true, если указанное значение есть в массиве, иначе false.<br><eg>Например:<br>var myArray = [10, 3]<br>?myArray.Contains(3)<br>  &gt;Да</eg></td>
   </tr>
   <tr>
     <td>a.Count()</td>
-    <td>Возвращает the number of elements in the array.<br><eg>Например:<br>var myArray = ["apple","banana"]<br>var size = myArray.Count()<br>&gt;Array size = @size@</eg></td>
+    <td>Возвращает количество элементов в массиве.<br><eg>Например:<br>var myArray = ["apple","banana"]<br>var size = myArray.Count()<br>&gt;Размер массива = @size@</eg></td>
   </tr>
   <tr>
     <td>a.Emplace(integer, value)</td>
-    <td>Replaces the value at a given position with a new value.<br><eg>Например:<br>var myArray = [10, 3]<br>myArray.Emplace(0, 4)<br>var value = myArray[0]<br>&gt;Value at [0] is now @value@</eg></td>
+    <td>Заменяет значение на указанной позиции новым значением.<br><eg>Например:<br>var myArray = [10, 3]<br>myArray.Emplace(0, 4)<br>var value = myArray[0]<br>&gt;Значение в [0] теперь @value@</eg></td>
   </tr>
   <tr>
     <td>a.IndexOf(value)</td>
-    <td>Searches for a given value inside the array. Возвращает an integer indicating the position of the first occurrance of the value. If the value is not found Возвращает -1.<br><eg>Например:<br>var myArray = [10, 3]<br>var index = myArray.IndexOf(3)<br>&gt;Found at position @index@</eg></td>
+    <td>Возвращает индекс первого вхождения элемента с указанным значением. Если таковых нет, возвращает -1.<br><eg>Например:<br>var myArray = [10, 3]<br>var index = myArray.IndexOf(3)<br>&gt;Найдено на позиции @index@</eg></td>
   </tr>
   <tr>
     <td>a.Insert(integer, value)</td>
-    <td>Adds a new value/object to a specific position of the array. Elements to the right are shifted to the next position.<br><eg>Например:<br>var myArray = [10, 3]<br>myArray.Insert(1, "apple")<br>// The array is now [10, "apple", 3]</eg></td>
+    <td>Добавляет новое значение/объект в указанное место. Элементы справа сдвигаются на одну позицию.<br><eg>Например:<br>var myArray = [10, 3]<br>myArray.Insert(1, "apple")<br>// Массив теперь [10, "apple", 3]</eg></td>
   </tr>
   <tr>
     <td>a.RemoveAt(integer)</td>
-    <td>Removes an element in the array from a specific position. Возвращает the value removed.<br>Zero-based: <eg>myArray.RemoveAt(0)</eg> removes the first element.<br>Elements to the right are shifted to the previous position.<br><eg>Например:<br>var myArray = [1, 2, 3]<br>myArray.RemoveAt(1)<br>// The array is now [1, 3]</eg></td>
+    <td>Удаляет элемент на конкретной позиции. Возвращает удаленный элемент.<br>Индексация с нуля: <eg>myArray.RemoveAt(0)</eg> удаляет первый элемент.<br>Элементы справа сдвигаются на одну позицию влево.<br><eg>Например:<br>var myArray = [1, 2, 3]<br>myArray.RemoveAt(1)<br>// Массив теперь [1, 3]</eg></td>
   </tr>
   <tr>
     <td>a.Sort()</td>
-    <td>Organizes the array's elements into ascending order. If the array contains objects of different types it will still be sorted, but no expected results are defined and elements are not guaranteed to be grouped by type.<br><eg>Например:<br>var myArray = ["Cherry", 2, "Apple", 1, true, false, "Banana", 3]<br>var value<br><br>myArray.Sort()<br><br>for i = 0 .. myArray.Count() - 1<br>  value = myArray[i]<br>  &gt;`0,@i@,@value@</eg></td>
+    <td>Сортирует список по возрастанию. Если в массиве есть объекты разных типов, он все равно будет отсортирован, но результат нельзя определить заранее, и не гарантировано, что элементы будут сгруппированы по типу.<br><eg>Например:<br>var myArray = ["Cherry", 2, "Apple", 1, true, false, "Banana", 3]<br>var value<br><br>myArray.Sort()<br><br>for i = 0 .. myArray.Count() - 1<br>  value = myArray[i]<br>  &gt;`0,@i@,@value@</eg></td>
   </tr>
 </tbody></table>
 
-Here are some of the different ways to initialize and use arrays:
+Вот еще несколько примеров объявления и использования массивов:
 <eg>
 var emptyCollection = []
 
@@ -1838,10 +1838,10 @@ var sameButMultiLine = [
 ]
 
 var redeclaredEachFrame
-redeclaredEachFrame = [] // Not good for the PC
+redeclaredEachFrame = [] // Не очень хорошо по ресурсам
 
 var clearedEachFrame = []
-clearedEachFrame.Clear() // Better for CPU &amp; memory
+clearedEachFrame.Clear() // Лучше для ЦП и памяти
 
 var clearedEachLoop = []
 ?loc.begin | loc.loop
@@ -1870,7 +1870,7 @@ asciiend
 ^]
 </eg>
 
-Looping through arrays:
+Прохождение по массивам циклом:
 <eg>
 var myArray = ["Apple", "Banana", "Cherry"]
 var count
@@ -1882,16 +1882,16 @@ count = myArray.Count()
     value = myArray[i]
     &gt;`0,@i@,@value@
 
-// This example prints fruit names to the left of the screen
+// Данный пример выводит названия фруктов слева сверху
 </eg>
 
-Multi-dimensional access:
+Массивы могут быть вложены в другие массивы:
 <eg>
 var a = [[1,2], [3,4]]
 var value
 
 value = a[1][0]
-&gt;Found value @value@ at (1, 0)
+&gt;Значение @value@ по индексам (1, 0)
 </eg></f></font>
 
 <a href="#"><font color="#505050">^К началу</font></a>
@@ -1899,11 +1899,11 @@ value = a[1][0]
 
 <div id="custom-input"><div id="separator"><!---------------------------></div>
 
-·:·:· Custom Input ·:·:·
+·:·:· Кастомный ввод ·:·:·
 <font color="#bbbbbb">
-Stonescript can read player inputs by use of the ?key game state. This can be used to drive advanced behaviors, such as different modes for the AI, but custom inputs allow the creation of entirely new experiences layered on top of Stone Story.
+Stonescript может считывать ввод с использованием игрового состояния ?key. Это можно использовать для каких-либо продвинутых алгоритмов, например, других режимов ИИ, но кастомные способы ввода позволяют создать абсолютно новые штуки поверх Stone Story.
 
-<eg><f>In this example, the @ symbol can be moved across the screen like the main character in a classic Rogue-like game. The key codes (leftBegin, etc) refer to the initial downpress of the button.
+<eg><f>В данном примере символ @ можно двигать по экрану стрелками, как персонажа в какой-либо другой игре. Коды клавиш (leftBegin, и т.п.) соотносятся с нажатием кнопки.
 
 var x = 0
 var y = 0
@@ -1925,44 +1925,44 @@ var y = 0
 &gt;`@x@,@y@,#ffffff,@
 </f></eg>
 
-Table with all the available key codes:
+Таблица со всеми доступными клавишами:
 
 <table>
   <tbody><tr>
-    <td>Held<br>----</td>
-    <td>Pressed<br>-------</td>
-    <td>Released<br>--------</td>
-	<td>Default PC<br>----------</td>
+    <td>Удержание<br>---------</td>
+    <td>Нажатие<br>-------</td>
+    <td>Отпускание<br>----------</td>
+	<td>По умолчанию (ПК)<br>-----------------</td>
   </tr>
   <tr>
     <td>left</td>
     <td>leftBegin</td>
     <td>leftEnd</td>
-	<td>A or ←</td>
+	<td>A или ←</td>
   </tr>
   <tr>
     <td>right</td>
     <td>rightBegin</td>
     <td>rightEnd</td>
-	<td>D or →</td>
+	<td>D или →</td>
   </tr>
   <tr>
     <td>up</td>
     <td>upBegin</td>
     <td>upEnd</td>
-	<td>W or ↑</td>
+	<td>W или ↑</td>
   </tr>
   <tr>
     <td>down</td>
     <td>downBegin</td>
     <td>downEnd</td>
-	<td>S or ↓</td>
+	<td>S или ↓</td>
   </tr>
   <tr>
 	<td>primary</td>
 	<td>primaryBegin</td>
 	<td>primaryEnd</td>
-	<td>LMB, Return</td>
+	<td>ЛКМ, Enter</td>
   </tr>
   <tr>
 	<td>back</td>
@@ -1980,7 +1980,7 @@ Table with all the available key codes:
 	<td>ability2</td>
 	<td>ability2Begin</td>
 	<td>ability2End</td>
-	<td>Control</td>
+	<td>Ctrl</td>
   </tr>
   <tr>
 	<td>bumpL</td>
@@ -2000,9 +2000,9 @@ Table with all the available key codes:
 
 <div id="user-interface"><div id="separator"><!---------------------------></div>
 
-·:·:· User Interface ·:·:·
+·:·:· Пользовательский интерфейс ·:·:·
 <font color="#bbbbbb">
-Кнопки, текст, анимации... Stonescript предоставляет системы создания сложных layouts и пользовательского интерфейса с высокой производительностью. По умолчанию существует невидимая панель "root", в основании системы. К этой корневой панели можно добавить множество различных элементов, включая доп.панели, формируя древовидную структуру. Все элементы отрисовываются вместе, за один шаг, в том порядке, в котором они были добавлены.
+Кнопки, текст, анимации... Stonescript предоставляет возможность создания сложного пользовательского интерфейса с высокой производительностью. По умолчанию существует невидимая панель "root", которая является основанием всей огромной системы интерфейса. К этой корневой панели можно добавить множество различных элементов, включая доп.панели, формируя древовидную структуру. Все элементы отрисовываются вместе, за один шаг, в том порядке, в котором они были добавлены.
 <eg><f>
 root
 │
