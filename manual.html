@@ -10,14 +10,16 @@
 
 <title>Руководство по Stonescript</title>
 
+<style type="text/css">
+  eg {
+    color: #707070;
+  }
+</style>
+
 <link rel="stylesheet" href="./Stonescript Manual_files/faq-fixed.css" type="text/css" media="only screen and (min-device-width: 891px)">
 <link rel="stylesheet" href="./Stonescript Manual_files/faq-stretch.css" type="text/css" media="only screen and (max-width: 890px)">
 
-<style type="text/css">
-	eg {
-		color: #707070;
-	}
-</style>
+
 
 </head>
 <body><div id="content">
@@ -54,7 +56,7 @@
 
 <f>Данное руководство является всеобъемлющим справочником всех доступных возможностей Stonescript. Большинство приведенных примеров можно скопировать/вставить прямо в Камень Разума, что является отличным способом проверить их работу на деле.</f>
 
-<f>Переведено Димакулом примерно на 60%.</f>
+<f>Переведено Димакулом примерно на 70%.</f>
 </f></f></f></font>
 
 
@@ -1387,36 +1389,36 @@ While scripts can define their own functions, Stonescript comes with a set of pr
   </tr>
   <tr>
     <td>screen.ToWorldZ(int)<br><eg>Возвращает integer</eg></td>
-    <td>Converts a value from the screen-space Y-axis to world-space Z-axis.<eg><br>Например:<br>var x<br>var y<br>var z<br>x = input.x<br>y = input.y<br>&gt;`0,1,Screen position of cursor: @x@,@y@<br><br>x = screen.ToWorldX(input.x)<br>z = screen.ToWorldZ(input.y)<br>&gt;`0,2,World position of cursor: @x@,@z@</eg></td>
+    <td>Конвертирует значение координаты Y на экране в координату Z в пространстве мира.<eg><br>Например:<br>var x<br>var y<br>var z<br>x = input.x<br>y = input.y<br>&gt;`0,1,Позиция курсора на экране: @x@,@y@<br><br>x = screen.ToWorldX(input.x)<br>z = screen.ToWorldZ(input.y)<br>&gt;`0,2,Позиция курсора в мире: @x@,@z@</eg></td>
   </tr>
   <tr>
     <td>screen.Next()<br><eg>Ничего не возвращает</eg></td>
-    <td>For locations that are multi-screen, moves the camera one screen forward in relation to the player.<eg><br>Например:<br>?key = rightBegin<br>  screen.Next()</eg></td>
+    <td>Для многоэкранных локаций передвигает камеру на экран вперед.<eg><br>Например:<br>?key = rightBegin<br>  screen.Next()</eg></td>
   </tr>
   <tr>
     <td>screen.Previous()<br><eg>Ничего не возвращает</eg></td>
-    <td>For locations that are multi-screen, moves the camera one screen back in relation to the player.<eg><br>Например:<br>?key = leftBegin<br>  screen.Previous()</eg></td>
+    <td>Для многоэкранных локаций передвигает камеру на экран назад.<eg><br>Например:<br>?key = leftBegin<br>  screen.Previous()</eg></td>
   </tr>
   <tr>
     <td>screen.ResetOffset()<br><eg>Ничего не возвращает</eg></td>
-    <td>Resets the camera to follow the player, undoing changes made by screen.Next() and screen.Previous()<eg><br>Например:<br>var lastScreenI = -1<br>?lastScreenI ! screen.i<br>  screen.ResetOffset()<br>lastScreenI = screen.i</eg></td>
+    <td>Камера снова начинает следовать за игроком, отменяя изменения, вызванные screen.Next() и screen.Previous().<eg><br>Например:<br>var lastScreenI = -1<br>?lastScreenI ! screen.i<br>  screen.ResetOffset()<br>lastScreenI = screen.i</eg></td>
   </tr>
-  <tr><td>storage<br>‾‾‾‾‾‾‾</td><td>Values saved into permanent storage persist when you leave a location, as well as when the game is shut down. They are not part of your primary_save, existing instead in a series of separate files within the Stonescript folder. Imported scripts access storage in isolation from each other, allowing different modules to use the same keys without modifying each other's data.</td></tr>
+  <tr><td>storage<br>‾‾‾‾‾‾‾</td><td>Значения, сохраненные в это перманентное хранилище, сохраняются, даже если вы покидаете локацию или выключаете игру. Они не являются частью сохранения, а хранятся как отдельные файлы в папке Stonescript. Импортированные скрипты получают доступ к хранилищу отдельно друг от друга, что дает возможность различным модулям использовать одни и те же ключи без влияния на данные друг друга.</td></tr>
   <tr>
     <td>storage.Delete(string)<br><eg>Ничего не возвращает</eg></td>
-    <td>Deletes any value that may exist at the specified key.<br><eg>Например:<br>storage.Delete("highscore")</eg></td>
+    <td>Удаляет любое значение указанного ключа.<br><eg>Например:<br>storage.Delete("highscore")</eg></td>
   </tr>
   <tr>
     <td>storage.Get(string)<br><eg>Возвращает value</eg></td>
-    <td>Retrieves a permanent value stored at the specified key.<br><eg>Например:<br>var value = storage.Get("highscore")<br>?value<br>  &gt;High Score = @value@<br>:<br>  &gt;No High Score found.</eg></td>
+    <td>Возвращает значение, хранящееся по заданному ключу.<br><eg>Например:<br>var value = storage.Get("highscore")<br>?value<br>  &gt;Рекоорд = @value@<br>:<br>  &gt;Рекорд не найден.</eg></td>
   </tr>
   <tr>
     <td>storage.Get(string, value)<br><eg>Возвращает value</eg></td>
-    <td>Retrieves a permanent value stored at the specified key. If it's not found, Возвращает the second parameter as a default value.<br><eg>Например:<br>var value = storage.Get("highscore", 0)<br>&gt;High Score = @value@</eg></td>
+    <td>Возвращает значение, хранящееся по заданному ключу. Если оно не найдено, возвращает второй параметр по умолчанию.<br><eg>Например:<br>var value = storage.Get("highscore", 0)<br>&gt;Рекорд = @value@</eg></td>
   </tr>
   <tr>
     <td>storage.Has(string)<br><eg>Возвращает boolean</eg></td>
-    <td>Возвращает <eg>true</eg> if the specified key exists in permanent storage; <eg>false</eg> otherwise.<br><eg>Например:<br>?storage.Has("highscore")<br>  var value = storage.Get("highscore")<br>  &gt;High Score = @value@<br>:<br>  &gt;No High Score found.</eg></td>
+    <td>Возвращает <eg>true</eg>, если указанный ключ есть в хранилище; <eg>false</eg> в противном случае.<br><eg>Например:<br>?storage.Has("highscore")<br>  var value = storage.Get("highscore")<br>  &gt;Рекорд = @value@<br>:<br>  &gt;Рекорд не найден.</eg></td>
   </tr>
   <tr>
     <td>storage.Incr(string)<br><eg>Возвращает integer</eg></td>
