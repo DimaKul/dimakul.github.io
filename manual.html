@@ -50,39 +50,41 @@
 <font color="#bbbbbb">
 <f>Используется в Камне Разума (Mind Stone) для автоматизации выбора снаряжения. Stonescript - минималистичный, однако мощный язык в <a href="https://stonestoryrpg.com/" target="_blank">Stone Story RPG</a>.</f>
 
-<f>Впервые работаете со Stonescript? Начните с <a href="https://stonestoryrpg.com/stonescript">Введения в Камень Разума</a>.
+<f>Впервые работаете со Stonescript? Начните с <a href="https://stonestoryrpg.com/stonescript">Введения в Камень Разума</a> (пока не переведено, но можно ознакомиться в нашем Telegram).
 
 <f>Нужна помощь? Посетите <a href="https://discord.gg/StoneStoryRPG" target="_blank">официальный Discord</a> или <a href="https://t.me/StoneStoryRpgRu" target="_blank">канал в Telegram</a>.<f>
 
 <f>Данное руководство является всеобъемлющим справочником всех доступных возможностей Stonescript. Большинство приведенных примеров можно скопировать/вставить прямо в Камень Разума, что является отличным способом проверить их работу на деле.</f>
 
+<f><font color="#666666">Перевел DimaKul совместно с IvaBel. Все права принадлежат разработчикам Stone Story RPG, которые написали все это руководство на английском языке.</font></f>
+
 </f></f></f></font>
 
 ·:·:· Оглавление ·:·:·
 
-<f>  <a href="#example">1. Пример +</a></f>
-<f>  <a href="#basics">2. Основы +</a></f>
-<f>  <a href="#game-state">3. Состояние игры +</a></f>
-<f>  <a href="#commands">4. Команды +</a></f>
-<f>  <a href="#search-filters">5. Фильтры поиска +</a></f>
-<f>  <a href="#comparisons">6. Сравнения +</a></f>
-<f>  <a href="#variables">7. Переменные +</a></f>
-<f>  <a href="#math-operations">8. Математические операции +</a></f>
-<f>  <a href="#functions">9. Функции +</a></f>
-<f>  <a href="#native-functions">10. Встроенные функции +</a></f>
-<f>  <a href="#import">11. Импорт сторонних скриптов +</a></f>
-<f>  <a href="#ascii-art">12. ASCII-арт +</a></f>
-<f>  <a href="#loops">13. Циклы +</a></f>
-<f>  <a href="#arrays">14. Массивы +</a></f>
-<f>  <a href="#custom-input">15. Кастомный ввод +</a></f>
+<f>  <a href="#example">1. Пример</a></f>
+<f>  <a href="#basics">2. Основы</a></f>
+<f>  <a href="#game-state">3. Состояние игры</a></f>
+<f>  <a href="#commands">4. Команды</a></f>
+<f>  <a href="#search-filters">5. Фильтры поиска</a></f>
+<f>  <a href="#comparisons">6. Сравнения</a></f>
+<f>  <a href="#variables">7. Переменные</a></f>
+<f>  <a href="#math-operations">8. Математические операции</a></f>
+<f>  <a href="#functions">9. Функции</a></f>
+<f>  <a href="#native-functions">10. Встроенные функции</a></f>
+<f>  <a href="#import">11. Импорт сторонних скриптов</a></f>
+<f>  <a href="#ascii-art">12. ASCII-арт </a></f>
+<f>  <a href="#loops">13. Циклы</a></f>
+<f>  <a href="#arrays">14. Массивы</a></f>
+<f>  <a href="#custom-input">15. Кастомный ввод</a></f>
 <f>  <a href="#user-interface">16. Пользовательский интерфейс</a></f>
-<f>  <a href="#tips">17. Советы +</a></f>
-<f>  <a href="#default-script">18. Скрипт по умолчанию +</a></f>
-<f>  <a href="#ability_ids">Приложение A - ID перезарядки способностей +</a></f>
-<f>  <a href="#sounds">Приложение B - Звуковые эффекты +</a></f>
-<f>  <a href="#music">Приложение C - Музыка +</a></f>
-<f>  <a href="#ambient">Приложение D - Атмосферные звуки +</a></f>
-<f>  <a href="#scripts">Приложение E - Все импортируемые скрипты +</a></f>
+<f>  <a href="#tips">17. Советы</a></f>
+<f>  <a href="#default-script">18. Скрипт по умолчанию</a></f>
+<f>  <a href="#ability_ids">Приложение A - ID перезарядки способностей</a></f>
+<f>  <a href="#sounds">Приложение B - Звуковые эффекты</a></f>
+<f>  <a href="#music">Приложение C - Музыка</a></f>
+<f>  <a href="#ambient">Приложение D - Атмосферные звуки</a></f>
+<f>  <a href="#scripts">Приложение E - Все импортируемые скрипты</a></f>
 
 
 <div id="example"><div id="separator"><!---------------------------></div>
