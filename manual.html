@@ -56,9 +56,7 @@
 
 <f>Данное руководство является всеобъемлющим справочником всех доступных возможностей Stonescript. Большинство приведенных примеров можно скопировать/вставить прямо в Камень Разума, что является отличным способом проверить их работу на деле.</f>
 
-<f>Переведено Димакулом примерно на 90%.</f>
 </f></f></f></font>
-
 
 ·:·:· Оглавление ·:·:·
 
@@ -603,7 +601,7 @@
   </tr>
   <tr>
     <td>&gt;oX,Y,[#rrggbb,](str)</td>
-    <td>Продвинутая функция вывода относительно позиции игрока. X и Y - координатные смещения. #rrggbb - цвет текста в <a href="https://htmlcolorcodes.com/" target="_blank">шестнадцатеричной форме</a>. Цвет также может быть одной из следующих констант: #white, #cyan, #yellow, #green, #blue and #red. Радужный цвет использует #rainFF, где 2 последних символа определяют яркость.<eg><br>Данный пример выводит "Погнали!" красным цветом на 6 блоков влево и 3 вниз относительно игрока:<br>&gt;o-6,3,#red,Погнали!</eg></td>
+    <td>Продвинутая функция вывода относительно позиции игрока. X и Y - координатные смещения. #rrggbb - цвет текста в <a href="https://htmlcolorcodes.com/" target="_blank">шестнадцатеричной форме</a>. Цвет также может быть одной из следующих констант: #white, #cyan, #yellow, #green, #blue или #red. Радужный цвет использует #rainFF, где 2 последних символа определяют яркость.<eg><br>Данный пример выводит "Погнали!" красным цветом на 6 блоков влево и 3 вниз относительно игрока:<br>&gt;o-6,3,#red,Погнали!</eg></td>
   </tr>
   <tr>
     <td>&gt;hX,Y,[#rrggbb,](str)</td>
@@ -948,7 +946,7 @@ TestScope(3)
 
 ·:·:· Встроенные функции ·:·:·
 <font color="#bbbbbb">
-While scripts can define their own functions, Stonescript comes with a set of pre-defined/native functions that behave similar to commands, but differ in that they are more clearly grouped by subject, can accept parameters and sometimes return a value.
+Хотя скрипты и могут определять свои собственные функции, в Stonescript есть множество заранее определенных (нативных) функций, которые ведут себя почти так же, как команды, но более сгруппированы по своей сути, а также могут принимать параметры и иногда возвращать какое-то значение.
 
 <table>
   <tbody><tr><td>ambient<br>‾‾‾‾‾‾‾</td></tr>
@@ -1522,7 +1520,7 @@ While scripts can define their own functions, Stonescript comes with a set of pr
   <tr>
   </tr><tr>
     <td>te.language<br><eg>string</eg></td>
-    <td>Код выбранного игроком языка. Возможные значения: EN, PT-BR, ZH-CN, ZH-TW, FR, DE, RU, ES-LA, ES-EU, JP, KR and TK.<eg><br>Например:<br>var lang = te.language<br>&gt;Язык = @lang@</eg></td>
+    <td>Код выбранного игроком языка. Возможные значения: EN, PT-BR, ZH-CN, ZH-TW, FR, DE, RU, ES-LA, ES-EU, JP, KR и TK.<eg><br>Например:<br>var lang = te.language<br>&gt;Язык = @lang@</eg></td>
   </tr>
   <tr>
     <td>te.xt(str)<br><eg>Возвращает string</eg></td>
@@ -2037,147 +2035,147 @@ root
   </tr>
   <tr>
     <td>ui.AddStyle()<br><eg>Возвращает int</eg></td>
-    <td>Adds a new style that can be used for drawing rectangular Components such as Panels and Buttons. Возвращает an ID number of the new style. Is protected against the same style being added multiple times, in which case nothing changes and the same ID is returned. Because different scripts may all call ui.AddStyle(), it's recommended to save the ID as a variable instead of hard-coding style numbers into the script.<eg><br>Например:<br>var customStyle = ui.AddStyle("<br>^123<br>^456<br>^789")<br>?loc.begin<br>  var p = ui.AddPanel()<br>  p.style = customStyle</eg></td>
+    <td>Добавляет новый стиль, который можно использовать для отрисовки прямоугольных компонентов, таких как панели и кнопки. Возвращает ID нового стиля. Имеется защита от добавления одного и того же стиля несколько раз: в таком случае ничего не изменится, и будет возвращен тот же ID. Посколько различные скрипты могут вызывать ui.AddStyle(), рекомендуется сохранить ID в переменную вместо того, чтобы вручную указывать ID стилей.<eg><br>Например:<br>var customStyle = ui.AddStyle("<br>^123<br>^456<br>^789")<br>?loc.begin<br>  var p = ui.AddPanel()<br>  p.style = customStyle</eg></td>
   </tr>
   <tr>
     <td>ui.AddText()<br>ui.AddText(string)<br><eg>Возвращает Text</eg></td>
-    <td>Adds a Text object to the root Panel.<eg><br>Например:<br>?loc.begin<br>  var t = ui.AddText()<br>  t.text = "Hello World!"</eg></td>
+    <td>Добавляет обхект типа Text на корневую панель.<eg><br>Например:<br>?loc.begin<br>  var t = ui.AddText()<br>  t.text = "Hello World!"</eg></td>
   </tr>
   <tr>
     <td>ui.Clear()<br><eg>Ничего не возвращает</eg></td>
-    <td>Removes all UI elements from the main container.<eg><br>Например:<br>?key = backBegin<br>  ui.Clear()</eg></td>
+    <td>Удаляет все элементы UI из основного контейнера.<eg><br>Например:<br>?key = backBegin<br>  ui.Clear()</eg></td>
   </tr>
-  <tr><td><br>Component<br>‾‾‾‾‾‾‾‾‾</td><td><br>Component is a base type for all other UI types. This means that other elements (Panels, Text, Buttons and Anim) all have the following properties:</td></tr>
+  <tr><td><br>Component<br>‾‾‾‾‾‾‾‾‾</td><td><br>Component - родительский тип для всех элементов интерфейса. Это значит, что другие элементы (Panel, Text, Button и Anim) имеют следующие свойства:</td></tr>
   <tr>
     <td>component.x<br><eg>integer</eg></td>
-    <td>The X position of the component relative to its docked position.</td>
+    <td>Координата X компонента относительно точки закрепления.</td>
   </tr>
   <tr>
     <td>component.y<br><eg>integer</eg></td>
-    <td>The Y position of the component relative to its docked position.</td>
+    <td>Координата Y компонента относительно точки закрепления.</td>
   </tr>
   <tr>
     <td>component.w<br><eg>integer</eg></td>
-    <td>The component's width. Default value varies by object type.<br><eg>Например:<br>button.w = string.Size(button.text) + 4<br>// Sizes a button to fit its current text, +2 on each side</eg></td>
+    <td>Ширина компонента. Значение по умолчанию зависит от типа объекта.<br><eg>Например:<br>button.w = string.Size(button.text) + 4<br>// Устанавливает ширину кнопки, чтобы текст влезал, +2 с каждой стороны</eg></td>
   </tr>
   <tr>
     <td>component.h<br><eg>integer</eg></td>
-    <td>The component's height. Default value is 5.<br><eg>Например:<br>panel.h = panel.parent.h<br>// Sets the height of a panel to match the height of its parent panel</eg></td>
+    <td>Высота компонента. По умолчанию 5.<br><eg>Например:<br>panel.h = panel.parent.h<br>// Делает высоту панели равной высоте родительской панели</eg></td>
   </tr>
   <tr>
     <td>component.absoluteX<br>component.absoluteY<br><eg>integer<br>read-only</eg></td>
-    <td>The component's position relative to the screen.<br><eg>Например:<br>var t<br>?loc.begin<br>  var p = ui.AddPanel()<br>  p.anchor = bottom_right<br>  p.dock = bottom_right<br>  t = ui.AddText("Foo")<br>  p.Add(t)<br>`0,1,Relative pos = @t.x@,@t.y@<br>&gt;`0,2,Absolute pos = @t.absoluteX@,@t.absoluteY@</eg></td>
+    <td>Положение компонента относительно экрана.<br><eg>Например:<br>var t<br>?loc.begin<br>  var p = ui.AddPanel()<br>  p.anchor = bottom_right<br>  p.dock = bottom_right<br>  t = ui.AddText("Foo")<br>  p.Add(t)<br>`0,1,Relative pos = @t.x@,@t.y@<br>&gt;`0,2,Позиция = @t.absoluteX@,@t.absoluteY@</eg></td>
   </tr>
   <tr>
     <td>component.anchor<br><eg>string</eg></td>
-    <td>Auto-layout property representing the internal pivot of the component. This guides the UI system on how to position the component relative to itself. Default value is "center_center". Possible values: top_left, top_center, top_right, center_left, center_center, center_right, bottom_left, bottom_center and bottom_right.</td>
+    <td>Свойство автоматического размещения компонента, отражающее автоматическую точку-якорь. Указывает системе UI, как расположить компонент относительно самого себя. Default value is "center_center". Possible values: top_left, top_center, top_right, center_left, center_center, center_right, bottom_left, bottom_center и bottom_right.</td>
   </tr>
   <tr>
     <td>component.dock<br><eg>string</eg></td>
-    <td>Auto-layout property similar to <eg>anchor</eg>. However, <eg>dock</eg> represents the external pivot, or position inside the parent where to position the component. If in doubt, use the same value for both <eg>anchor</eg> and <eg>dock</eg>, which is the most common situation.<br><eg>Например:<br>?loc.begin<br>  var p = ui.AddPanel()<br>  p.anchor = top_right<br>  p.dock = top_right<br>  p.w = 20<br>  p.h = 9<br>  var t = ui.AddText("HelloWorld!")<br>  t.anchor = left_bottom<br>  t.dock = bottom_left<br>  t.x = 2<br>  t.h = t.lines.Count() + 1<br>  p.Add(t)</eg></td>
+    <td>Свойство автоматического размещения компонента, похожее на <eg>anchor</eg>. Однако <eg>dock</eg> отражает внешнюю точку, то есть позицию внутри родителя. Если сомневаетесь, используйте одинаковые значения и для <eg>anchor</eg>, и для <eg>dock</eg> - это самая частая ситуация.<br><eg>Например:<br>?loc.begin<br>  var p = ui.AddPanel()<br>  p.anchor = top_right<br>  p.dock = top_right<br>  p.w = 20<br>  p.h = 9<br>  var t = ui.AddText("HelloWorld!")<br>  t.anchor = left_bottom<br>  t.dock = bottom_left<br>  t.x = 2<br>  t.h = t.lines.Count() + 1<br>  p.Add(t)</eg></td>
   </tr>
   <tr>
     <td>component.ax<br><eg>string</eg></td>
-    <td>The X part of the <eg>anchor</eg>. Possible values: left, center and right.</td>
+    <td>Горизонтальная часть <eg>anchor</eg>. Принимает значения: left, center и right.</td>
   </tr>
   <tr>
     <td>component.ay<br><eg>string</eg></td>
-    <td>The Y part of the <eg>anchor</eg>. Possible values: top, center and bottom.</td>
+    <td>Вертикальная часть якоря <eg>anchor</eg>. Принимает значения: top, center и bottom.</td>
   </tr>
   <tr>
     <td>component.dx<br><eg>string</eg></td>
-    <td>The X part of the <eg>dock</eg>. Possible values: left, center and right.</td>
+    <td>Горизонтальная часть <eg>dock</eg>. Принимает значения: left, center и right.</td>
   </tr>
   <tr>
     <td>component.dy<br><eg>string</eg></td>
-    <td>The Y part of the <eg>dock</eg>. Possible values: top, center and bottom.<br><eg>Например:<br>var p<br>?loc.begin<br>  p = ui.AddPanel()<br>  p.ax = right<br>  p.ay = top<br>  p.dx = right<br>  p.dy = top</eg></td>
+    <td>Вертикальная часть <eg>dock</eg>. Принимает значения: top, center и bottom.<br><eg>Например:<br>var p<br>?loc.begin<br>  p = ui.AddPanel()<br>  p.ax = right<br>  p.ay = top<br>  p.dx = right<br>  p.dy = top</eg></td>
   </tr>
   <tr>
     <td>component.parent<br><eg>Panel<br>read-only</eg></td>
-    <td>Reference to the component's parent Panel. May refer to the <eg>root</eg> Panel if the component was created but never added to another Panel. When <eg>panel.Add(component)</eg> is called the component's parent changes.</td>
+    <td>Ссылка на родительскую панель компонента. Является <eg>корневой</eg> панелью, если компонент не был добавлен на другую панель. Когда вызывается <eg>panel.Add(component)</eg>, родитель компонента меняется.</td>
   </tr>
   <tr>
     <td>component.visible<br><eg>multi type<br>bool/string</eg></td>
-    <td>Visibility of the component. Default value is "inherit". Possible values: true, false and inherit. If set to 'true', the component will always be visible, ignoring the status of its parent. If set to 'false', the component will be invisible, regardless of its parent. However, if set to 'inherit', the component will follow the visibility of its parent.</td>
+    <td>Видимость компонента. По умолчанию "inherit". Принимает значения: true, false и inherit. Если 'true', компонент всегда виден (вне зависимости от видимости родителя). Если 'false', компонент всегда скрыт (вне зависимости от родителя). Если 'inherit', видимость компонента наследуется от родителя.</td>
   </tr>
   <tr>
     <td>component.Recycle()<br><eg>Ничего не возвращает</eg></td>
-    <td>Removes the component from its parent Panel. It will be repurposed in future ui.Add_() calls. Any variable references to the recycled element should be nulled or reassigned to avoid bugs.</td>
+    <td>Удаляет компонент с родительской панели. "Переработанные" компоненты будут повторно использованы в последующих вызовах ui.Add_(). Все ссылки на удаленный объект стоит переназначить или установить в null, чтобы избежать багов.</td>
   </tr>
-  <tr><td><br>Panel &gt; Component<br>‾‾‾‾‾</td><td><br>Panels are rectangular Components that serve as containers for other Components. A chain of Panels added to each other form a tree structure.</td></tr>
+  <tr><td><br>Panel &gt; Component<br>‾‾‾‾‾</td><td><br>Панели (Panel) - прямоугольные компоненты, которые служат 'контейнерами' для других компонентов. Последовательная цепочка панелей, добавленных друг на друга, формирует древовидную структуру.</td></tr>
   <tr>
     <td>panel.children<br><eg>Component[]</eg></td>
-    <td>Array with all the child components that have been added to the Panel with <eg>panel.Add()</eg>.</td>
+    <td>Список всех дочерних компонентов, добавленных на панель с помощью <eg>panel.Add()</eg>.</td>
   </tr>
   <tr>
     <td>panel.clip<br><eg>bool</eg></td>
-    <td>Indicates if the bounds of Panel should be used to contrain the drawing of child components. If true, parts of child components that fall outside of the Panel's bounds will not draw.<br><eg>Например:<br>var p<br>?loc.begin<br>  p = ui.AddPanel()<br>  p.w = 4<br>  p.h = 3<br>  var t = ui.AddText("The quick brown fox jumps<br>^ over the lazy dog.")<br>  p.Add(t)<br><br>?time%30 &lt; 15<br>  p.clip = true<br>:<br>  p.clip = false</eg></td>
+    <td>Определяет, следует ли ограничивать отрисовку дочерних компонентов границами панели. Если true, части дочерних компонентов, которые выходят за границы, не будут отрисованы.<br><eg>Например:<br>var p<br>?loc.begin<br>  p = ui.AddPanel()<br>  p.w = 4<br>  p.h = 3<br>  var t = ui.AddText("The quick brown fox jumps<br>^ over the lazy dog.")<br>  p.Add(t)<br><br>?time%30 &lt; 15<br>  p.clip = true<br>:<br>  p.clip = false</eg></td>
   </tr>
   <tr>
     <td>panel.color<br><eg>string</eg></td>
-    <td>The panels color, in <a href="https://htmlcolorcodes.com/" target="_blank">RGB hexadecimal format</a>.</td>
+    <td>Цвет панели, в <a href="https://htmlcolorcodes.com/" target="_blank">шестнадцатеричном формате RGB</a>.</td>
   </tr>
   <tr>
     <td>panel.style<br><eg>int</eg></td>
-    <td>ID number of the Panel's current style. Default value is 1. Possible values from -8 to 8. Additional styles can be added with <eg>ui.AddStyle()</eg></td>
+    <td>ID стиля, используемого на панели. По умолчанию 1. Может принимать значения от -8 до 8. Дополнительные стили можно добавлять с помощью <eg>ui.AddStyle()</eg>.</td>
   </tr>
   <tr>
     <td>panel.Add(Component)<br>panel.Add(Component, int)<br><eg>Ничего не возвращает</eg></td>
-    <td>Adds a Component to a Panel. The Component becomes a child of the Panel and the Panel becomes the parent of the Component. The order in which elements are added to a Panel affects the draw order. Components may be inserted to a specific sorting position by use of the optional integer parameter. No integer parameter means the Component is added as the last child of the Panel. This function can also be used for changing the draw order of Components that are already children of the Panel.</td>
+    <td>Добавляет компонент на панель. Компонент становится дочерним для панели, а панель - родительской для компонента. Порядок добавленных элементов влияет на их отрисовку. Компоненты можно вставить на определенную позицию, если передать опциональный целочисленный параметр. Если этот параметр не передавать, то компонент будет добавлен как последний дочерний. Эта функция также может изменить порядок отрисовки уже добавленных компонентов.</td>
   </tr>
   <tr>
     <td>panel.Clear()<br><eg>Ничего не возвращает</eg></td>
-    <td>Removes all UI elements from the Panel. Components removed this way are recycled into the UI system and will be repurposed in future ui.Add_() calls. Any variable references to those elements should be nulled or reassigned to avoid bugs.</td>
+    <td>Удаляет все компоненты с панели. Компоненты, удаленные таким образом, будут переработаны в системе UI и повторно использованы в будущих вызовах ui.Add_(). Все ссылки на удаленный объект стоит переназначить или установить в null, чтобы избежать багов.</td>
   </tr>
   <tr>
     <td>panel.Remove(Component)<br>panel.Remove(int)<br><eg>Ничего не возвращает</eg></td>
-    <td>Removes a specific Component from a Panel or removes the Component at a specified index number. Components removed this way are recycled into the UI system and will be repurposed in future ui.Add_() calls. Any variable references to those elements should be nulled or reassigned to avoid bugs.</td>
+    <td>Удаляет конкретный компонент с панели или удаляет компонент по указанному индексу. Компоненты, удаленные таким образом, будут переработаны в системе UI и повторно использованы в будущих вызовах ui.Add_(). Все ссылки на удаленный объект стоит переназначить или установить в null, чтобы избежать багов.</td>
   </tr>
-  <tr><td><br>Text &gt; Component<br>‾‾‾‾</td><td><br>Multi-line text box. Supports color metadata.</td></tr>
+  <tr><td><br>Text &gt; Component<br>‾‾‾‾</td><td><br>Многострочное текстовое окно. Поддерживает цвета.</td></tr>
   <tr>
     <td>text.align<br><eg>string</eg></td>
-    <td>The alignment/justification of the text inside the box. Default value is "left". Possible values: left, center and right.</td>
+    <td>Выравнивание текста внутри границ. По умолчанию "left". Может принимать значения: left, center и right.</td>
   </tr>
   <tr>
     <td>text.color<br><eg>string</eg></td>
-    <td>The color of the text, in <a href="https://htmlcolorcodes.com/" target="_blank">RGB hexadecimal format</a>.</td>
+    <td>Цвет текста в <a href="https://htmlcolorcodes.com/" target="_blank">шестнадцатеричном формате RGB</a>.</td>
   </tr>
   <tr>
     <td>text.lines<br><eg>string[]</eg></td>
-    <td>Array of strings that are the broken-down lines of text after the Text box has formatted its contents. Excludes color metadata.</td>
+    <td>Массив строк текста (после всего прочего форматирования). Не включает данные о цветах.</td>
   </tr>
   <tr>
     <td>text.text<br><eg>string</eg></td>
-    <td>The full contents of the Text box. A subsection of the text may be colored with the metadata [color=#rrggbb][/color].<br><eg>Например:<br>?loc.begin<br>  var t = ui.AddText()<br>  t.text = "Hello [color=#red]World[/color]!"</eg></td>
+    <td>Полное содержание текстового окна. Части текста можно подсветить отдельным цветом с помощью тега [color=#rrggbb][/color].<br><eg>Например:<br>?loc.begin<br>  var t = ui.AddText()<br>  t.text = "Hello [color=#red]World[/color]!"</eg></td>
   </tr>
   <tr><td><br>Button &gt; Component<br>‾‾‾‾‾‾</td></tr>
   <tr>
     <td>button.text<br><eg>string</eg></td>
-    <td>The text that appears inside the button.<br><eg>Например:<br>button.text = player.name<br>// Put your name on the button!</eg></td>
+    <td>Текст, который появляется внутри кнопки.<br><eg>Например:<br>button.text = player.name<br>// Помещает ваше имя на кнопку!</eg></td>
   </tr>
   <tr>
     <td>button.tcolor<br><eg>string</eg></td>
-    <td>The color of the text inside the button, in <a href="https://htmlcolorcodes.com/" target="_blank">RGB hexadecimal format</a>.<br><eg>Например:<br>button.tcolor = #ff0000<br>// Sets the button text color to red</eg></td>
+    <td>Цвет текста внутри кнопки в <a href="https://htmlcolorcodes.com/" target="_blank">шестнадцатеричном формате RGB</a>.<br><eg>Например:<br>button.tcolor = #ff0000<br>// Устанавливает цвет текста в красный</eg></td>
   </tr>
   <tr>
     <td>button.bcolor<br><eg>string</eg></td>
-    <td>The color of the button's border, in <a href="https://htmlcolorcodes.com/" target="_blank">RGB hexadecimal format</a>.<br><eg>Например:<br>&gt;@button.bcolor@<br>button.bcolor = #880000<br>// Prints the border's current color, then sets it to a dark red</eg></td>
+    <td>Цвет границы кнопки в <a href="https://htmlcolorcodes.com/" target="_blank">шестнадцатеричном формате RGB</a>.<br><eg>Например:<br>&gt;@button.bcolor@<br>button.bcolor = #880000<br>// Выводит цвет границы, затем устанавливает его в темно-красный</eg></td>
   </tr>
   <tr>
     <td>button.hcolor<br><eg>string</eg></td>
-    <td>The color of the button's highlight when it's pressed, in <a href="https://htmlcolorcodes.com/" target="_blank">RGB hexadecimal format</a>.<br><eg>Например:<br>?loc.begin<br>  var b = ui.AddButton()<br>  b.hcolor = #yellow</eg></td>
+    <td>Цвет подсветки кнопки (при нажатии) в <a href="https://htmlcolorcodes.com/" target="_blank">шестнадцатеричном формате RGB</a>.<br><eg>Например:<br>?loc.begin<br>  var b = ui.AddButton()<br>  b.hcolor = #yellow</eg></td>
   </tr>
   <tr>
     <td>button.sound<br><eg>string</eg></td>
-    <td>The <a href="#sounds">sound effect</a> that plays when the button is pressed. Default is "confirm".<br><eg>Например:<br>button.sound = buy<br>// Changes the button so it plays the buying sound when pressed</eg></td>
+    <td><a href="#sounds">Звуковой эффект</a>, который проигрывается при нажатии кнопки. По умолчанию "confirm".<br><eg>Например:<br>button.sound = buy<br>//Эта кнопка будет проигрывать звук покупки при нажатии</eg></td>
   </tr>
   <tr>
     <td>button.style<br><eg>int</eg></td>
-    <td>ID number of the Buttons's current style. Default value is 1. Possible values from -8 to 8. Additional styles can be added with <eg>ui.AddStyle()</eg></td>
+    <td>ID стиля кнопки. По умолчанию 1. Может принимать значения от -8 до 8. Дополнительные стили можно добавлять с помощью <eg>ui.AddStyle()</eg>.</td>
   </tr>
   <tr>
     <td>button.SetPressed(f)<br><eg>function callback</eg></td>
-    <td>Assigns a function to be called when the button is pressed. The function can have any number of parameters (even no parameters). When the function is called, the first parameter will be a reference to the button itself.<br><eg>Например:<br>var button1<br>var button2<br>func OnPressed(btn)<br>  ?btn = button1<br>    &gt;Button1 was pressed<br>  :<br>    &gt;Button2 was pressed<br><br>?loc.begin<br>  button1 = ui.AddButton()<br>  button1.y = 1<br>  button1.SetPressed(OnPressed)<br><br>  button2 = ui.AddButton()<br>  button2.y = 6<br>  button2.SetPressed(OnPressed)</eg></td>
+    <td>Назначает функцию, которая вызывается, когда кнопка нажата. Функция может иметь сколько угодно параметров (или не иметь их совсем). При вызове данной функции первый переданный параметр будет являться ссылкой на саму кнопку.<br><eg>Например:<br>var button1<br>var button2<br>func OnPressed(btn)<br>  ?btn = button1<br>    &gt;Button1 was pressed<br>  :<br>    &gt;Button2 was pressed<br><br>?loc.begin<br>  button1 = ui.AddButton()<br>  button1.y = 1<br>  button1.SetPressed(OnPressed)<br><br>  button2 = ui.AddButton()<br>  button2.y = 6<br>  button2.SetPressed(OnPressed)</eg></td>
   </tr>
   <tr>
     <td>button.SetDown(f)<br><eg>function callback</eg></td>
