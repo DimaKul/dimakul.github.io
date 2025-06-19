@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://stonestoryrpg.com/stonescript/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="Introduction to the Mind Stone" property="og:title">
+<meta content="Get started with the Mind Stone, one of the most powerful relics in Stone Story RPG." property="og:description">
+<meta content="https://stonestoryrpg.com/mind_stone.png" property="og:image">
+<meta name="theme-color" content="#ffffff">
+<meta name="twitter:card" content="summary_large_image">
+<link type="application/json+oembed" href="https://stonestoryrpg.com/faq.json"> 
+
+<title>Introduction to the Mind Stone</title>
+
+<link rel="stylesheet" href="./introduction_files/faq-fixed.css" type="text/css" media="only screen and (min-device-width: 891px)">
+<link rel="stylesheet" href="./introduction_files/faq-stretch.css" type="text/css" media="only screen and (max-width: 890px)">
+
+<style type="text/css">
+	eg {
+		color: #707070;
+	}
+</style>
+
+</head>
+<body><div id="content">
+<f>
+<div id="logo"><a href="https://stonestoryrpg.com/" target="_blank"><img src="./introduction_files/capsule_b_231x87.png" alt="Stone Story RPG" align="middle"></a></div>
+
+<div id="title-separator"><!---------------------------></div>
+
+<center>· ·:·: Introduction to the Mind Stone :·:· ·</center>
+<div id="title-separator"><!---------------------------></div>
+
+<answer><center>intro | <a href="https://stonestoryrpg.com/stonescript/manual.html">manual</a> | <a href="https://stonestoryrpg.com/stonescript/beta.html">beta</a>  ·:·  <a href="https://stonestoryrpg.com/releasenotes">release notes</a> | <a href="https://stonestoryrpg.com/faq.html">faq</a></center></answer>
+<center><font color="#808080">
+      _ ______________________ _            
+  ,:´      \____        __.---<font color="#ffffff">,.</font> `.         
+ :.!  __________\_______\__`--<font color="#ffffff">`´</font>__ \        
+ :' \ \--------------------------.\ \       
+ ':' · \ <font color="#ffffff">·:. :'· :.:·             </font>\\ \      
+  ':' \ \ <font color="#ffffff">:·' :·:.                 </font>\\ \     
+   ':' · \ <font color="#ffffff">.: ·:: '.:. ':'··:.      </font>\\ \    
+    ':' \ \ <font color="#ffffff">· :..                    </font>\\ \   
+     ':' · \ <font color="#ffffff">:·: ..': :·:. ·:: '.     </font>\\ \  
+      ':' \ \__________________________\\ \ 
+       ':' `     .         \         .     )
+        ':' . . . \ . . . . ' . . . . \ . .;
+          `·.;,;,;,;,;,;,;,;,;,;,;,;,;,;,:' 
+</font></center>
+</f>
+<f>
+In this tutorial you will learn:<font color="#bbbbbb">
+To use the Mind Stone to auto-farm Deadwood Canyon</font>
+
+Estimated time to complete:<font color="#bbbbbb">
+20 minutes</font>
+
+Prior knowledge required:<font color="#bbbbbb">
+- Play Stone Story RPG until you defeat Nagaraja.
+- Understand the strategic value of changing weapons in the middle of a location.
+- Build the Cauldron and understand the Healing Potion.
+- Understand that the Ouroboros causes locations to loop around.</font>
+
+Items needed:<font color="#bbbbbb">
+- Sword, Shield and Crossbow with at least 4-stars each.
+- 80 Tar for potions.
+- Auto-refill enabled on your Cauldron.
+
+
+The Mind Stone is an incredibly powerful relic. Its purpose is to automate actions, such as changing weapons and using potions in the middle of a run. Instructions feed into the game's AI and tell it what to do. The Mind Stone, if setup correctly, leads to super-human actions as your character immediatly adapts to changes in the game.
+
+This relic is also Stone Story's gate to customization and cosmetics. Explore work done by other players and even create your own! There are pets, hats, custom interface, entire mini-games and more. <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2003221477" target="_blank">Learn about cosmetics and modding here</a>.
+
+Instructions in the Mind Stone are written in Stonescript, a minimalist language designed for use by everyone. If you can type, you can Stonescript--no programming degree required! However, if you'd like to dive into the deep end, see the <a href="https://stonestoryrpg.com/stonescript/manual.html">Stonescript manual</a> where all available instructions are listed in detail, along with examples.
+
+Need help? Want to collaborate on scripts? Visit <a href="https://discord.gg/StoneStoryRPG" target="_blank">our Discord</a>.
+
+
+Let's get started!
+
+</font></f>
+<div id="example"><div id="separator"><!---------------------------></div>
+
+·:·:· 1. Clear the Mind Stone ·:·:·
+<f><font color="#bbbbbb">
+Select all the text that comes by default in your Mind Stone and delete it. If you'd like, you could keep the header by <eg>Bezerra, the Sage</eg>, as any text preceeded by <eg>//</eg> has no effect and is ignored by the AI.
+
+Hint: The shortcut to select all is Ctrl + A.
+
+        _.,·─·──·────┬───────────────────────·──·─·.,_
+     .:´             |                                `-.
+   .:'               └--------┐                Power     `.
+  /:'                         |          ____,---╓───┐    `\
+ ,:'                          ◘         │    '---╙───┘      \
+ :'                                     |                   `.
+:.'  ╔══════════════════════════════════╧═══════════════╕    |
+:.|  ║                                                  │   '/
+:.!  ║                                                  │   ´!
+:.   ║                                                  │    |
+:.'  ║                                                  │   '|
+:.   ║                                                  │    |
+:.'  ║                                                  │   '|
+:.   ║                                                  │    |
+!.'  ║                                                  │   '|
+:.   ║                                                  │    |
+:.'  ║                                                  │   '|
+:.|  ║                                                  │    |
+:.'  ║                                                  │   '|
+:.   ║                                                  │   .(
+:.'  ║                                                  │   '|
+:.   ║                                                  │    |
+:.'  ║                                                  │   '|
+:.|  ║                                                  │    |
+:.'  ╙────────────────────────┬─────────────────────────┘   ';
+':.\           .              |              .             ./
+ '::.`-        |              °              |            .'
+   '':.:.:.:.:.|.:.:.:.:.:.:.:.:.:.:.:.:.:.:.|.:.:.:.:.:·`
+</font></f>
+<div id="example"><div id="separator"><!---------------------------></div>
+
+·:·:· 2. Healing ·:·:·
+<f>
+ )(
+(~≈)
+ ¯¯
+<font color="#bbbbbb">Instructions are all about converting common sense into something the game's AI can understand. For example, if you're about to die it would make sense to use a Healing Potion, right?
+
+There's a command to do that. Type the following into the Mind Stone:
+
+<eg>
+activate potion
+</eg>
+
+This tells the AI what to do. When you visit a location it will continuously try to activate the potion, every frame. As soon as you lose some health it will then successfully activate. In case you have a non-healing potion such as Lucky Potion, then it will activate immediately when you visit a location. Probably not the outcome we're looking for, so let's improve it.
+
+We can think of a more complete instruction like this:
+
+<eg>
+"IF my hitpoints are low THEN activate potion"
+</eg>
+
+Translating that into Stonescript, modify the Mind Stone to the following:
+
+<eg>
+?hp &lt; 7
+  activate potion
+</eg>
+
+The first line <eg>?hp &lt; 7</eg> is asking a question, <eg>"Are my hitpoints less-than 7?"</eg> As opposed to human language, the game requires the question mark as the first thing in the line, this way it knows right away that it's a question and knows how to read the rest (¿kinda like Spanish?).
+
+Notice the space added in front of <eg>activate potion</eg>. The space is important because it groups that line as dependant to the line above it. This way, it will only activate if the question above equals <eg>"yes"</eg>.
+</font></f>
+<div id="example"><div id="separator"><!---------------------------></div>
+
+·:·:· 3. Play ·:·:·
+<f><font color="#bbbbbb">
+  \|' /´,  
+ `|    /  ,
+ /\ /  `-´-
+ \ò ó` /´  
+ |   , (   
+ '¡'!| |   
+ |-'´ _'-. 
+¯'_/`´·\  `
+
+With your Mind Stone powered up and a potion freshly brewed, head over to any dangerous location and watch as you take damage from foes. When your hitpoints go below 7 it should automatically activate the potion.
+
+Hint: To re-open the Mind Stone in the middle of a location press 'M'. There's no need to head back to the Workstation. When you close the Mind Stone and resume the location your script will be reloaded and the new instructions you've written will take effect.
+</font></f>
+<div id="example"><div id="separator"><!---------------------------></div>
+
+·:·:· 4. Weapons ·:·:·
+<f>
+│ O__
+┼/|)_)
+ / \
+<font color="#bbbbbb">
+Our goal in this tutorial is to auto-farm Deadwood Canyon. A basic Sword + Shield combo is enough to complete the location on some difficulties and a good starting point.
+
+Add the following to the bottom of your Mind Stone:
+
+<eg>
+equipL sword
+equipR shield
+</eg>
+
+The <eg>equip</eg> command is exactly what you'd expect. It finds a weapon from your inventory and equips it. All text to the right of the command are additional details for the instruction. The <eg>L</eg> and <eg>R</eg> indicate which hand to place the weapon, left or right respectively. You could add more details to specify which weapon to equip, as you probably have many swords in your inventory. For example you can add <eg>*7</eg> to specify it's a 7-star weapon: <eg>equipL sword *7</eg>. Without any additional details the AI will find your best weapon and equip that, which is probably ok.
+</font>
+   |/) 
+ o.-._ 
+´ /|`-`
+  `'   
+<font color="#bbbbbb">
+This will do fine in general, but when you are against Mosquitos it could be better to equip a Crossbow and avoid all damage, as they are very weak but can swarm you and deal lots of damage:
+
+<eg>
+?foe = mosquito
+  equip crossbow
+</eg>
+
+The keyword <eg>foe</eg> allows us to inspect the enemy currently targeted by the AI and then make decisions based on what kind of <eg>foe</eg> it is.
+
+You may notice there's no <eg>L</eg> or <eg>R</eg> on this <eg>equip</eg> command. For the Crossbow we'll leave it without any details and let the AI decide what's best. Keep things simple for now.
+
+Your entire script should look like this:
+
+<eg>
+?hp &lt; 7
+  activate potion
+
+equipL sword
+equipR shield
+?foe = mosquito
+  equip crossbow
+</eg>
+
+At this point it's worth clarifying that your script executes from top to bottom. It will first check the potion, then equip the sword and shield, and finally, if you are facing a mosquito it will equip the crossbow. The whole script runs 30 times per second.
+
+Go to Deadwood Canyon to see if everything is working. If your script is a success and you didn't choose a location that's too hard for your current weapons, then you should be able to keep looping the location with the Ouroboros and farm it many times. That is, until you run out of Tar for potions or your inventory becomes full with treasure.
+</font></f>
+<div id="example"><div id="separator"><!---------------------------></div>
+
+·:·:· 5. Wood ·:·:·
+<f><font color="#bbbbbb">
+    \|
+     |, |/
+  \| |  /-'
+`-─\ | /_/─,
+    \'//
+  '\} {
+    { }
+    } {
+   //\`\
+
+As you approach trees in Deadwood Canyon, perhaps you'd like to take the opportunity to harvest wood.
+Add the following to the bottom of your script:
+
+<eg>
+?harvest.distance &lt; 10
+  equip hatchet
+</eg>
+
+In this case <eg>L</eg> and <eg>R</eg> are also not needed because the Hatchet can only be equipped on the right side anyway.
+
+Visit Deadwood to try out your latest changes!
+</font></f>
+<div id="example"><div id="separator"><!---------------------------></div>
+
+·:·:· 6. More Healing ·:·:·
+<f><font color="#bbbbbb">       ____,
+    _.-·´ o/`___
+  ,´  _.-._\¯¯`-.`.
+ /  ,´           `.`.
+|  :              | :
+|  :.            .' ;
+ \  `':.,,,,,..·´ ,´
+   `-._       _,-´
+        ¯¯¯¯¯
+At this point the script works, but depending on the star level of your gear or the chosen difficulty of the location you may still be taking too much damage from foes. Let's improve the script by equipping the Ouroboros, which heals over time while equipped.
+
+Add the following:
+
+<eg>
+?foe ! boss &amp; foe.distance &gt; 8
+  equipL ouroboros
+</eg>
+
+The question asked here is more complex, so let's break it down. On line 1, the first part asks <eg>foe ! boss</eg> which translates to <eg>"Foe is not a boss"</eg>. The exclamation mark is the opposite of the equals symbol.
+
+The second part of line 1 is <eg>foe.distance &gt; 8</eg> which means <eg>"Is the foe's distance to the player greater than 8?"</eg>. The two questions in line 1 are combined into a single question with the <eg>&amp;</eg> symbol, which means <eg>"AND"</eg>.
+
+The whole instruction means:
+
+<eg>
+"If the next foe is not a boss and it's distance to the player is greater than 8, equip the Ouroboros on the left hand."
+</eg>
+
+Hint: With a foe distance of <eg>8</eg> the Ouroboros will be used in combat. This is useful if your gear level is low. However, if <eg>17</eg> is used instead of <eg>8</eg> then the Ouroboros is excluded from combat, resulting in faster loop times. This is because the Ouroboros has an attack range of <eg>17</eg>. The value of <eg>8</eg> allows the Sword to be prioritized in melee situations.
+</font></f>
+<div id="example"><div id="separator"><!---------------------------></div>
+
+·:·:· 7. Pickups ·:·:·
+<f>
+   ,
+ _/-'
+<font color="#bbbbbb">
+You may notice that one thing slowing us down are things on the ground that must be picked up. In Deadwood Canyon that would be bits of wood. Lucky for us, the Star Stone (when equipped) sucks up all pickups and speeds up movement by a lot.
+
+Add the following:
+
+<eg>
+?pickup.distance &lt; 10
+  equipL star
+</eg>
+
+Similar to <eg>foe.distance</eg> this instruction is asking if the next pickup is less than <eg>10</eg> units away from the player. If that's the case then we equip the Star Stone on the left hand. We can say only <eg>star</eg> and that's enough to identify the relic because there aren't any other items with <eg>star</eg> in their name.
+</font></f>
+<div id="example"><div id="separator"><!---------------------------></div>
+
+·:·:· 8. All Together ·:·:·
+<f><font color="#bbbbbb">
+Our script for Deadwood is complete! However, these instructions will currently run in all locations. We probably want to do a specific set of instructions for each location, so we need to group these and only run them if we are exploring Deadwood Canyon.
+
+To check in what location we are, we can use the keyword <eg>loc</eg>.
+
+At the TOP of the script, add the following:
+
+<eg>
+?loc = deadwood
+</eg>
+
+But also, add space to the front of all the lines thereafter, so they become dependant on the location question. The entire script should look like this:
+
+<eg>
+?loc = deadwood
+  ?hp &lt; 7
+    activate potion
+  
+  equipL sword
+  equipR shield
+  ?foe = mosquito
+    equip crossbow
+  
+  ?harvest.distance &lt; 10
+    equip hatchet
+
+  ?foe ! boss &amp; foe.distance &gt; 8
+    equipL ouroboros
+  
+  ?pickup.distance &lt; 10
+    equipL star
+</eg>
+
+Hint: You can copy/paste scripts from here or from other players into the Mind Stone with the Ctrl+C / Ctrl+V shortcuts.
+</font></f>
+<div id="example"><div id="separator"><!---------------------------></div>
+
+·:·:· What's next? ·:·:·
+<f>
+     .-.
+     \ ´ .-.
+,-.   )  \ ´
+'- `-/¯\-´
+ .· /`°´\ ·.
+ `-´     `-´
+<font color="#bbbbbb">
+External resources and mini-tutorials below.
+
+
+Links
+
+Trouble with this tutorial? Need help with other locations? Visit <a href="https://discord.gg/StoneStoryRPG" target="_blank">our Discord</a>.
+
+Discover fun <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2003221477" target="_blank">cosmetics and mini-games</a> created by the Stone Story community.
+
+Ready to dive deeper? Learn everything from the <a href="https://stonestoryrpg.com/stonescript/manual.html">Stonescript manual</a>.
+
+
+
+Lifesteal
+
+If you have a good Lifesteal sword (dL) you may want to use that to manage your hitpoints, instead of relying only on potions. This will vastly improve your survivability (and save Tar):
+
+<eg>
+  ?hp &lt; maxhp &amp; foe.distance &lt; 7
+    equipL sword dL
+</eg>
+
+Poison
+
+With a good Poison weapon (dP) you can mitigate most of the damage from the boss. Again, greatly improving your survival and need for potions. This allows you to reach higher difficulty locations with minimal gear:
+
+<eg>
+  ?foe = boss &amp; foe.debuffs.count = 0
+    equipR dp
+</eg>
+
+In this idea, we check the number of debuffs to avoid re-applying the Poison before its time runs out.
+
+
+Mobility
+
+Players often employ the Dashing Shield, Triskelion and even the Quarterstaff abilities to greatly improve their loop times. E.g.:
+
+<eg>
+  ?foe.distance &gt;= 11 &amp; foe.distance &lt;= 16
+    equipR dashing
+</eg>
+
+
+Ability Activation
+
+Here things start getting more complex. A common question from players is how to activate abilities. While some items like the Hatchet and Blade of the Fallen God are easier, an important one that gives players lots of trouble is the Bardiche:
+
+<eg>
+?foe = boss &amp; foe.distance &lt;= 10 &amp;
+^item.GetCooldown("bardiche") &lt;= 0 |
+^item.GetCooldown("bardiche") &gt; 870
+  equip bardiche
+  activate R
+</eg>
+
+A few new symbols you will notice here are the <eg>^</eg> which is a way of continuing the previous line, as well as the <eg>|</eg> which means <eg>"OR"</eg>.
+
+In this example we are using the Bardiche's special ability against the boss (<eg>?foe = boss</eg>) when it's in range (<eg>foe.distance &lt;= 10</eg>) by calling <eg>equip bardiche</eg> then <eg>activate R</eg>. We are also using <eg>item.GetCooldown()</eg> to check the cooldown on the Bardiche's super attack.
+
+We use the cooldown information to keep it equipped only during the activation. Unlike some ability activations that are instantaneous, the Bardiche has a "cast" time, during which we need to keep it equipped. The game allows you to equip something else during the cast, but that cancels the ability and it goes on cooldown anyway. That's where the <eg>870</eg> comes from: Cooldown values are represented in frames. Each second equals 30 frames. The Bardiche has a 30 second cooldown which translates to 900 frames. Minus the cast time which is roughly one second, equals 870 frames.
+
+To better visualize what's happening with the Bardiche, try adding this:
+
+<eg>
+var cd
+cd = item.GetCooldown("bardiche")
+&gt;`0,0,Bardiche cooldown = @cd@
+</eg>
+
+The above snippet will print the cooldown in the upper-left corner. Activate the Bardiche's ability to see it go up to 900 then count down back to zero.
+
+</font></f>
+<div id="example"><div id="separator"><!---------------------------></div>
+
+
+<a href="https://stonestoryrpg.com/stonescript/#"><font color="#505050">^Back to top</font></a>
+</div>
+
+
+<font color="#505050">
+Copyright Martian Rex, Inc. 2020
+
+</font>
+</div>
+
+<br>
+</div></div></div></div></div></div></div></div></div></body></html>
